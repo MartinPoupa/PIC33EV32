@@ -6,7 +6,7 @@
             <name>main</name>
             <creation-uuid>cf855701-59d9-4541-b2cc-01efaea1ad7b</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions>c</c-extensions>
+            <c-extensions/>
             <cpp-extensions/>
             <header-extensions/>
             <asminc-extensions/>
@@ -16,6 +16,7 @@
                 <sourceRootElem>/Users/martinpoupa/Documents/GitHub/pic33EV32</sourceRootElem>
                 <sourceRootElem>/Users/martinpoupa/Documents/GitHub/PIC33/src</sourceRootElem>
                 <sourceRootElem>main/src</sourceRootElem>
+                <sourceRootElem>main/asm</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
