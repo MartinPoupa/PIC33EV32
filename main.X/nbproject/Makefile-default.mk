@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=/Users/martinpoupa/Documents/GitHub/PIC33/src/main.c
+SOURCEFILES_QUOTED_IF_SPACED=main/src/main.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/2074154371/main.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/2074154371/main.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main/src/main.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main/src/main.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/2074154371/main.o
+OBJECTFILES=${OBJECTDIR}/main/src/main.o
 
 # Source Files
-SOURCEFILES=/Users/martinpoupa/Documents/GitHub/PIC33/src/main.c
+SOURCEFILES=main/src/main.c
 
 
 CFLAGS=
@@ -94,20 +94,20 @@ MP_LINKER_FILE_OPTION=,--script=p33EV32GM002.gld
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/_ext/2074154371/main.o: /Users/martinpoupa/Documents/GitHub/PIC33/src/main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/2074154371" 
-	@${RM} ${OBJECTDIR}/_ext/2074154371/main.o.d 
-	@${RM} ${OBJECTDIR}/_ext/2074154371/main.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  /Users/martinpoupa/Documents/GitHub/PIC33/src/main.c  -o ${OBJECTDIR}/_ext/2074154371/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/2074154371/main.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
-	@${FIXDEPS} "${OBJECTDIR}/_ext/2074154371/main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+${OBJECTDIR}/main/src/main.o: main/src/main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/main/src" 
+	@${RM} ${OBJECTDIR}/main/src/main.o.d 
+	@${RM} ${OBJECTDIR}/main/src/main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  main/src/main.c  -o ${OBJECTDIR}/main/src/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main/src/main.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/main/src/main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 else
-${OBJECTDIR}/_ext/2074154371/main.o: /Users/martinpoupa/Documents/GitHub/PIC33/src/main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/2074154371" 
-	@${RM} ${OBJECTDIR}/_ext/2074154371/main.o.d 
-	@${RM} ${OBJECTDIR}/_ext/2074154371/main.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  /Users/martinpoupa/Documents/GitHub/PIC33/src/main.c  -o ${OBJECTDIR}/_ext/2074154371/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/2074154371/main.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
-	@${FIXDEPS} "${OBJECTDIR}/_ext/2074154371/main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+${OBJECTDIR}/main/src/main.o: main/src/main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/main/src" 
+	@${RM} ${OBJECTDIR}/main/src/main.o.d 
+	@${RM} ${OBJECTDIR}/main/src/main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  main/src/main.c  -o ${OBJECTDIR}/main/src/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main/src/main.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/main/src/main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 endif
 

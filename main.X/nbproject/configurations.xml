@@ -12,7 +12,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>/Users/martinpoupa/Documents/GitHub/PIC33/src/main.c</itemPath>
+      <itemPath>main/src/main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -23,6 +23,7 @@
   <sourceRootList>
     <Elem>/Users/martinpoupa/Documents/GitHub/pic33EV32</Elem>
     <Elem>/Users/martinpoupa/Documents/GitHub/PIC33/src</Elem>
+    <Elem>main/src</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

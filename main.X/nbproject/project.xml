@@ -15,6 +15,7 @@
             <sourceRootList>
                 <sourceRootElem>/Users/martinpoupa/Documents/GitHub/pic33EV32</sourceRootElem>
                 <sourceRootElem>/Users/martinpoupa/Documents/GitHub/PIC33/src</sourceRootElem>
+                <sourceRootElem>main/src</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
