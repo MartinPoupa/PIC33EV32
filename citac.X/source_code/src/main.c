@@ -62,18 +62,20 @@ _FWDT( FWDTEN_OFF )
 
 void  main() {
 
-    asm(" nop " );
-    asm(" nop " );
-    asm(" nop " );
-    asm(" nop " );
-    asm(" nop " );
+    TRISA = 0;
+    ANSELB = 0;
+    PR2 = 28789;
+    T2CON = 0x8020; //1000 0000 0010 0000
+    
 
     while(1) {
 
-        asm(" nop " );
-        asm(" nop " );
-        asm(" nop " );
-        asm(" nop " );
+        if(IFS0bits.T2IF == 1){
+        
+            IFS0bits.T2IF = 0;
+            PORTBbits.RB0 = ! PORTBbits.RB0;
+        
+        }
         
     }
 }
