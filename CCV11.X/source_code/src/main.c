@@ -23,7 +23,7 @@
 
 
 void  main() {
-    int a; //
+    int a; //ahoj
 
     a = pokus(a);
 
