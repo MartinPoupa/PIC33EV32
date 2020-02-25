@@ -23,9 +23,9 @@
 
 
 void  main() {
-    int a;
+    int a; //
 
-    a = pokus(a); 
+    a = pokus(a);
 
     asm(" nop " );
     asm(" nop " );
