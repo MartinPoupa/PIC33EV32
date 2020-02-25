@@ -9,7 +9,7 @@
 
 #include "p33EV32GM002.h"
 
-
+#include"include/mainFuncion.h"
 
 
 
@@ -23,6 +23,9 @@
 
 
 void  main() {
+    int a;
+
+    a = pokus(a); 
 
     asm(" nop " );
     asm(" nop " );
