@@ -25,7 +25,7 @@
 void  main() {
     int a;
 
-    a = pokus(a); // zdar
+    a = pokus(a);
 
     asm(" nop " );
     asm(" nop " );
