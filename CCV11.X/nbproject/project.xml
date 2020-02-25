@@ -3,8 +3,8 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>main</name>
-            <creation-uuid>cf855701-59d9-4541-b2cc-01efaea1ad7b</creation-uuid>
+            <name>CCV11</name>
+            <creation-uuid>e5b9213e-aca4-4fb0-861a-e14addef282f</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
             <cpp-extensions/>
@@ -13,11 +13,8 @@
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>/Users/martinpoupa/Documents/GitHub/pic33EV32</sourceRootElem>
-                <sourceRootElem>/Users/martinpoupa/Documents/GitHub/PIC33/src</sourceRootElem>
-                <sourceRootElem>main/src</sourceRootElem>
-                <sourceRootElem>main/asm</sourceRootElem>
-                <sourceRootElem>source_code/src</sourceRootElem>
+                <sourceRootElem>/Users/martinpoupa/Documents/GitHub/PIC33/main.X/source_code/src</sourceRootElem>
+                <sourceRootElem>/Users/martinpoupa/programi</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

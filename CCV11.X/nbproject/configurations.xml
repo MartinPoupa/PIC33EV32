@@ -12,7 +12,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>source_code/src/main.c</itemPath>
+      <itemPath>/Users/martinpoupa/Documents/GitHub/PIC33/main.X/source_code/src/main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -21,11 +21,8 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>/Users/martinpoupa/Documents/GitHub/pic33EV32</Elem>
-    <Elem>/Users/martinpoupa/Documents/GitHub/PIC33/src</Elem>
-    <Elem>main/src</Elem>
-    <Elem>main/asm</Elem>
-    <Elem>source_code/src</Elem>
+    <Elem>/Users/martinpoupa/Documents/GitHub/PIC33/main.X/source_code/src</Elem>
+    <Elem>/Users/martinpoupa/programi</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -41,7 +38,7 @@
         <platform>4</platform>
       </toolsSet>
       <packs>
-        <pack name="dsPIC33EV-GM-00X-10X_DFP" vendor="Microchip" version="1.0.20"/>
+        <pack name="dsPIC33EV-GM-00X-10X_DFP" vendor="Microchip" version="1.1.28"/>
       </packs>
       <compileType>
         <linkerTool>
@@ -129,6 +126,9 @@
         <property key="relax" value="false"/>
         <property key="warning-level" value="emit-warnings"/>
       </C30-AS>
+      <C30-CO>
+        <property key="coverage-enable" value=""/>
+      </C30-CO>
       <C30-LD>
         <property key="additional-options-use-response-files" value="false"/>
         <property key="boot-eeprom" value="no_eeprom"/>
@@ -454,6 +454,8 @@
                   value="report"/>
         <property key="warningmessagebreakoptions.W0243_ADC_INVALID_TAD" value="report"/>
         <property key="warningmessagebreakoptions.W0244_ADC_CONVERSION_ABORTED"
+                  value="report"/>
+        <property key="warningmessagebreakoptions.W0245_ADC_BUFREGEN_NOT_ALLOWED"
                   value="report"/>
         <property key="warningmessagebreakoptions.W0400_PWM_PWM_FASTER_THAN_FOSC"
                   value="report"/>
