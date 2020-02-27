@@ -2,15 +2,20 @@
             .include "p33EV32GM002.inc"
 
 
-            ;.bss
-            ;.text
+		    ;.bss
+		    ;.text
 
-            .global _delay
-_delay:     do W0, stop
-                repeat #7365
-                    nop
-stop:           nop
-            return
+		    .global _delay
+_delay:		    do W0, stop
+			repeat #7365
+			    nop
+stop:			nop
+		    return
+
+
+
+
+
 
 ;            .global _pinMode
 ;_pinMode:     do W0, stop
