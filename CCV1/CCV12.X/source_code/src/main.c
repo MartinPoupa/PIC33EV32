@@ -12,7 +12,7 @@
 
 
 #include "p33EV32GM002.h"
-#include "stdbool.h"
+//#include "stdbool.h"
 
 #include"include/mainFuncion.h"
 
@@ -30,45 +30,49 @@
 //_FWDT(FWDTEN_OFF)
 
 
-bool i = false;
-void main() {
 
 
-    TRISB = 0x00;
-    PORTB = 0;
+int f = 0;
 
-    ANSELB = 0;
-
-    toneT2B0(1000);
-
-    while (1) {
-        delay(10);
-    }
-    return 0;
+void toneT2B0(int frequency) {
+    PR2 = ((CYCLE_FREQUENCY * 1000000) / 256) / frequency ;
+    T2CON = 0xA030; // 256
 }
+
 
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
 
     IFS0bits.T2IF = 0;
 
 
-    if (i){
-        PORTBbits.RB0 = 1;
-        PORTB = 0xffff;
-        i = false;
+    if (f == 0){
+        PORTBbits.RB2 = 1;
+        f = 1;
     }
     else{
-        PORTBbits.RB0 = 0;
-        i = true;
+        PORTBbits.RB2 = 0;
+        f = 0;
     }
 }
 
-void toneT2B0(int frequency) {
-    PR2 = (CYCLE_FREQUENCY / 256) / frequency ;
-    T2CON = 0x8030; // 256
+
+void main() {
 
 
+    TRISB = 0;
+    ANSELB = 0;
+    PORTB = 0;
     IEC0bits.T2IE = 1;
     INTCON2bits.GIE = 1;
 
+    while (1) {
+        toneT2B0(262);
+        delay(500);
+        toneT2B0(330);
+        delay(500);
+        toneT2B0(392);
+        delay(500);
+        toneT2B0(523);
+        delay(500);
+    }
 }
