@@ -42,9 +42,6 @@ void main() {
     toneT2B0(1000);
 
     while (1) {
-        PORTBbits.RB1 = 1;
-        delay(10);
-        PORTBbits.RB1 = 0;
         delay(10);
     }
     return 0;
