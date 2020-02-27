@@ -29,7 +29,38 @@
 //_FOSC(OSCIOFNC_ON & IOL1WAY_OFF)
 //_FWDT(FWDTEN_OFF)
 
+
+
+
 int f = 0;
+
+void toneT2B0(int frequency) {
+    PR2 = (CYCLE_FREQUENCY / 256) / frequency ;
+    T2CON = 0x8030; // 256
+
+
+    IEC0bits.T2IE = 1;
+    INTCON2bits.GIE = 1;
+
+}
+
+
+void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
+
+    IFS0bits.T2IF = 0;
+
+
+    if (f == 0){
+        PORTBbits.RB2 = 1;
+        f = 1;
+    }
+    else{
+        PORTBbits.RB2 = 0;
+        f = 0;
+    }
+}
+
+
 void main() {
 
 
@@ -49,27 +80,5 @@ void main() {
     return 0;
 }
 
-void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
-
-    IFS0bits.T2IF = 0;
 
 
-    if (f == 0){
-        PORTBbits.RB0 = 1;
-        f = 0;
-    }
-    else{
-        PORTBbits.RB0 = 0;
-        f = 1;
-    }
-}
-
-void toneT2B0(int frequency) {
-    PR2 = (CYCLE_FREQUENCY / 256) / frequency ;
-    T2CON = 0x8030; // 256
-
-
-    IEC0bits.T2IE = 1;
-    INTCON2bits.GIE = 1;
-
-}
