@@ -12,7 +12,7 @@
 
 
 #include "p33EV32GM002.h"
-#include "stdbool.h"
+//#include "stdbool.h"
 
 #include"include/mainFuncion.h"
 
@@ -29,15 +29,14 @@
 //_FOSC(OSCIOFNC_ON & IOL1WAY_OFF)
 //_FWDT(FWDTEN_OFF)
 
-
-bool i = false;
+int f = 0;
 void main() {
 
 
-    TRISB = 0x00;
+    TRISB = 0;
+    ANSELB = 0;
     PORTB = 0;
 
-    ANSELB = 0;
 
     toneT2B0(1000);
 
@@ -55,14 +54,13 @@ void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
 
 
-    if (i){
+    if (i == 0){
         PORTBbits.RB0 = 1;
-        PORTB = 0xffff;
-        i = false;
+        f = 0;
     }
     else{
         PORTBbits.RB0 = 0;
-        i = true;
+        f = 1;
     }
 }
 
