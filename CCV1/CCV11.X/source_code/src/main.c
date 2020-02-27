@@ -54,7 +54,7 @@ void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
 
 
-    if (i == 0){
+    if (f == 0){
         PORTBbits.RB0 = 1;
         f = 0;
     }
