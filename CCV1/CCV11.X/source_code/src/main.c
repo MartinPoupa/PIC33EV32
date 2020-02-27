@@ -35,12 +35,8 @@
 int f = 0;
 
 void toneT2B0(int frequency) {
-    PR2 = (CYCLE_FREQUENCY / 256) / frequency ;
-    T2CON = 0x8030; // 256
-
-
-  
-
+    PR2 = ((CYCLE_FREQUENCY * 1000000) / 256) / frequency ;
+    T2CON = 0xA030; // 256
 }
 
 
@@ -68,7 +64,7 @@ void main() {
     PORTB = 0;
     IEC0bits.T2IE = 1;
     INTCON2bits.GIE = 1;
-    
+
 
 
     toneT2B0(1000);
@@ -81,6 +77,3 @@ void main() {
     }
     return 0;
 }
-
-
-
