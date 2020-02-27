@@ -39,8 +39,7 @@ void toneT2B0(int frequency) {
     T2CON = 0x8030; // 256
 
 
-    IEC0bits.T2IE = 1;
-    INTCON2bits.GIE = 1;
+  
 
 }
 
@@ -67,6 +66,9 @@ void main() {
     TRISB = 0;
     ANSELB = 0;
     PORTB = 0;
+    IEC0bits.T2IE = 1;
+    INTCON2bits.GIE = 1;
+    
 
 
     toneT2B0(1000);
