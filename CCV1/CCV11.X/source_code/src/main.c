@@ -67,13 +67,13 @@ void main() {
 
 
 
-    toneT2B0(1000);
+
 
     while (1) {
-        PORTBbits.RB1 = 1;
-        delay(10);
-        PORTBbits.RB1 = 0;
-        delay(10);
+        toneT2B0(262);
+        delay(1000);
+        toneT2B0(349);
+        delay(1000);
     }
     return 0;
 }
