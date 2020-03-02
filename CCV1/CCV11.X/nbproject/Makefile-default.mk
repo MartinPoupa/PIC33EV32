@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=source_code/src/main.c
+SOURCEFILES_QUOTED_IF_SPACED=source_code/src/main.c source_code/src/asm/mainFuncion.s
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/source_code/src/main.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/source_code/src/main.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/source_code/src/main.o ${OBJECTDIR}/source_code/src/asm/mainFuncion.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/source_code/src/main.o.d ${OBJECTDIR}/source_code/src/asm/mainFuncion.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/source_code/src/main.o
+OBJECTFILES=${OBJECTDIR}/source_code/src/main.o ${OBJECTDIR}/source_code/src/asm/mainFuncion.o
 
 # Source Files
-SOURCEFILES=source_code/src/main.c
+SOURCEFILES=source_code/src/main.c source_code/src/asm/mainFuncion.s
 
 
 
@@ -115,7 +115,21 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/source_code/src/asm/mainFuncion.o: source_code/src/asm/mainFuncion.s  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/source_code/src/asm" 
+	@${RM} ${OBJECTDIR}/source_code/src/asm/mainFuncion.o.d 
+	@${RM} ${OBJECTDIR}/source_code/src/asm/mainFuncion.o 
+	${MP_CC} $(MP_EXTRA_AS_PRE)  source_code/src/asm/mainFuncion.s  -o ${OBJECTDIR}/source_code/src/asm/mainFuncion.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  -Wa,-MD,"${OBJECTDIR}/source_code/src/asm/mainFuncion.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp=${DFP_DIR}/xc16
+	@${FIXDEPS} "${OBJECTDIR}/source_code/src/asm/mainFuncion.o.d"  $(SILENT)  -rsi ${MP_CC_DIR}../  
+	
 else
+${OBJECTDIR}/source_code/src/asm/mainFuncion.o: source_code/src/asm/mainFuncion.s  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/source_code/src/asm" 
+	@${RM} ${OBJECTDIR}/source_code/src/asm/mainFuncion.o.d 
+	@${RM} ${OBJECTDIR}/source_code/src/asm/mainFuncion.o 
+	${MP_CC} $(MP_EXTRA_AS_PRE)  source_code/src/asm/mainFuncion.s  -o ${OBJECTDIR}/source_code/src/asm/mainFuncion.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  -Wa,-MD,"${OBJECTDIR}/source_code/src/asm/mainFuncion.o.d",--defsym=__MPLAB_BUILD=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp=${DFP_DIR}/xc16
+	@${FIXDEPS} "${OBJECTDIR}/source_code/src/asm/mainFuncion.o.d"  $(SILENT)  -rsi ${MP_CC_DIR}../  
+	
 endif
 
 # ------------------------------------------------------------------------------------
