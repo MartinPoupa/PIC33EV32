@@ -42,7 +42,7 @@
 
 int f = 0;
 
-void toneT2B0(int frequency) {
+void toneT2B2(int frequency) {
     PR2 = ((CYCLE_FREQUENCY * 1000000) / 256) / frequency ;
     T2CON = 0xA030; // 256
 }
@@ -74,56 +74,56 @@ void main() {
     INTCON2bits.GIE = 1;
 
     while (1) {
-        toneT2B0(C2);
+        toneT2B2(C2);
         delay(500);
-        toneT2B0(E2);
+        toneT2B2(E2);
         delay(500);
-        toneT2B0(G2);
-        delay(500);
-
-        toneT2B0(C2);
-        delay(500);
-        toneT2B0(E2);
-        delay(500);
-        toneT2B0(G2);
+        toneT2B2(G2);
         delay(500);
 
-
-        toneT2B0(E2);
+        toneT2B2(C2);
         delay(500);
-        toneT2B0(E2);
+        toneT2B2(E2);
         delay(500);
-
-        toneT2B0(D2);
-        delay(500);
-        toneT2B0(E2);
+        toneT2B2(G2);
         delay(500);
 
-        toneT2B0(F2);
+
+        toneT2B2(E2);
         delay(500);
-        toneT2B0(D2);
+        toneT2B2(E2);
         delay(500);
 
-        toneT2B0(E2);
+        toneT2B2(D2);
         delay(500);
-        toneT2B0(E2);
-        delay(500);
-
-        toneT2B0(D2);
-        delay(500);
-        toneT2B0(E2);
+        toneT2B2(E2);
         delay(500);
 
-        toneT2B0(F2);
+        toneT2B2(F2);
         delay(500);
-        toneT2B0(D2);
+        toneT2B2(D2);
         delay(500);
 
-        toneT2B0(E2);
+        toneT2B2(E2);
         delay(500);
-        toneT2B0(D2);
+        toneT2B2(E2);
         delay(500);
-        toneT2B0(C2);
+
+        toneT2B2(D2);
+        delay(500);
+        toneT2B2(E2);
+        delay(500);
+
+        toneT2B2(F2);
+        delay(500);
+        toneT2B2(D2);
+        delay(500);
+
+        toneT2B2(E2);
+        delay(500);
+        toneT2B2(D2);
+        delay(500);
+        toneT2B2(C2);
         delay(500);
     }
 }
