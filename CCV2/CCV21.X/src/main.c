@@ -5,14 +5,7 @@
 * Created on 2. prosince 2018, 16:43
 */
 
-
-
-
-
-
-
 #include "p33EV32GM002.h"
-//#include "stdbool.h"
 
 #include"include/mainFuncion.h"
 
@@ -23,27 +16,18 @@
 #pragma config FWDTEN = OFF	   // WDT and SWDTEN Disabled    Watchdog vypnut
 
 
-
-
-void sendToSPI(unsigned int value);
-
-
-
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void)  {
       IFS0bits.T2IF = 0;
-
-      sendToSPI(0x1234);
+      sendToSPI(0x9fa5);
 }
 
 void __attribute__((interrupt, auto_psv)) _SPI1Interrupt(void)  {
       IFS0bits.SPI1IF = 0;
-
-
 }
 
 void sendToSPI(unsigned int value){
-    unsigned int cteni = SPI1BUF;      //prectem at muzem vysiliat
-    SPI1BUF = value;          // 5. Write the data to be transmitted to the SPIxBUF register
+    unsigned int cteni = SPI1BUF;
+    SPI1BUF = value;       
 }
 
 int f = 0;
@@ -82,8 +66,6 @@ int main() {
     /*  povoluji preruseni  od citace  */
     IEC0bits.T2IE = 1;
     IEC0bits.SPI1IE = 1;
-
-
 
     /*  globalni povoleni preruseni, tohle se musi povolit,
      * jinak nebude zadne preruseni krome TRAP   */

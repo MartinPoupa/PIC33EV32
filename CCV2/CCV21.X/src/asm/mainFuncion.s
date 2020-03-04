@@ -6,7 +6,7 @@
 		    ;.text
 
 		    .global _delay
-_delay:		      W0, stop
+_delay:		      do W0, stop
 			     repeat #7368
 			              nop
 stop:		     nop
