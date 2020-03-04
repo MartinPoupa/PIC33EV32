@@ -3,8 +3,8 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>CCV11</name>
-            <creation-uuid>712e662c-f257-4100-9efe-08a631ad0533</creation-uuid>
+            <name>CCV21</name>
+            <creation-uuid>a93dcfb5-e754-4925-aad5-ba025c8a09b7</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions/>
             <cpp-extensions/>

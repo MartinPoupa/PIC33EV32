@@ -22,7 +22,36 @@
 #pragma config IOL1WAY = ON    //Allow Only One reconfiguration pro PPS
 #pragma config FWDTEN = OFF	   // WDT and SWDTEN Disabled    Watchdog vypnut
 
+
+
+
 void sendToSPI(unsigned int value);
+
+
+
+void __attribute__((interrupt, auto_psv)) _T2Interrupt(void)  {
+      IFS0bits.T2IF = 0;
+
+      sendToSPI(0x1234);
+}
+
+void __attribute__((interrupt, auto_psv)) _SPI1Interrupt(void)  {
+      IFS0bits.SPI1IF = 0;
+
+
+}
+
+void sendToSPI(unsigned int value){
+    unsigned int cteni = SPI1BUF;      //prectem at muzem vysiliat
+    SPI1BUF = value;          // 5. Write the data to be transmitted to the SPIxBUF register
+}
+
+int f = 0;
+
+void toneT2B2(int frequency) {
+    PR2 = ((CYCLE_FREQUENCY * 1000000) / 256) / frequency ;
+    T2CON = 0xA030; // 256
+}
 
 /*
  *
@@ -38,32 +67,30 @@ int main() {
     ANSELB = 0;
     ANSELA = 0;
 
-
     PR2 = 28346;
     T2CON = 0xA020;
 
+    SPI1STAT = 0x0000;
 
-    SPI1STAT = 0x0000;      //  modul zatim nechavame vzpnuty
-
-    SPI1CON1 = 0x0520;      // 0000 0101 0010 0000
+    SPI1CON1 = 0x0520;
 
     SPI1CON2 = 0 ;
 
-    SPI1STATbits.SPIROV = 0;     // 3. Clear the SPIROV bit (SPIxSTAT<6>).
-    SPI1STATbits.SPIEN  = 1;     // 4. Enable SPI operation by setting the SPIEN bit (SPIxSTAT<15>).
+    SPI1STATbits.SPIROV = 0;
+    SPI1STATbits.SPIEN  = 1;
 
     /*  povoluji preruseni  od citace  */
     IEC0bits.T2IE = 1;
-    IEC0bits.SPI1IE=1;      //povoleni preruseni od SPI1
+    IEC0bits.SPI1IE = 1;
 
 
 
     /*  globalni povoleni preruseni, tohle se musi povolit,
-     *  jinak nebude zadne preruseni krome TRAP
-     */
+     * jinak nebude zadne preruseni krome TRAP   */
     INTCON2bits.GIE = 1;
 
     while (1) {
+
         asm(" btg PORTA, #0 ");
         asm(" btg PORTA, #1 ");
         asm(" btg PORTA, #2 ");
@@ -71,26 +98,4 @@ int main() {
     }
 
     return 0;
-}
-
-void __attribute__((interrupt, auto_psv)) _T2Interrupt(void)  {
-      IFS0bits.T2IF = 0;
-
-      sendToSPI(0x1234);
-}
-
-
-
-
-
-
-void __attribute__((interrupt, auto_psv)) _SPI1Interrupt(void)  {
-      IFS0bits.SPI1IF = 0;
-      /* a tady dal vsechno to, co se ma udelat po odvysilani znaku po SPI   */
-
-}
-
-void sendToSPI(unsigned int value){
-    unsigned int cteni = SPI1BUF;      //prectem at muzem vysiliat
-    SPI1BUF = value;          // 5. Write the data to be transmitted to the SPIxBUF register
 }
