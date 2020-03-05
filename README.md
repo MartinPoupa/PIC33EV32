@@ -1,4 +1,4 @@
-# PIC33
+# PIC33EV32
 
 Vítejte v projekt který má za úkol zjednodušit práci s piv33EV32.
 Tento projekt je také určen jako vzdělávací pomůcka. 
