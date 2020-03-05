@@ -8,5 +8,5 @@
 #define A 0
 #define B 1
 
-#define DOWN 0
-#define UP 1
+#define LOW 0
+#define HIGH 1
