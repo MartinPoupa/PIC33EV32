@@ -2,7 +2,6 @@
 * File:   main.c
 * Author: Martin Poupa
 *
-* Created on 2. prosince 2018, 16:43
 */
 
 
@@ -12,7 +11,6 @@
 
 
 #include "p33EV32GM002.h"
-//#include "stdbool.h"
 
 #include"include/mainFuncion.h"
 
