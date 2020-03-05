@@ -2,7 +2,6 @@
 * File:   main.c
 * Author: Martin Poupa
 *
-* Created on 2. prosince 2018, 16:43
 */
 
 #include "p33EV32GM002.h"
@@ -27,7 +26,7 @@ void __attribute__((interrupt, auto_psv)) _SPI1Interrupt(void)  {
 
 void sendToSPI(unsigned int value){
     unsigned int cteni = SPI1BUF;
-    SPI1BUF = value;       
+    SPI1BUF = value;
 }
 
 int f = 0;
