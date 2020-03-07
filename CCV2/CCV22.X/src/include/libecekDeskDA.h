@@ -1,7 +1,7 @@
 
 void setDA (){
     //set pins
-    pinMode(5, INOUT);
+    pinMode(5, INPUT);
     pinMode(6, INPUT);
     pinMode(13, OUTPUT);
     pinAD(5, DIGITAL);
