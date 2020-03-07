@@ -31,9 +31,9 @@ int main() {
 
     while (1) {
         DA(A, 0x0000);
-        delay(1000);
+        delay(200);
         DA(A, 0x0fff);
-        delay(1000);
+        delay(200);
     }
 
     return 0;
