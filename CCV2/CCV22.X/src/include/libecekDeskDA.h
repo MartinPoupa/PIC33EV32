@@ -40,7 +40,7 @@ void DA (int convertor, int voltage){
     //if((voltage > 4096 )&& (voltage <= 0 )){
         digitalWrite(13, LOW);
         int cteni = SPI1BUF ;
-        SPI1BUF = (voltage + (0x8000 * convertor));
+        SPI1BUF = (voltage + (0xf000));
         delay(5);
         digitalWrite(13, HIGH);
     //}
