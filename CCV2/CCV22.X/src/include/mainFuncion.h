@@ -5,8 +5,8 @@
 #define OUTPUT 0
 #define INPUT 1
 
-#define A 0
-#define B 1
+#define A 1
+#define B 0
 
 #define LOW 0
 #define HIGH 1
