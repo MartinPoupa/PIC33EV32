@@ -42,7 +42,6 @@ void toneT2B2(int frequency) {
  */
 int main() {
 
-
     TRISA = 0x0;
 
     TRISB = 0x00;
@@ -73,6 +72,7 @@ int main() {
   /*  __builtin_write_OSCCONL(OSCCON & 0xBF);
 
     RPINR22 = 0x2426;
+
 
     __builtin_write_OSCCONL(OSCCON |  0x40);   */
 

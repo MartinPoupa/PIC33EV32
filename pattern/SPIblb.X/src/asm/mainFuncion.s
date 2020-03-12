@@ -14,4 +14,18 @@ stop:		     nop
 
 
 
+
+
+
+;            .global _pinMode
+;_pinMode:     do W0, stop
+;                repeat #7365
+;                    nop
+;stop:           nop
+;            return
+
+
+
+
+
             .end
