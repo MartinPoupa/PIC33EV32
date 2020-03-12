@@ -26,7 +26,6 @@
 #define DIGITAL 0
 #define ANALOG 1
 
-int f = 0;
 
 void delay(int);
 void pinMode(int, int);
@@ -131,10 +130,30 @@ void __attribute__((interrupt, auto_psv)) _SPI2Interrupt(void)  {
 
 ///////////////////////////////////////////////////////////////////////////
 
+int state = 0;
+int voltageDA = 0;
+
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
 
     IFS0bits.T2IF = 0;
-    DA(A, 0x0555);
+    if (voltageDA == 0x0fff) {
+        state = 1;
+    }
+    if (voltageDA == 0x0000) {
+        state = 0;
+    }
+
+
+    if (state == 0) {
+        DA(A, voltageDA);
+        voltageDA++;
+    }
+    else{
+        DA(A, voltageDA);
+        voltageDA = voltageDA - 1;
+    }
+
+
 
 }
 

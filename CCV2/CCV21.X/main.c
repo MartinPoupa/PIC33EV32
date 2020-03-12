@@ -82,8 +82,8 @@ void setDA (){
      TRISB = 0;
      ANSELB = 0;
 
-    PORTBbits.RB5 = 1;
-    PORTBbits.RB6 = 1;
+    PORTBbits.RB5 = 0;
+    PORTBbits.RB6 = 0;
     PORTBbits.RB13 = 1;
 
     //PPS
@@ -134,7 +134,9 @@ void __attribute__((interrupt, auto_psv)) _SPI2Interrupt(void)  {
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
 
     IFS0bits.T2IF = 0;
-    DA(A, 0x0555);
+    PORTBbits.RB13 = 0;
+    int cteni = SPI2BUF;
+    SPI2BUF = 0x9FA5;
 
 }
 
