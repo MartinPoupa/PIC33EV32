@@ -13,10 +13,6 @@
 #pragma config FWDTEN = OFF	   // WDT and SWDTEN Disabled    Watchdog vypnut
 
 
-
-
-///////////////////////////////////////////////////////////////////////////
-
 int state = 0;
 int voltageDA = 0;
 
