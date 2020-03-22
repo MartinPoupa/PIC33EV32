@@ -49,7 +49,7 @@ int main() {
       pinAD(1, DIGITAL);
 
       setDA();
-      FrequencyT2(100);
+      FrequencyT2(1000);
       startInterrupts();
 
       DA(A, 0x0fff);
