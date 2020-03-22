@@ -161,7 +161,7 @@ _DA:		            MOV #0x0fff, W2
                     .global __SPI2Interrupt     ; SPI interapt
 __SPI2Interrupt:       BCLR IFS2, #SPI2IF
                        BSET PORTB, #13
-                       BTG PORTB, #0
+                     ;  BTG PORTB, #0
                     retfie
 
 
