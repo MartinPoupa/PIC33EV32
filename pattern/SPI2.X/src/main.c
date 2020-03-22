@@ -48,17 +48,8 @@ int main() {
       pinMode(1, OUTPUT);
       pinAD(1, DIGITAL);
 
-      FrequencyT2(1000);
+      FrequencyT2(50000);
       setDA();
-
-      //SPI2STATbits.SPIROV = 0 ;
-
-     // SPI2STATbits.SPIEN = 1 ;
-
-
-      //IEC2bits.SPI2IE = 1 ;
-
-
       startInterrupts();
 
       DA(A, 0x0fff);
