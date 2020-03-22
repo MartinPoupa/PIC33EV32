@@ -50,6 +50,7 @@ void FrequencyT2(int frequency) {
 void __attribute__((interrupt, auto_psv)) _SPI2Interrupt(void) {
     IFS2bits.SPI2IF  = 0 ;
     PORTBbits.RB13 = 1 ;
+    asm(" btg PORTB, #0 ");
 
 
 }
