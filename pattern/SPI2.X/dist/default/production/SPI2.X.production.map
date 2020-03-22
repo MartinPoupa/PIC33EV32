@@ -85,10 +85,10 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x356           0x501  (1281)
-.text                        0x556               0x17c           0x23a  (570)
-.dinit                       0x6d2                 0x8             0xc  (12)
+.text                        0x556               0x17e           0x23d  (573)
+.dinit                       0x6d4                 0x8             0xc  (12)
 
-                 Total "program" memory used (bytes):          0x747  (1863) 5%
+                 Total "program" memory used (bytes):          0x74a  (1866) 5%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x1000]
@@ -148,13 +148,13 @@ External Symbols in Program Memory (by address):
                   0x0005c8                  _startInterrupts
                   0x0005cc                  _setDA
                   0x00061c                  _DA
-                  0x000634                  _FrequencyT2
-                  0x0006b0                  _main
+                  0x000636                  _FrequencyT2
+                  0x0006b2                  _main
 
 External Symbols in Program Memory (by name):
 
                   0x00061c                  _DA
-                  0x000634                  _FrequencyT2
+                  0x000636                  _FrequencyT2
                   0x00036c                  __DefaultInterrupt
                   0x0002fa                  __T2Interrupt
                   0x000372                  ___divsf3
@@ -174,7 +174,7 @@ External Symbols in Program Memory (by name):
                   0x000200                  __resetPRI
                   0x000556                  _delay
                   0x000584                  _digitalWrite
-                  0x0006b0                  _main
+                  0x0006b2                  _main
                   0x0005a6                  _pinAD
                   0x000562                  _pinMode
                   0x0005cc                  _setDA
@@ -352,10 +352,10 @@ __FALTREG
  .debug_abbrev    0x000000        0x11a build/default/production/src/main.o
  .debug_abbrev    0x00011a         0x14 build/default/production/src/asm/mainFuncion.o
 
-.debug_line       0x000000        0x20c
+.debug_line       0x000000        0x20d
  *(.debug_line)
  .debug_line      0x000000        0x163 build/default/production/src/main.o
- .debug_line      0x000163         0xa9 build/default/production/src/asm/mainFuncion.o
+ .debug_line      0x000163         0xaa build/default/production/src/asm/mainFuncion.o
 
 .debug_frame      0x000000         0x8e
  *(.debug_frame)
@@ -1550,8 +1550,8 @@ __c30_signature
  .ivt._T2Interrupt
                   0x000022          0x2 build/default/production/src/main.o
 
-.text             0x000556        0x17c
- .text            0x000556         0xde build/default/production/src/asm/mainFuncion.o
+.text             0x000556        0x17e
+ .text            0x000556         0xe0 build/default/production/src/asm/mainFuncion.o
                   0x000556                  _delay
                   0x000562                  _pinMode
                   0x000584                  _digitalWrite
@@ -1559,9 +1559,9 @@ __c30_signature
                   0x0005c8                  _startInterrupts
                   0x0005cc                  _setDA
                   0x00061c                  _DA
- .text            0x000634         0x9e build/default/production/src/main.o
-                  0x000634                  _FrequencyT2
-                  0x0006b0                  _main
+ .text            0x000636         0x9e build/default/production/src/main.o
+                  0x000636                  _FrequencyT2
+                  0x0006b2                  _main
 
-.dinit            0x0006d2          0x8
- .dinit           0x0006d2          0x8 data_init
+.dinit            0x0006d4          0x8
+ .dinit           0x0006d4          0x8 data_init
