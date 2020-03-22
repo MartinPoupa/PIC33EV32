@@ -344,10 +344,10 @@ __FALTREG
 .comment
  *(.comment)
 
-.debug_info       0x000000        0x817
+.debug_info       0x000000        0x8f3
  *(.debug_info)
- .debug_info      0x000000        0x777 build/default/production/src/main.o
- .debug_info      0x000777         0xa0 build/default/production/src/asm/mainFuncion.o
+ .debug_info      0x000000        0x853 build/default/production/src/main.o
+ .debug_info      0x000853         0xa0 build/default/production/src/asm/mainFuncion.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x12e
@@ -364,9 +364,9 @@ __FALTREG
  *(.debug_frame)
  .debug_frame     0x000000         0xb2 build/default/production/src/main.o
 
-.debug_str        0x000000         0x2f
+.debug_str        0x000000         0x3b
  *(.debug_str)
- .debug_str       0x000000         0x2f build/default/production/src/main.o
+ .debug_str       0x000000         0x3b build/default/production/src/main.o
 
 .debug_loc
  *(.debug_loc)
@@ -1501,36 +1501,36 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x000030         0x95
+                  0x000030         0xb8
  .debug_pubtypes
-                  0x000030         0x95 build/default/production/src/main.o
+                  0x000030         0xb8 build/default/production/src/main.o
 
 __c30_signature
-                  0x0000c5         0x48
+                  0x0000e8         0x48
  __c30_signature
-                  0x0000c5          0x6 build/default/production/src/main.o
+                  0x0000e8          0x6 build/default/production/src/main.o
  __c30_signature
-                  0x0000cb          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
+                  0x0000ee          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
  __c30_signature
-                  0x0000d1          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
+                  0x0000f4          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
  __c30_signature
-                  0x0000d7          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(divsf3.epeo)
+                  0x0000fa          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(divsf3.epeo)
  __c30_signature
-                  0x0000dd          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(fixunssfsi.epeo)
+                  0x000100          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(fixunssfsi.epeo)
  __c30_signature
-                  0x0000e3          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatsisf.epeo)
+                  0x000106          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatsisf.epeo)
  __c30_signature
-                  0x0000e9          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(fpack.epeo)
+                  0x00010c          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(fpack.epeo)
  __c30_signature
-                  0x0000ef          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(funpack.epeo)
+                  0x000112          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(funpack.epeo)
  __c30_signature
-                  0x0000f5          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(funpack2.epeo)
+                  0x000118          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(funpack2.epeo)
  __c30_signature
-                  0x0000fb          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(futil.epeo)
+                  0x00011e          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(futil.epeo)
  __c30_signature
-                  0x000101          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatdisf.epeo)
+                  0x000124          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatdisf.epeo)
  __c30_signature
-                  0x000107          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatundisf.epeo)
+                  0x00012a          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatundisf.epeo)
 
 .nbss               0x1000          0x4
  .nbss              0x1000          0x4 build/default/production/src/main.o

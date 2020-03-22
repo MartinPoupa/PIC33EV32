@@ -58,9 +58,9 @@ int main() {
       //IEC0bits.T2IE = 1;
       //IEC2bits.SPI2IE = 1 ;
 
-      //INTCON2bits.GIE = 1;
+      INTCON2bits.GIE = 1;
 
-      startInterrupts();
+      //startInterrupts();
 
       DA(A, 0x0fff);
 
