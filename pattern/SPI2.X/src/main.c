@@ -45,10 +45,12 @@ void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
 int main() {
       pinMode(0, OUTPUT);
       pinAD(0, DIGITAL);
+
       setDA();
       FrequencyT2(10000);
-      DA(A, 0x0fff);
       startInterrupts();
+      
+      DA(A, 0x0fff);
 
 
     while (1) {

@@ -90,17 +90,17 @@ endDigitalWrite:        MOV W0, PORTB
 
                     .global _setDA              ; void setDA();
                         ;pin set
- _setDA:	            BCLR TRISB,#5        ;  14 sdo
-                        BCLR TRISB,#6        ;  15 sck
-                        BCLR TRISB,#13       ;     cs
+ _setDA:	            BCLR TRISB, #5        ;  14 sdo
+                        BCLR TRISB, #6        ;  15 sck
+                        BCLR TRISB, #13       ;     cs
 
-                        BCLR ANSELB,#5
-                        BCLR ANSELB,#6
-                        BCLR ANSELB,#13
+                        BCLR ANSELB, #5
+                        BCLR ANSELB, #6
+                        BCLR ANSELB, #13
 
-                        BCLR PORTB,#5
-                        BCLR PORTB,#6
-                        BSET PORTB,#13
+                        BCLR PORTB, #5
+                        BCLR PORTB, #6
+                        BSET PORTB, #13
 
                         ;PPS
                         MOV #OSCCONL, W1
@@ -130,18 +130,18 @@ endDigitalWrite:        MOV W0, PORTB
                         REPEAT #4
                             MOV SPI2BUF, W0
 
-                        MOV #0x0000 , W0
-                        MOV W0 , SPI2STAT
-                        MOV #0x053b , W0
-                        MOV W0 , SPI2CON1
-                        MOV #0x0000 , W0
-                        MOV W0 , SPI2CON2
+                        MOV #0x0000, W0
+                        MOV W0, SPI2STAT
+                        MOV #0x053b, W0
+                        MOV W0, SPI2CON1
+                        MOV #0x0000, W0
+                        MOV W0, SPI2CON2
 
-                        BCLR SPI2STAT , #SPIROV
-                        BSET SPI2STAT , #SPIEN
+                        BCLR SPI2STAT, #SPIROV
+                        BSET SPI2STAT, #SPIEN
 
                         ;SPI interapt
-                        BCLR IFS2, #SPI2IF
+                        ;BCLR IFS2, #SPI2IF
                         BSET IFS2, #SPI2IE
 
                     return
@@ -153,14 +153,14 @@ _DA:		            MOV #0x0fff, W2
                         REPEAT #11
                             RRNC W0, W0
                         IOR W0, W1, W1
-                        BCLR PORTB,#13
+                        BCLR PORTB, #13
                         MOV SPI2BUF, W0
                         MOV W1, SPI2BUF
                     return
 
-                    __SPI2Interrupt:            ;SPI interapt
-                       BCLR IFS2, #SPI2IF
-                       BSET PORTB , #13
+                    .global __SPI2Interrupt     ; SPI interapt
+__SPI2Interrupt:       BCLR IFS2, #SPI2IF
+                       BSET PORTB, #13
                     retfie
 
 
