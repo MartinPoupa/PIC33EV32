@@ -51,16 +51,16 @@ int main() {
       FrequencyT2(1000);
       setDA();
 
-      //SPI2STATbits.SPIROV = 0 ;
+      SPI2STATbits.SPIROV = 0 ;
 
-      //SPI2STATbits.SPIEN = 1 ;
+      SPI2STATbits.SPIEN = 1 ;
 
       //IEC0bits.T2IE = 1;
-      //IEC2bits.SPI2IE = 1 ;
+      IEC2bits.SPI2IE = 1 ;
 
-      INTCON2bits.GIE = 1;
+      //INTCON2bits.GIE = 1;
 
-      //startInterrupts();
+      startInterrupts();
 
       DA(A, 0x0fff);
 
