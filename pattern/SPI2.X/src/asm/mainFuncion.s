@@ -71,19 +71,6 @@ endDigitalWrite:        MOV W0, PORTB
  endPinAD:              MOV W0, ANSELB
                     return
 
-
-
-
-
-
-
-
-
-
-
-
-
-
                     .global _startInterrupts    ; void startInterrupts();
  _startInterrupts:	     BSET  INTCON2, #GIE
                     return
