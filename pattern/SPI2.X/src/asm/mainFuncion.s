@@ -151,7 +151,7 @@ _DA:		            MOV #0x0fff, W2
                         AND W2, W1, W1
                         BSET W1, #12
                         REPEAT #11
-                            RRNC W0, W0
+                            RRNC W0, W0 
                         IOR W0, W1, W1
                         MOV SPI2BUF, W0
                         MOV W1, SPI2BUF
