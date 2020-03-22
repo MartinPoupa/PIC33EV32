@@ -158,10 +158,11 @@ _DA:		            MOV #0x0fff, W2
                         MOV W1, SPI2BUF
                     return
 
-;                    .global __SPI2Interrupt     ; SPI interapt
-;__SPI2Interrupt:       BCLR IFS2, #SPI2IF
-;                       BSET PORTB, #13
-;                    retfie
+                    .global __SPI2Interrupt     ; SPI interapt
+__SPI2Interrupt:       BCLR IFS2, #SPI2IF
+                       BSET PORTB, #13
+                       BTG PORTB, #0 
+                    retfie
 
 
 
