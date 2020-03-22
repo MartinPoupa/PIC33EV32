@@ -85,10 +85,10 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x356           0x501  (1281)
-.text                        0x556               0x18e           0x255  (597)
-.dinit                       0x6e4                 0x8             0xc  (12)
+.text                        0x556               0x18c           0x252  (594)
+.dinit                       0x6e2                 0x8             0xc  (12)
 
-                 Total "program" memory used (bytes):          0x762  (1890) 5%
+                 Total "program" memory used (bytes):          0x75f  (1887) 5%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x1000]
@@ -147,17 +147,17 @@ External Symbols in Program Memory (by address):
                   0x0005a6                  _pinAD
                   0x0005c8                  _startInterrupts
                   0x0005cc                  _setDA
-                  0x00061a                  _DA
-                  0x00062e                  __SPI2Interrupt
-                  0x000636                  _FrequencyT2
-                  0x0006b2                  _main
+                  0x00061c                  _DA
+                  0x000630                  __SPI2Interrupt
+                  0x000638                  _FrequencyT2
+                  0x0006b4                  _main
 
 External Symbols in Program Memory (by name):
 
-                  0x00061a                  _DA
-                  0x000636                  _FrequencyT2
+                  0x00061c                  _DA
+                  0x000638                  _FrequencyT2
                   0x00036c                  __DefaultInterrupt
-                  0x00062e                  __SPI2Interrupt
+                  0x000630                  __SPI2Interrupt
                   0x0002fa                  __T2Interrupt
                   0x000372                  ___divsf3
                   0x0003f6                  ___fixunssfsi
@@ -176,7 +176,7 @@ External Symbols in Program Memory (by name):
                   0x000200                  __resetPRI
                   0x000556                  _delay
                   0x000584                  _digitalWrite
-                  0x0006b2                  _main
+                  0x0006b4                  _main
                   0x0005a6                  _pinAD
                   0x000562                  _pinMode
                   0x0005cc                  _setDA
@@ -343,29 +343,29 @@ __FALTREG
 .comment
  *(.comment)
 
-.debug_info       0x000000        0x845
+.debug_info       0x000000        0x5d9
  *(.debug_info)
- .debug_info      0x000000        0x7a5 build/default/production/src/main.o
- .debug_info      0x0007a5         0xa0 build/default/production/src/asm/mainFuncion.o
+ .debug_info      0x000000        0x539 build/default/production/src/main.o
+ .debug_info      0x000539         0xa0 build/default/production/src/asm/mainFuncion.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x158
+.debug_abbrev     0x000000        0x12e
  *(.debug_abbrev)
- .debug_abbrev    0x000000        0x144 build/default/production/src/main.o
- .debug_abbrev    0x000144         0x14 build/default/production/src/asm/mainFuncion.o
+ .debug_abbrev    0x000000        0x11a build/default/production/src/main.o
+ .debug_abbrev    0x00011a         0x14 build/default/production/src/asm/mainFuncion.o
 
-.debug_line       0x000000        0x211
+.debug_line       0x000000        0x212
  *(.debug_line)
  .debug_line      0x000000        0x167 build/default/production/src/main.o
- .debug_line      0x000167         0xaa build/default/production/src/asm/mainFuncion.o
+ .debug_line      0x000167         0xab build/default/production/src/asm/mainFuncion.o
 
 .debug_frame      0x000000         0x8e
  *(.debug_frame)
  .debug_frame     0x000000         0x8e build/default/production/src/main.o
 
-.debug_str        0x000000         0x32
+.debug_str        0x000000         0x1c
  *(.debug_str)
- .debug_str       0x000000         0x32 build/default/production/src/main.o
+ .debug_str       0x000000         0x1c build/default/production/src/main.o
 
 .debug_loc
  *(.debug_loc)
@@ -1500,36 +1500,36 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x000030         0x9b
+                  0x000030         0x59
  .debug_pubtypes
-                  0x000030         0x9b build/default/production/src/main.o
+                  0x000030         0x59 build/default/production/src/main.o
 
 __c30_signature
-                  0x0000cb         0x48
+                  0x000089         0x48
  __c30_signature
-                  0x0000cb          0x6 build/default/production/src/main.o
+                  0x000089          0x6 build/default/production/src/main.o
  __c30_signature
-                  0x0000d1          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
+                  0x00008f          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
  __c30_signature
-                  0x0000d7          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
+                  0x000095          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
  __c30_signature
-                  0x0000dd          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(divsf3.epeo)
+                  0x00009b          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(divsf3.epeo)
  __c30_signature
-                  0x0000e3          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(fixunssfsi.epeo)
+                  0x0000a1          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(fixunssfsi.epeo)
  __c30_signature
-                  0x0000e9          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatsisf.epeo)
+                  0x0000a7          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatsisf.epeo)
  __c30_signature
-                  0x0000ef          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(fpack.epeo)
+                  0x0000ad          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(fpack.epeo)
  __c30_signature
-                  0x0000f5          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(funpack.epeo)
+                  0x0000b3          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(funpack.epeo)
  __c30_signature
-                  0x0000fb          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(funpack2.epeo)
+                  0x0000b9          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(funpack2.epeo)
  __c30_signature
-                  0x000101          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(futil.epeo)
+                  0x0000bf          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(futil.epeo)
  __c30_signature
-                  0x000107          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatdisf.epeo)
+                  0x0000c5          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatdisf.epeo)
  __c30_signature
-                  0x00010d          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatundisf.epeo)
+                  0x0000cb          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatundisf.epeo)
 
 .nbss               0x1000          0x4
  .nbss              0x1000          0x4 build/default/production/src/main.o
@@ -1557,19 +1557,19 @@ __c30_signature
  .ivt._SPI2Interrupt
                   0x000056          0x2 build/default/production/src/asm/mainFuncion.o
 
-.text             0x000556        0x18e
- .text            0x000556         0xe0 build/default/production/src/asm/mainFuncion.o
+.text             0x000556        0x18c
+ .text            0x000556         0xe2 build/default/production/src/asm/mainFuncion.o
                   0x000556                  _delay
                   0x000562                  _pinMode
                   0x000584                  _digitalWrite
                   0x0005a6                  _pinAD
                   0x0005c8                  _startInterrupts
                   0x0005cc                  _setDA
-                  0x00061a                  _DA
-                  0x00062e                  __SPI2Interrupt
- .text            0x000636         0xae build/default/production/src/main.o
-                  0x000636                  _FrequencyT2
-                  0x0006b2                  _main
+                  0x00061c                  _DA
+                  0x000630                  __SPI2Interrupt
+ .text            0x000638         0xaa build/default/production/src/main.o
+                  0x000638                  _FrequencyT2
+                  0x0006b4                  _main
 
-.dinit            0x0006e4          0x8
- .dinit           0x0006e4          0x8 data_init
+.dinit            0x0006e2          0x8
+ .dinit           0x0006e2          0x8 data_init

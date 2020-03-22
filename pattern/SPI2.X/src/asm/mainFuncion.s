@@ -141,8 +141,8 @@ endDigitalWrite:        MOV W0, PORTB
                         BSET SPI2STAT, #SPIEN
 
                         ;SPI interapt
-                        ;BCLR IFS2, #SPI2IF
-                        BSET IFS2, #SPI2IE
+                        BCLR IFS2, #SPI2IF
+                        BSET IEC2, #SPI2IE
 
                     return
 
@@ -161,7 +161,7 @@ _DA:		            MOV #0x0fff, W2
                     .global __SPI2Interrupt     ; SPI interapt
 __SPI2Interrupt:       BCLR IFS2, #SPI2IF
                        BSET PORTB, #13
-                       BTG PORTB, #0 
+                       BTG PORTB, #0
                     retfie
 
 

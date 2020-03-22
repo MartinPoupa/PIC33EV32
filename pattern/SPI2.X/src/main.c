@@ -53,10 +53,10 @@ int main() {
 
       //SPI2STATbits.SPIROV = 0 ;
 
-      SPI2STATbits.SPIEN = 1 ;
+     // SPI2STATbits.SPIEN = 1 ;
 
 
-      IEC2bits.SPI2IE = 1 ;
+      //IEC2bits.SPI2IE = 1 ;
 
 
       startInterrupts();
