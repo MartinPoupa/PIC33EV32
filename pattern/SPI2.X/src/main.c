@@ -19,23 +19,25 @@ int voltageDA = 0;
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
 
     IFS0bits.T2IF = 0;
-    if (voltageDA == 0x0fff) {
+    if (voltageDA >= 0x0fff) {
         digitalWrite(0, LOW );
         state = 1;
+        voltageDA = 0x0fff;
     }
-    if (voltageDA == 0x0000) {
+    if (voltageDA <= 0) {
         digitalWrite(0, HIGH );
         state = 0;
+        voltageDA = 0;
     }
 
     if (state == 0) {
         DA(A, voltageDA);
 
-        voltageDA++;
+        voltageDA = voltageDA + 334;
     }
     else{
         DA(A, voltageDA);
-        voltageDA = voltageDA - 1;
+        voltageDA = voltageDA - 334;
     }
 
 
@@ -45,8 +47,6 @@ void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
 int main() {
       pinMode(0, OUTPUT);
       pinAD(0, DIGITAL);
-
-
       FrequencyT2(25000);
       setDA();
       startInterrupts();
