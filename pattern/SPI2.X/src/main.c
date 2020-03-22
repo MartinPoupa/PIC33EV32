@@ -47,7 +47,7 @@ int main() {
       pinAD(0, DIGITAL);
 
 
-      FrequencyT2(20000);
+      FrequencyT2(30000);
       setDA();
       startInterrupts();
 
