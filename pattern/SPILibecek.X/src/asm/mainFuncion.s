@@ -72,18 +72,6 @@ endDigitalWrite:        MOV W0, PORTB
                     return
 
 
-
-
-
-
-
-
-
-
-
-
-
-
                     .global _startInterrupts    ; void startInterrupts();
  _startInterrupts:	     BSET  INTCON2, #GIE
                     return
@@ -113,8 +101,8 @@ endDigitalWrite:        MOV W0, PORTB
                             MOV #0x0800,  W0 ; 14 sdo out
                             MOV W0,  RPOR1
 
-                            MOV #0x0009,  W0 ; 15 sck out
-                            MOV W0,  RPOR2
+                            MOV #0x0090,  W0 ; 15 sck out
+                            MOV W0,  RPOR1
 
                             MOV #0x2600,  W0 ; 15 sck in
                             MOV W0,  RPINR22
@@ -137,8 +125,8 @@ endDigitalWrite:        MOV W0, PORTB
                         MOV #0x0000 , W0
                         MOV W0 , SPI2CON2
 
-                        BCLR SPI2STAT , #SPIROV
                         BSET SPI2STAT , #SPIEN
+                        BCLR SPI2STAT , #SPIROV
 
                         ;SPI interapt
                         BCLR IFS2, #SPI2IF

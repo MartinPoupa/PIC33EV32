@@ -20,14 +20,17 @@ void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
 
     IFS0bits.T2IF = 0;
     if (voltageDA == 0x0fff) {
+        digitalWrite(0, LOW );
         state = 1;
     }
     if (voltageDA == 0x0000) {
+        digitalWrite(0, HIGH );
         state = 0;
     }
 
     if (state == 0) {
         DA(A, voltageDA);
+
         voltageDA++;
     }
     else{
@@ -40,10 +43,13 @@ void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
 }
 
 int main() {
-
+      pinMode(0, OUTPUT);
+      pinAD(0, DIGITAL);
       setDA();
       FrequencyT2(10000);
+      DA(A, 0x0fff);
       startInterrupts();
+
 
     while (1) {
         delay(1);
