@@ -46,12 +46,3 @@ void FrequencyT2(int frequency) {
         IEC0bits.T2IE = 1;
     }
 }
-/*
-void __attribute__((interrupt, auto_psv)) _SPI2Interrupt(void) {
-    IFS2bits.SPI2IF  = 0 ;
-    PORTBbits.RB13 = 1 ;
-    asm(" btg PORTB, #0 ");
-
-
-}
-*/

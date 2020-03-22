@@ -51,7 +51,7 @@ int main() {
       FrequencyT2(1000);
       setDA();
 
-      SPI2STATbits.SPIROV = 0 ;
+      //SPI2STATbits.SPIROV = 0 ;
 
       SPI2STATbits.SPIEN = 1 ;
 

@@ -85,10 +85,10 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x356           0x501  (1281)
-.text                        0x556               0x190           0x258  (600)
-.dinit                       0x6e6                 0x8             0xc  (12)
+.text                        0x556               0x18e           0x255  (597)
+.dinit                       0x6e4                 0x8             0xc  (12)
 
-                 Total "program" memory used (bytes):          0x765  (1893) 5%
+                 Total "program" memory used (bytes):          0x762  (1890) 5%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x1000]
@@ -354,10 +354,10 @@ __FALTREG
  .debug_abbrev    0x000000        0x144 build/default/production/src/main.o
  .debug_abbrev    0x000144         0x14 build/default/production/src/asm/mainFuncion.o
 
-.debug_line       0x000000        0x212
+.debug_line       0x000000        0x211
  *(.debug_line)
- .debug_line      0x000000        0x168 build/default/production/src/main.o
- .debug_line      0x000168         0xaa build/default/production/src/asm/mainFuncion.o
+ .debug_line      0x000000        0x167 build/default/production/src/main.o
+ .debug_line      0x000167         0xaa build/default/production/src/asm/mainFuncion.o
 
 .debug_frame      0x000000         0x8e
  *(.debug_frame)
@@ -1557,7 +1557,7 @@ __c30_signature
  .ivt._SPI2Interrupt
                   0x000056          0x2 build/default/production/src/asm/mainFuncion.o
 
-.text             0x000556        0x190
+.text             0x000556        0x18e
  .text            0x000556         0xe0 build/default/production/src/asm/mainFuncion.o
                   0x000556                  _delay
                   0x000562                  _pinMode
@@ -1567,9 +1567,9 @@ __c30_signature
                   0x0005cc                  _setDA
                   0x00061a                  _DA
                   0x00062e                  __SPI2Interrupt
- .text            0x000636         0xb0 build/default/production/src/main.o
+ .text            0x000636         0xae build/default/production/src/main.o
                   0x000636                  _FrequencyT2
                   0x0006b2                  _main
 
-.dinit            0x0006e6          0x8
- .dinit           0x0006e6          0x8 data_init
+.dinit            0x0006e4          0x8
+ .dinit           0x0006e4          0x8 data_init
