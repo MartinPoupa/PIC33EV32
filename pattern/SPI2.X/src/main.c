@@ -28,7 +28,7 @@ int main() {
       pinAD(0, DIGITAL);
       //FrequencyT2(35000);
       T2CON = 0x8000;
-      PR2 = 92;
+      PR2 = 60;
       IFS0bits.T2IF = 0;
       IEC0bits.T2IE = 1;
       setDA();
