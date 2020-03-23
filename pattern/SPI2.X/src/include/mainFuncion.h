@@ -17,7 +17,7 @@
 
 void delay(int t);                              // it waits t seconds
 
-void pinMode(int pinNumber, int set);           // set OUTPUT/INPUT
+void pinMode(int pinNumber, int set);            // set OUTPUT/INPUT
 void pinAD(int pinNumber, int set);             // set DIGITAL/ANALOG
 
 void digitalWrite(int pinNumber, int set);      // set LOW/HIGH
@@ -26,7 +26,7 @@ void setDA();                                   // sets the DA converter
 void DA (int chanel, int value);               // sends value to DA converter
 
 void startInterrupts();                         // enable interrupt
-void FrequencyT2(int frequency) {
+void FrequencyT2(unsigned int frequency) {
     if(frequency > 64){
         T2CON = 0x8000; // 1
         PR2 = CYCLE_FREQUENCY / frequency ;

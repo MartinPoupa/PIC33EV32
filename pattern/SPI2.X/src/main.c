@@ -32,7 +32,7 @@ void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
 
 int main() {
       pinMode(0, OUTPUT);
-      pinAD(0, DIGITAL);
+      pinAD(0, DIGITAL); 
       FrequencyT2(40000);
       //T2CON = 0x8000;
       //PR2 = 80;
