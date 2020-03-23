@@ -44,7 +44,7 @@
 
 }*/
 
-int main() {
+void main() {
       TRISB=0;
       ANSELB=0;
       FrequencyT2(25000);         //Nastaveni frekvence preruseni od T2
@@ -62,5 +62,4 @@ int main() {
         delay(1000);
         DA(A, 2730);
     }
-      return 0;
 }

@@ -1,6 +1,6 @@
 /*
 * File:   main.c
-* Author: Matej Kraus
+* Author: Martin Poupa
 *
 */
 
@@ -13,10 +13,10 @@
 #pragma config FWDTEN = OFF	   // WDT and SWDTEN Disabled    Watchdog vypnut
 
 
-//int state = 0;
-//int voltageDA = 0;
+int state = 0;
+int voltageDA = 0;
 
-/*void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
+void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
 
     IFS0bits.T2IF = 0;
     if (voltageDA >= 0x0fff) {
@@ -42,25 +42,24 @@
 
 
 
-}*/
+}
 
 int main() {
-      TRISB=0;
-      ANSELB=0;
-      FrequencyT2(25000);         //Nastaveni frekvence preruseni od T2
-      setDA();                    //Nastaveni DA prevodniku
-      startInterrupts();          //Generalni povoleni preruseni
+      pinMode(0, OUTPUT);
+      pinAD(0, DIGITAL);
+      FrequencyT2(25000);
+      setDA();
+      startInterrupts();
 
-      DA(A, 0x0fff);              //A=ktery prevodnik; 0x0fff=jake cislo posilame
+      DA(A, 0x0fff);
 
 
     while (1) {
-        //
-        delay(1000);
-        DA(A, 910);
-
-        delay(1000);
-        DA(A, 2730);
+        delay(1);
     }
-      return 0;
+
+    return 0;
 }
+/*
+
+  */
