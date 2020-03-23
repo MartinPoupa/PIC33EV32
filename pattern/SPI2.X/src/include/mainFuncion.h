@@ -28,19 +28,19 @@ void DA (int value );               // sends value to DA converter
 void startInterrupts();                         // enable interrupt
 void FrequencyT2(int frequency) {
     if(frequency > 64){
-        T2CON = 0xA000; // 1
+        T2CON = 0x8000; // 1
         PR2 = (CYCLE_FREQUENCY * 1000000) / frequency ;
         IFS0bits.T2IF = 0;
         IEC0bits.T2IE = 1;
     }
     else if(frequency <= 64 && frequency > 8){
-        T2CON = 0xA010; // 8
+        T2CON = 0x8010; // 8
         PR2 = ((CYCLE_FREQUENCY * 1000000) / 8) / frequency ;
         IFS0bits.T2IF = 0;
         IEC0bits.T2IE = 1;
     }
     else if(frequency <= 8){
-        T2CON = 0xA020; // 64
+        T2CON = 0x8020; // 64
         PR2 = ((CYCLE_FREQUENCY * 1000000) / 64) / frequency ;
         IFS0bits.T2IF = 0;
         IEC0bits.T2IE = 1;
