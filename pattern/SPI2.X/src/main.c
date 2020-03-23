@@ -19,14 +19,14 @@ int voltageDA = 0;
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
 
     IFS0bits.T2IF = 0;
-    DA(A, 0x0fff);
+    DA(A, 0x0fff);  
 
 }
 
 int main() {
       pinMode(0, OUTPUT);
       pinAD(0, DIGITAL);
-      FrequencyT2(27500);
+      FrequencyT2(30000);
       setDA();
       startInterrupts();
 
