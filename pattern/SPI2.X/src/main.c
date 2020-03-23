@@ -40,11 +40,9 @@ void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
 int main() {
       pinMode(0, OUTPUT);
       pinAD(0, DIGITAL);
-      FrequencyT2(10000);
+      FrequencyT2(820);
       setDA();
       startInterrupts();
-      DA(A, 0x0fff);
-
 
     while (1) {
         delay(1);
