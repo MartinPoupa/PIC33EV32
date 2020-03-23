@@ -18,7 +18,8 @@ int voltageDA = 0x9fff;
 
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
-    DA(voltageDA);
+    //DA(voltageDA);
+    asm("btg PORTB, #13");
 
 }
 
