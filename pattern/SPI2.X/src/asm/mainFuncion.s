@@ -5,10 +5,10 @@
  ;.text
 
                     .global _delay              ; void delay(int);
-_delay:		            do W0, stop
+_delay:		            DO W0, stop
                             REPEAT #7365
-                                nop
-stop:		                nop
+                                NOP
+stop:		                NOP
                     return
 
                     .global _pinMode            ; void pinMode(int, int);
@@ -119,7 +119,7 @@ endDigitalWrite:        MOV W0, PORTB
 
                         MOV #0x0000, W0
                         MOV W0, SPI2STAT
-                        MOV #0x053b, W0
+                        MOV #0x053f, W0
                         MOV W0, SPI2CON1
                         MOV #0x0000, W0
                         MOV W0, SPI2CON2
@@ -128,28 +128,30 @@ endDigitalWrite:        MOV W0, PORTB
                         BSET SPI2STAT, #SPIEN
 
                         ;SPI interapt
-                        BCLR IFS2, #SPI2IF
-                        BSET IEC2, #SPI2IE
+                        ;BCLR IFS2, #SPI2IF
+                        ;BSET IEC2, #SPI2IE
 
                     return
 
                     .global _DA                 ; void DA(int, int);
-_DA:		            MOV #0x0fff, W2
-                        AND W2, W1, W1
+_DA:
+                        BCLR W1, #15
+                        BCLR W1, #13
                         BSET W1, #12
-                        REPEAT #11
-                            RRNC W0, W0
                         IOR W0, W1, W1
-                        BCLR PORTB, #13
                         MOV SPI2BUF, W0
+                        BCLR PORTB, #13
                         MOV W1, SPI2BUF
+                        REPEAT #16
+                            NOP
+                        BSET PORTB, #13
                     return
 
-                    .global __SPI2Interrupt     ; SPI interapt
-__SPI2Interrupt:       BCLR IFS2, #SPI2IF
-                       BSET PORTB, #13
+;                    .global __SPI2Interrupt     ; SPI interapt
+;__SPI2Interrupt:       BSET PORTB, #13
+;                       BCLR IFS2, #SPI2IF
                      ;  BTG PORTB, #0
-                    retfie
+;                    retfie
 
 
 
