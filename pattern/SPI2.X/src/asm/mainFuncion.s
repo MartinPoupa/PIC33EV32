@@ -132,7 +132,7 @@ endDigitalWrite:        MOV W0, PORTB
 
                         MOV #0x0000, W0
                         MOV W0, SPI2STAT
-                        MOV #0x053b, W0
+                        MOV #0x053f, W0
                         MOV W0, SPI2CON1
                         MOV #0x0000, W0
                         MOV W0, SPI2CON2
