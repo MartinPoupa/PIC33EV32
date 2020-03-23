@@ -19,9 +19,9 @@ int main() {
 
     while (1) {
         delay(2000);
-        DA(A, 910);
+        DA(A, 100);
         delay(2000);
-        DA(A, 2760);
+        DA(A, 2900);
     }
       return 0;
 }
