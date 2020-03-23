@@ -1,15 +1,1 @@
-/main.X/build/
-/main.X/dist/
-/CCV11.X/build/
-/CCV11.X/dist/
-/citac.X/build/
-/citac.X/dist/
 .gitignore
-/CCV2/CCV21.X/build/
-/CCV2/CCV21.X/dist/
-/CCV2/CCV24.X/build/
-/CCV2/CCV24.X/dist/
-/pattern/PWM.X/build/
-/pattern/PWM.X/dist/
-/CCV2/CCV22.X/build/
-/CCV2/CCV22.X/dist/
