@@ -71,10 +71,10 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x186           0x249  (585)
-.text                        0x386               0x172           0x22b  (555)
-.dinit                       0x4f8                0x10            0x18  (24)
+.text                        0x386               0x16a           0x21f  (543)
+.dinit                       0x4f0                0x10            0x18  (24)
 
-                 Total "program" memory used (bytes):          0x48c  (1164) 3%
+                 Total "program" memory used (bytes):          0x480  (1152) 3%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x1000]
@@ -295,10 +295,10 @@ __FALTREG
  .debug_abbrev    0x000000        0x109 build/default/production/src/main.o
  .debug_abbrev    0x000109         0x14 build/default/production/src/asm/mainFuncion.o
 
-.debug_line       0x000000        0x205
+.debug_line       0x000000        0x202
  *(.debug_line)
- .debug_line      0x000000        0x15f build/default/production/src/main.o
- .debug_line      0x00015f         0xa6 build/default/production/src/asm/mainFuncion.o
+ .debug_line      0x000000        0x15c build/default/production/src/main.o
+ .debug_line      0x00015c         0xa6 build/default/production/src/asm/mainFuncion.o
 
 .debug_frame      0x000000         0x8e
  *(.debug_frame)
@@ -1482,7 +1482,7 @@ __c30_signature
  .ivt._T2Interrupt
                   0x000022          0x2 build/default/production/src/main.o
 
-.text             0x000386        0x172
+.text             0x000386        0x16a
  .text            0x000386         0xd8 build/default/production/src/asm/mainFuncion.o
                   0x000386                  _delay
                   0x000392                  _pinMode
@@ -1491,9 +1491,9 @@ __c30_signature
                   0x0003f8                  _startInterrupts
                   0x0003fc                  _setDA
                   0x000448                  _DA
- .text            0x00045e         0x9a build/default/production/src/main.o
+ .text            0x00045e         0x92 build/default/production/src/main.o
                   0x00045e                  _FrequencyT2
                   0x0004ce                  _main
 
-.dinit            0x0004f8         0x10
- .dinit           0x0004f8         0x10 data_init
+.dinit            0x0004f0         0x10
+ .dinit           0x0004f0         0x10 data_init
