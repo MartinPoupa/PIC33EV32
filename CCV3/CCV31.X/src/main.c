@@ -18,7 +18,7 @@
 void main() {
       TRISB=0;
       ANSELB=0;
-      FrequencyT2(25000);
+      
       setDA();
       startInterrupts();
 
@@ -26,7 +26,7 @@ void main() {
 
 
     while (1) {
-        //
+
         delay(1000);
         DA(A, 910);
 

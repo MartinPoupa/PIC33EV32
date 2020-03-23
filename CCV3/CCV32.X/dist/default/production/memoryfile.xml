@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <executable name="dist/default/production/CCV32.X.production.elf">
+    <memory name="data">
+      <units>bytes</units>
+      <length>4096</length>
+      <used>4</used>
+      <free>4092</free>
+    </memory>
+    <memory name="program">
+      <units>bytes</units>
+      <length>32832</length>
+      <used>1794</used>
+      <free>31038</free>
+    </memory>
+  </executable>
+</project>
