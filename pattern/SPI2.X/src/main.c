@@ -18,8 +18,9 @@ int voltageDA = 0x0fff;
 
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
+    asm("btg PORTB, #0");
     DA(voltageDA);
-    //asm("btg PORTB, #13");
+
 
 }
 
@@ -28,7 +29,7 @@ int main() {
       pinAD(0, DIGITAL);
       //FrequencyT2(35000);
       T2CON = 0x8000;
-      PR2 = 40;
+      PR2 = 60;
       IFS0bits.T2IF = 0;
       IEC0bits.T2IE = 1;
       setDA();
