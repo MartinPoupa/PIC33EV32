@@ -26,7 +26,7 @@ void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
 int main() {
       pinMode(0, OUTPUT);
       pinAD(0, DIGITAL);
-      FrequencyT2(35000);
+      FrequencyT2(32500);
       setDA();
       startInterrupts();
 
