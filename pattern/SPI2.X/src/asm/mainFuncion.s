@@ -146,12 +146,12 @@ endDigitalWrite:        MOV W0, PORTB
 
                     return
 
-                    .global _DA                 ; void DA(int);
-_DA:		            BSET W0, #15
-                        BCLR W0, #13
-                        BSET W0, #12
-
-
+                    .global _DA                 ; void DA(int, int);
+_DA:
+                        BCLR W1, #15
+                        BCLR W1, #13
+                        BSET W1, #12
+                        IOR W0, W1, W1
                         MOV SPI2BUF, W0
                         BCLR PORTB, #13
                         MOV W1, SPI2BUF
