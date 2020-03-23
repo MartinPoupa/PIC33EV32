@@ -19,7 +19,13 @@ int voltageDA = 0;
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
 
     IFS0bits.T2IF = 0;
-    DA(A, 0x0fff);
+    if(0x0fff == voltageDA){
+        voltageDA = 0;
+    }
+    else{
+        voltageDA = 0x0fff;
+    }
+    DA(A, voltageDA);
 
 }
 
