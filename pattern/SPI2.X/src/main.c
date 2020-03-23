@@ -18,16 +18,23 @@ int voltageDA = 0x0fff;
 
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
-    if (voltageDA == 0x0fff){
-        voltageDA = 0;
-    }
-    else{
+    if (voltageDA >= 0x0fff) {
+        digitalWrite(0, LOW );
+        state = 1;
         voltageDA = 0x0fff;
     }
-
+    if (voltageDA <= 0) {
+        digitalWrite(0, HIGH );
+        state = 0;
+        voltageDA = 0;
+    }
     DA(A, voltageDA);
-    asm("btg PORTB, #0");
-
+    if (state == 0) {
+        voltageDA = voltageDA + 334;
+    }
+    else{
+        voltageDA = voltageDA - 334;
+    }
 }
 
 int main() {
@@ -36,7 +43,6 @@ int main() {
       FrequencyT2(40000);
       setDA();
       startInterrupts();
-
       DA(A, 0x0fff);
 
 
