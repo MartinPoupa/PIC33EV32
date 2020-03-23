@@ -127,10 +127,6 @@ endDigitalWrite:        MOV W0, PORTB
                         BCLR SPI2STAT, #SPIROV
                         BSET SPI2STAT, #SPIEN
 
-                        ;SPI interapt
-                        ;BCLR IFS2, #SPI2IF
-                        ;BSET IEC2, #SPI2IE
-
                     return
 
                     .global _DA                 ; void DA(int, int);
@@ -146,13 +142,5 @@ _DA:
                             NOP
                         BSET PORTB, #13
                     return
-
-;                    .global __SPI2Interrupt     ; SPI interapt
-;__SPI2Interrupt:       BSET PORTB, #13
-;                       BCLR IFS2, #SPI2IF
-                     ;  BTG PORTB, #0
-;                    retfie
-
-
 
                     .end

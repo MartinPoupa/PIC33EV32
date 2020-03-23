@@ -1,6 +1,6 @@
 /*
 * File:   main.c
-* Author: Martin Poupa
+* Author: Matej Kraus and Martin Poupa
 *
 */
 
@@ -13,43 +13,28 @@
 #pragma config FWDTEN = OFF	   // WDT and SWDTEN Disabled    Watchdog vypnut
 
 
-int state = 0;
-int voltageDA = 0x0fff;
+int voltageDA = 0;
 
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
     if (voltageDA >= 0x0fff) {
-        digitalWrite(0, LOW );
-        state = 1;
-        voltageDA = 0x0fff;
-    }
-    if (voltageDA <= 0) {
-        digitalWrite(0, HIGH );
-        state = 0;
         voltageDA = 0;
     }
+    voltageDA++;
     DA(A, voltageDA);
-    if (state == 0) {
-        voltageDA = voltageDA + 1;
-    }
-    else{
-        voltageDA = voltageDA - 1;
-    }
+
 }
 
+
 int main() {
-      pinMode(0, OUTPUT);
-      pinAD(0, DIGITAL);
       FrequencyT2(820);
       setDA();
       startInterrupts();
+      DA(A, 0);
+
 
     while (1) {
         delay(1);
     }
-
-    return 0;
+      return 0;
 }
-/*
-
-  */
