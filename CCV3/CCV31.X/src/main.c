@@ -21,7 +21,7 @@ int main() {
         delay(2000);
         DA(A, 910);
         delay(2000);
-        DA(A, 2730);
+        DA(A, 2760);
     }
       return 0;
 }
