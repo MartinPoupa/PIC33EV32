@@ -14,12 +14,12 @@
 
 
 int state = 0;
-int voltageDA = 0x9fff;
+int voltageDA = 0x0fff;
 
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
-    //DA(voltageDA);
-    asm("btg PORTB, #13");
+    DA(voltageDA);
+    //asm("btg PORTB, #13");
 
 }
 
