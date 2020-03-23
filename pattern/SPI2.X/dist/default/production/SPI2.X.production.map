@@ -342,16 +342,16 @@ __FALTREG
 .comment
  *(.comment)
 
-.debug_info       0x000000        0x5ca
+.debug_info       0x000000        0x5c3
  *(.debug_info)
- .debug_info      0x000000        0x52a build/default/production/src/main.o
- .debug_info      0x00052a         0xa0 build/default/production/src/asm/mainFuncion.o
+ .debug_info      0x000000        0x523 build/default/production/src/main.o
+ .debug_info      0x000523         0xa0 build/default/production/src/asm/mainFuncion.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x11d
+.debug_abbrev     0x000000         0xfb
  *(.debug_abbrev)
- .debug_abbrev    0x000000        0x109 build/default/production/src/main.o
- .debug_abbrev    0x000109         0x14 build/default/production/src/asm/mainFuncion.o
+ .debug_abbrev    0x000000         0xe7 build/default/production/src/main.o
+ .debug_abbrev    0x0000e7         0x14 build/default/production/src/asm/mainFuncion.o
 
 .debug_line       0x000000        0x204
  *(.debug_line)
@@ -362,9 +362,9 @@ __FALTREG
  *(.debug_frame)
  .debug_frame     0x000000         0x8e build/default/production/src/main.o
 
-.debug_str        0x000000         0x1c
+.debug_str        0x000000         0x12
  *(.debug_str)
- .debug_str       0x000000         0x1c build/default/production/src/main.o
+ .debug_str       0x000000         0x12 build/default/production/src/main.o
 
 .debug_loc
  *(.debug_loc)
