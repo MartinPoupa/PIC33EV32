@@ -13,45 +13,16 @@
 #pragma config FWDTEN = OFF	   // WDT and SWDTEN Disabled    Watchdog vypnut
 
 
-//int state = 0;
-//int voltageDA = 0;
 
-/*void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
-
-    IFS0bits.T2IF = 0;
-    if (voltageDA >= 0x0fff) {
-        digitalWrite(0, LOW );
-        state = 1;
-        voltageDA = 0x0fff;
-    }
-    if (voltageDA <= 0) {
-        digitalWrite(0, HIGH );
-        state = 0;
-        voltageDA = 0;
-    }
-
-    if (state == 0) {
-        DA(A, voltageDA);
-
-        voltageDA = voltageDA + 334;
-    }
-    else{
-        DA(A, voltageDA);
-        voltageDA = voltageDA - 334;
-    }
-
-
-
-}*/
 
 void main() {
       TRISB=0;
       ANSELB=0;
-      FrequencyT2(25000);         //Nastaveni frekvence preruseni od T2
-      setDA();                    //Nastaveni DA prevodniku
-      startInterrupts();          //Generalni povoleni preruseni
+      FrequencyT2(25000);
+      setDA();
+      startInterrupts();
 
-      DA(A, 0x0fff);              //A=ktery prevodnik; 0x0fff=jake cislo posilame
+      DA(A, 0x0fff);
 
 
     while (1) {
