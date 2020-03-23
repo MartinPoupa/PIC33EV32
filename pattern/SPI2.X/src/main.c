@@ -30,10 +30,10 @@ void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     }
     DA(A, voltageDA);
     if (state == 0) {
-        voltageDA = voltageDA + 334;
+        voltageDA = voltageDA + 1;
     }
     else{
-        voltageDA = voltageDA - 334;
+        voltageDA = voltageDA - 1;
     }
 }
 
