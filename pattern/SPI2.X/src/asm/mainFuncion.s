@@ -5,10 +5,10 @@
  ;.text
 
                     .global _delay              ; void delay(int);
-_delay:		            do W0, stop
+_delay:		            DO W0, stop
                             REPEAT #7365
-                                nop
-stop:		                nop
+                                NOP
+stop:		                NOP
                     return
 
                     .global _pinMode            ; void pinMode(int, int);
@@ -141,8 +141,8 @@ endDigitalWrite:        MOV W0, PORTB
                         BSET SPI2STAT, #SPIEN
 
                         ;SPI interapt
-                        BCLR IFS2, #SPI2IF
-                        BSET IEC2, #SPI2IE
+                        ;BCLR IFS2, #SPI2IF
+                        ;BSET IEC2, #SPI2IE
 
                     return
 
@@ -156,13 +156,16 @@ _DA:		            MOV #0x0fff, W2
                         MOV SPI2BUF, W0
                         BCLR PORTB, #13
                         MOV W1, SPI2BUF
+                        REPEAT #20
+                            NOP
+                        BSET PORTB, #13
                     return
 
-                    .global __SPI2Interrupt     ; SPI interapt
-__SPI2Interrupt:       BSET PORTB, #13
-                       BCLR IFS2, #SPI2IF
+;                    .global __SPI2Interrupt     ; SPI interapt
+;__SPI2Interrupt:       BSET PORTB, #13
+;                       BCLR IFS2, #SPI2IF
                      ;  BTG PORTB, #0
-                    retfie
+;                    retfie
 
 
 
