@@ -23,7 +23,7 @@ void pinAD(int pinNumber, int set);             // set DIGITAL/ANALOG
 void digitalWrite(int pinNumber, int set);      // set LOW/HIGH
 
 void setDA();                                   // sets the DA converter
-void DA (int chanel, int value );               // sends value to DA converter
+void DA (int value );               // sends value to DA converter
 
 void startInterrupts();                         // enable interrupt
 void FrequencyT2(int frequency) {
