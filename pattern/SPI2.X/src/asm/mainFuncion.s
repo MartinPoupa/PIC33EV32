@@ -156,7 +156,7 @@ _DA:		            MOV #0x0fff, W2
                         MOV SPI2BUF, W0
                         BCLR PORTB, #13
                         MOV W1, SPI2BUF
-                        REPEAT #26
+                        REPEAT #16
                             NOP
                         BSET PORTB, #13
                     return
