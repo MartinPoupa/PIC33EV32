@@ -153,14 +153,14 @@ _DA:		            MOV #0x0fff, W2
                         REPEAT #11
                             RRNC W0, W0
                         IOR W0, W1, W1
-                        BCLR PORTB, #13
                         MOV SPI2BUF, W0
+                        BCLR PORTB, #13
                         MOV W1, SPI2BUF
                     return
 
                     .global __SPI2Interrupt     ; SPI interapt
-__SPI2Interrupt:       BCLR IFS2, #SPI2IF
-                       BSET PORTB, #13
+__SPI2Interrupt:       BSET PORTB, #13
+                       BCLR IFS2, #SPI2IF
                      ;  BTG PORTB, #0
                     retfie
 
