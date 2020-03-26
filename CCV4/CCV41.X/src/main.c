@@ -20,9 +20,14 @@ int main() {
       pinMode(0, OUTPUT);
       pinMode(1, INPUT);
       pinMode(2, OUTPUT);
+      pinMode(3, OUTPUT);
       pinAD(0, DIGITAL);
       pinAD(1, DIGITAL);
       pinAD(2, DIGITAL);
+      pinAD(3, DIGITAL);
+      
+      digitalWrite(3,1);
+
 
 
       //setDA();
