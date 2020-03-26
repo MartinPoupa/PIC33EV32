@@ -60,7 +60,7 @@ _digitalRead:	        MOV PORTB, W3
                            RRNC W3, W3
                         MOV #0xFFFE, W2
                         AND W3, W2, W0
-
+                        MOV #1, W0
                     return
 
 
