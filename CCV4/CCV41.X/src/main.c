@@ -30,9 +30,9 @@ int main() {
 
     while (1) {
  //       delay(1);
-     //   int a = digitalRead(1);
-      //  digitalWrite(2,a);
-        PORTBbits.RB0 =  PORTBbits.RB1;
+        int a = digitalRead(1);
+        digitalWrite(0,a);
+        PORTBbits.RB2 =  PORTBbits.RB1;
     }
 
     return 0;
