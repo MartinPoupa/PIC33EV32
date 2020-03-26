@@ -17,11 +17,11 @@ void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
     if (state == 0) {
         state = 1;
-        digitalWrite(1, 1);
+        digitalWrite(0, 1);
     }
     else{
         state = 0;
-        digitalWrite(1, 0);
+        digitalWrite(0, 0);
     }
 }
 
