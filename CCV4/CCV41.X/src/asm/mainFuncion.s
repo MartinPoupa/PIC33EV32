@@ -52,6 +52,18 @@ nullDigitalWrite:	       IOR W3, W0, W0
 endDigitalWrite:        MOV W0, PORTB
                     return
 
+                    .global _digitalRead       ; void digitalRead(int);
+_digitalRead:	        MOV PORTB, W3
+                        MOV #0x000F, W2
+                        SUBR  W0, W2, W2
+                        REPEAT W2
+                           RRNC W3, W3
+                        MOV #0xFFFE, W2
+                        AND W3, W2, W0
+                    return
+
+
+
                     .global _pinAD              ; void pinAD(int, int);
  _pinAD:	            MOV #0x0001, W3
                         MOV #0x000F, W2

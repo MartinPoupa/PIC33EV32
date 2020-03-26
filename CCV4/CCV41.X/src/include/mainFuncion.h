@@ -21,6 +21,7 @@ void pinMode(int pinNumber, int set);            // set OUTPUT/INPUT
 void pinAD(int pinNumber, int set);             // set DIGITAL/ANALOG
 
 void digitalWrite(int pinNumber, int set);      // set LOW/HIGH
+int digitalRead(int pinNumber);
 
 void setDA();                                   // sets the DA converter
 void DA (int chanel, int value);               // sends value to DA converter

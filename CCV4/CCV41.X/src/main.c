@@ -12,40 +12,36 @@
 #pragma config IOL1WAY = ON    //Allow Only One reconfiguration pro PPS
 #pragma config FWDTEN = OFF	   // WDT and SWDTEN Disabled    Watchdog vypnut
 
-
 int state = 0;
-int voltageDA = 0x0fff;
-
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
-    if (voltageDA >= 0x0fff) {
-        digitalWrite(0, LOW );
-        state = 1;
-        voltageDA = 0x0fff;
-    }
-    if (voltageDA <= 0) {
-        digitalWrite(0, HIGH );
-        state = 0;
-        voltageDA = 0;
-    }
-    DA(A, voltageDA);
     if (state == 0) {
-        voltageDA = voltageDA + 1;
+        state = 1;
+        digitalWrite(1, 1);
     }
     else{
-        voltageDA = voltageDA - 1;
+        state = 0;
+        digitalWrite(1, 0);
     }
 }
 
+
+
 int main() {
       pinMode(0, OUTPUT);
+      pinMode(1, INPUT);
+      pinMode(2, OUTPUT);
       pinAD(0, DIGITAL);
-      FrequencyT2(820);
-      setDA();
-      startInterrupts();
+      pinAD(1, DIGITAL);
+      pinAD(2, DIGITAL);
+      FrequencyT2(1);
+
+
+      //setDA();
 
     while (1) {
-        delay(1);
+ //       delay(1);
+        digitalWrite(2,digitalRead(1));
     }
 
     return 0;
