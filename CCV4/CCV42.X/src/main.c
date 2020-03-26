@@ -13,21 +13,36 @@
 #pragma config FWDTEN = OFF	   // WDT and SWDTEN Disabled    Watchdog vypnut
 
 
+int state = 0;
+int voltageDA = 0x0fff;
 
-int napjeti = 0;
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
-     SSRC = 0;
-     ASAM = 1
-     SSRGC = 0;
-bclr ADCON1, #SAMP;
+    if (voltageDA >= 0x0fff) {
+        digitalWrite(0, LOW );
+        state = 1;
+        voltageDA = 0x0fff;
+    }
+    if (voltageDA <= 0) {
+        digitalWrite(0, HIGH );
+        state = 0;
+        voltageDA = 0;
+    }
+    DA(A, voltageDA);
+    if (state == 0) {
+        voltageDA = voltageDA + 1;
+    }
+    else{
+        voltageDA = voltageDA - 1;
+    }
 }
 
 int main() {
+      pinMode(0, OUTPUT);
+      pinAD(0, DIGITAL);
       FrequencyT2(820);
+      setDA();
       startInterrupts();
-      AD1CON1 = 0x0f02;  //0000 1000 0000 0010
-
 
     while (1) {
         delay(1);
