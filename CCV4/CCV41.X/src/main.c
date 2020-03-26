@@ -27,7 +27,7 @@ int main() {
       pinAD(3, DIGITAL);
       
       digitalWrite(3,1);
-
+      int a = 0;
 
 
       //setDA();

@@ -58,7 +58,7 @@ _digitalRead:	        MOV PORTB, W3
                         ADD  W0, W2, W2
                         REPEAT W2
                            RRNC W3, W3
-                        MOV #0xFFFE, W2
+                        MOV #0x0001, W2
                         AND W3, W2, W0
                     return
 
