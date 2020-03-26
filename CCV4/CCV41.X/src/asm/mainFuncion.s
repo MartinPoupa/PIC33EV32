@@ -54,13 +54,13 @@ endDigitalWrite:        MOV W0, PORTB
 
                     .global _digitalRead       ; void digitalRead(int);
 _digitalRead:	        MOV PORTB, W3
-                        MOV #0x000F, W2
-                        SUBR  W0, W2, W2
+			MOV #0x000F, W2
+                        ADD  W0, W2, W2
                         REPEAT W2
                            RRNC W3, W3
                         MOV #0xFFFE, W2
                         AND W3, W2, W0
-			MOV #1, W0
+
                     return
 
 
