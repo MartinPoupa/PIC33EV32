@@ -42,7 +42,7 @@ int main() {
 
     while (1) {
  //       delay(1);
-        int a = digitalRead(1)
+        int a = digitalRead(1);
         digitalWrite(2,a);
     }
 
