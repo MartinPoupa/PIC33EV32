@@ -23,7 +23,6 @@ int main() {
       pinAD(0, DIGITAL);
       pinAD(1, DIGITAL);
       pinAD(2, DIGITAL);
-      startInterrupts();
 
 
       //setDA();
@@ -32,7 +31,7 @@ int main() {
  //       delay(1);
         int a = digitalRead(1);
         digitalWrite(0,a);
-        PORTBbits.RB2 =  PORTBbits.RB1;
+        digitalWrite(2,PORTBbits.RB1);
     }
 
     return 0;
