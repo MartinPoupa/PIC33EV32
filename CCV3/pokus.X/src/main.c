@@ -37,7 +37,7 @@ void  main() {
 
     SPI2STAT = 0x0000;
     //Nastavi se spi
-    SPI2CON1 = 0x053C;
+    SPI2CON1 = 0x053C; 
     SPI2CON2 = 0x0000;
     //tady se to v?ecko povolí
     IFS2bits.SPI2IF = 0;
