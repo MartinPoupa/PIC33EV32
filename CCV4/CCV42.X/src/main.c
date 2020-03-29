@@ -38,7 +38,7 @@ int main() {
 
 
     while (1) {
-        /*
+
         if(digitalRead(B, 0) != input){
             if(digitalRead(B, 0)){
                 startInterrupts();
@@ -48,7 +48,7 @@ int main() {
                 stopInterrupts();
                 input = 0;
             }
-        }*/
+        }
     }
     return 0;
 }
