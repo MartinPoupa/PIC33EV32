@@ -71,9 +71,9 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x13e           0x1dd  (477)
-.text                        0x33e               0x28e           0x3d5  (981)
+.text                        0x33e               0x278           0x3b4  (948)
 
-                 Total "program" memory used (bytes):          0x5b2  (1458) 4%
+                 Total "program" memory used (bytes):          0x591  (1425) 4%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x1000]
@@ -282,10 +282,10 @@ __FALTREG
  .debug_abbrev    0x000000         0xc1 build/default/production/src/main.o
  .debug_abbrev    0x0000c1         0x14 build/default/production/src/asm/mainFuncion.o
 
-.debug_line       0x000000        0x237
+.debug_line       0x000000        0x241
  *(.debug_line)
- .debug_line      0x000000        0x14c build/default/production/src/main.o
- .debug_line      0x00014c         0xeb build/default/production/src/asm/mainFuncion.o
+ .debug_line      0x000000        0x156 build/default/production/src/main.o
+ .debug_line      0x000156         0xeb build/default/production/src/asm/mainFuncion.o
 
 .debug_frame      0x000000         0x48
  *(.debug_frame)
@@ -1455,7 +1455,7 @@ __c30_signature
 .config_IESO      0x005798          0x2
  .config_IESO     0x005798          0x2 build/default/production/src/main.o
 
-.text             0x00033e        0x28e
+.text             0x00033e        0x278
  .text            0x00033e        0x18e build/default/production/src/asm/mainFuncion.o
                   0x00033e                  _delay
                   0x00034a                  _pinMode
@@ -1466,6 +1466,6 @@ __c30_signature
                   0x000466                  _startInterrupts
                   0x00046a                  _setDA
                   0x0004b6                  _DA
- .text            0x0004cc        0x100 build/default/production/src/main.o
+ .text            0x0004cc         0xea build/default/production/src/main.o
                   0x0004cc                  _FrequencyT2
                   0x00053c                  _main

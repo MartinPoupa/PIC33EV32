@@ -17,32 +17,38 @@
 
 
 int main() {
-      pinMode(B, 0, INPUT);
-      pinMode(B, 1, OUTPUT);
-      pinMode(B, 2, INPUT);
-      pinMode(B, 3, OUTPUT);
-      pinMode(B, 4, OUTPUT);
-      pinAD(B, 0, DIGITAL);
-      pinAD(B, 1, DIGITAL);
-      pinAD(B, 2, DIGITAL);
-      pinAD(B, 3, DIGITAL);
-      pinAD(B, 4, DIGITAL);
-      pinPull(B, 0, UP);
-      pinPull(B, 0, DOWN);
-      pinPull(B, 2, UP);
-      digitalWrite(B, 4, 1);
+    pinMode(B, 0, INPUT);
+    pinMode(B, 1, INPUT);
 
+    pinAD(B, 0, DIGITAL);
+    pinAD(B, 1, DIGITAL);
 
-      //setDA();
+    pinPull(B, 0, DOWN);
+    pinPull(B, 1, DOWN);
+    digitalWrite(B, 4, 1);
+
+    setDA();
 
     while (1) {
- //       delay(1);
-        digitalWrite(B, 1, digitalRead(B, 0));
-        digitalWrite(B, 3, digitalRead(B, 2));
+        if (digitalRead(B, 1)) {
+            if (digitalRead(B, 0)) {
+                DA(A, 3000);
+            }
+            else{
+                DA(A, 2000);
+            }
+        }
+        else{
+            if (digitalRead(B, 0)) {
+                DA(A, 1000);
+            }
+            else{
+                DA(A, 0);
+            }
+        }
     }
-
     return 0;
 }
 /*
 
-  */
+*/
