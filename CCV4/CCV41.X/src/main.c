@@ -17,11 +17,11 @@
 
 
 int main() {
-      pinMode(B, 0, OUTPUT);
+      pinMode(A, 0, OUTPUT);
       pinMode(B, 1, INPUT);
       pinMode(B, 2, OUTPUT);
       pinMode(B, 3, OUTPUT);
-      pinAD(B, 0, DIGITAL);
+      pinAD(A, 0, DIGITAL);
       pinAD(B, 1, DIGITAL);
       pinAD(B, 2, DIGITAL);
       pinAD(B, 3, DIGITAL);
@@ -35,7 +35,7 @@ int main() {
     while (1) {
  //       delay(1);
         int a = digitalRead(B, 1);
-        digitalWrite(B, 0, a);
+        digitalWrite(A, 0, a);
         digitalWrite(B, 2, digitalRead(B, 1));
     }
 
