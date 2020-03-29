@@ -17,27 +17,27 @@
 
 
 int main() {
-      pinMode(A, 0, OUTPUT);
-      pinMode(B, 1, INPUT);
-      pinMode(B, 2, OUTPUT);
+      pinMode(B, 0, INPUT);
+      pinMode(B, 1, OUTPUT);
+      pinMode(B, 2, INPUT);
       pinMode(B, 3, OUTPUT);
-      pinAD(A, 0, DIGITAL);
+      pinMode(B, 5, OUTPUT);
+      pinAD(B, 0, DIGITAL);
       pinAD(B, 1, DIGITAL);
       pinAD(B, 2, DIGITAL);
       pinAD(B, 3, DIGITAL);
-      CNPDB = 2;
-      CNPUB = 0;
-      digitalWrite(B, 3, 1);
-      int a = 0;
+      pinAD(B, 5, DIGITAL);
+      CNPDB = 1;
+      CNPUB = 4;
+      digitalWrite(B, 5, 1);
 
 
       //setDA();
 
     while (1) {
  //       delay(1);
-        int a = digitalRead(B, 1);
-        digitalWrite(A, 0, a);
-        digitalWrite(B, 2, digitalRead(B, 1));
+        digitalWrite(B, 1, digitalRead(B, 0));
+        digitalWrite(B, 3, digitalRead(B, 2));
     }
 
     return 0;
