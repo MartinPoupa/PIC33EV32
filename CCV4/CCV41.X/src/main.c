@@ -25,7 +25,8 @@ int main() {
       pinAD(B, 1, DIGITAL);
       pinAD(B, 2, DIGITAL);
       pinAD(B, 3, DIGITAL);
-
+      CNPDB = 2;
+      CNPUB = 0;
       digitalWrite(B, 3, 1);
       int a = 0;
 

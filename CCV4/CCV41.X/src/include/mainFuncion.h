@@ -13,6 +13,11 @@
 #define LOW 0
 #define HIGH 1
 
+#define DOWN 0
+#define UP 1
+#define FREE 2
+
+
 
 
 void delay(int t);                              // it waits t seconds

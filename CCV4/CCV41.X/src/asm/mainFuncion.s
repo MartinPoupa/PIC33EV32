@@ -63,10 +63,15 @@ nullPinAD:                  MOV W1, ANSELA
 endPinAD:             NOP
                     return
 
+                    .global _pinPull            ; void pinAD(int, int, int);
+_pinPull:
+                    return
+
+
                     .global _digitalWrite            ; void digitalWrite(int, int, int);
 _digitalWrite:	        MOV #0x000F, W3
                         SUBR  W1, W3, W1
-                        MOV #0x0001, W3 
+                        MOV #0x0001, W3
                         REPEAT W1
                             RRNC W3, W3
                         BTSC W0, #15
@@ -102,6 +107,9 @@ endDigitalRead:         MOV #0x000F, W2
                         MOV #0x0001, W2
                         AND W0, W2, W0
                     return
+
+
+
 
 
 

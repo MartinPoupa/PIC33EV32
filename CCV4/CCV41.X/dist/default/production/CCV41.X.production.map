@@ -71,9 +71,9 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x13e           0x1dd  (477)
-.text                        0x33e               0x220           0x330  (816)
+.text                        0x33e               0x228           0x33c  (828)
 
-                 Total "program" memory used (bytes):          0x50d  (1293) 3%
+                 Total "program" memory used (bytes):          0x519  (1305) 3%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x1000]
@@ -100,26 +100,27 @@ External Symbols in Program Memory (by address):
 
                   0x000200                  __resetPRI
                   0x00023c                  __psv_init
-                  0x000248                  __data_init_extended
                   0x000248                  __data_init
+                  0x000248                  __data_init_extended
                   0x0002fa                  __DefaultInterrupt
                   0x000300                  ___divsi3
                   0x00031e                  ___udivsi3
                   0x00033e                  _delay
                   0x00034a                  _pinMode
                   0x000386                  _pinAD
-                  0x0003c2                  _digitalWrite
-                  0x0003fe                  _digitalRead
-                  0x00041a                  _startInterrupts
-                  0x00041e                  _setDA
-                  0x00046a                  _DA
-                  0x000480                  _FrequencyT2
-                  0x0004f0                  _main
+                  0x0003c2                  _pinPull
+                  0x0003c4                  _digitalWrite
+                  0x000400                  _digitalRead
+                  0x00041c                  _startInterrupts
+                  0x000420                  _setDA
+                  0x00046c                  _DA
+                  0x000482                  _FrequencyT2
+                  0x0004f2                  _main
 
 External Symbols in Program Memory (by name):
 
-                  0x00046a                  _DA
-                  0x000480                  _FrequencyT2
+                  0x00046c                  _DA
+                  0x000482                  _FrequencyT2
                   0x0002fa                  __DefaultInterrupt
                   0x000300                  ___divsi3
                   0x00031e                  ___udivsi3
@@ -128,13 +129,14 @@ External Symbols in Program Memory (by name):
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
                   0x00033e                  _delay
-                  0x0003fe                  _digitalRead
-                  0x0003c2                  _digitalWrite
-                  0x0004f0                  _main
+                  0x000400                  _digitalRead
+                  0x0003c4                  _digitalWrite
+                  0x0004f2                  _main
                   0x000386                  _pinAD
                   0x00034a                  _pinMode
-                  0x00041e                  _setDA
-                  0x00041a                  _startInterrupts
+                  0x0003c2                  _pinPull
+                  0x000420                  _setDA
+                  0x00041c                  _startInterrupts
 
 Memory Configuration
 
@@ -269,10 +271,10 @@ __FALTREG
 .comment
  *(.comment)
 
-.debug_info       0x000000        0x59e
+.debug_info       0x000000        0x5de
  *(.debug_info)
- .debug_info      0x000000        0x500 build/default/production/src/main.o
- .debug_info      0x000500         0x9e build/default/production/src/asm/mainFuncion.o
+ .debug_info      0x000000        0x540 build/default/production/src/main.o
+ .debug_info      0x000540         0x9e build/default/production/src/asm/mainFuncion.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000         0xef
@@ -280,10 +282,10 @@ __FALTREG
  .debug_abbrev    0x000000         0xdb build/default/production/src/main.o
  .debug_abbrev    0x0000db         0x14 build/default/production/src/asm/mainFuncion.o
 
-.debug_line       0x000000        0x214
+.debug_line       0x000000        0x217
  *(.debug_line)
- .debug_line      0x000000        0x149 build/default/production/src/main.o
- .debug_line      0x000149         0xcb build/default/production/src/asm/mainFuncion.o
+ .debug_line      0x000000        0x14b build/default/production/src/main.o
+ .debug_line      0x00014b         0xcc build/default/production/src/asm/mainFuncion.o
 
 .debug_frame      0x000000         0x48
  *(.debug_frame)
@@ -1453,16 +1455,17 @@ __c30_signature
 .config_IESO      0x005798          0x2
  .config_IESO     0x005798          0x2 build/default/production/src/main.o
 
-.text             0x00033e        0x220
- .text            0x00033e        0x142 build/default/production/src/asm/mainFuncion.o
+.text             0x00033e        0x228
+ .text            0x00033e        0x144 build/default/production/src/asm/mainFuncion.o
                   0x00033e                  _delay
                   0x00034a                  _pinMode
                   0x000386                  _pinAD
-                  0x0003c2                  _digitalWrite
-                  0x0003fe                  _digitalRead
-                  0x00041a                  _startInterrupts
-                  0x00041e                  _setDA
-                  0x00046a                  _DA
- .text            0x000480         0xde build/default/production/src/main.o
-                  0x000480                  _FrequencyT2
-                  0x0004f0                  _main
+                  0x0003c2                  _pinPull
+                  0x0003c4                  _digitalWrite
+                  0x000400                  _digitalRead
+                  0x00041c                  _startInterrupts
+                  0x000420                  _setDA
+                  0x00046c                  _DA
+ .text            0x000482         0xe4 build/default/production/src/main.o
+                  0x000482                  _FrequencyT2
+                  0x0004f2                  _main
