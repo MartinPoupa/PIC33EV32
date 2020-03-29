@@ -25,7 +25,7 @@ void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
 
 }
 
-int input;
+int input = 0;
 int main() {
     pinMode(B, 0, INPUT);
     pinAD(B, 0, DIGITAL);
@@ -40,7 +40,7 @@ int main() {
     while (1) {
         if(digitalRead(B, 0) != input){
             if(digitalRead(B, 0)){
-                stopInterrupts();
+                startInterrupts();
                 input = 1;
             }
             else{
