@@ -63,8 +63,39 @@ nullPinAD:                  MOV W1, ANSELA
 endPinAD:             NOP
                     return
 
-                    .global _pinPull            ; void pinAD(int, int, int);
-_pinPull:
+                    .global _pinPull            ; void pinPull(int, int, int);
+_pinPull:               MOV #0x000F, W3
+                        SUBR  W1, W3, W1
+                        MOV #0x0001, W3
+                        REPEAT W1
+                            RRNC W3, W3
+                        BTSC W0, #15
+                        GOTO nullChanelPinPull
+                            MOV CNPDB, W4
+                            MOV CNPUB, W5
+                            GOTO endChanelPinPull
+nullChanelPinPull:           MOV CNPDA, W4
+                            MOV CNPUA, W5
+
+endChanelPinPull:       BTSC W2, #0
+                        GOTO nullSetPinPull
+                            IOR W3, W4, W4
+                            MOV #0xFFFF, W2
+                            XOR W2, W3, W3
+                            AND W3, W5, W5
+                            GOTO endSetPinPull
+nullSetPinPull:	            IOR W3, W5, W5
+                            MOV #0xFFFF, W2
+                            XOR W2, W3, W3
+                            AND W3, W4, W4
+endSetPinPull:	        BTSC W0, #15
+                        GOTO nullPinPull
+                            MOV W4, CNPDB
+                            MOV W5, CNPUB
+                            GOTO endPinPull
+nullPinPull:                 MOV W4, CNPDA
+                            MOV W5, CNPUA
+endPinPull:             NOP
                     return
 
 

@@ -27,8 +27,9 @@ int main() {
       pinAD(B, 2, DIGITAL);
       pinAD(B, 3, DIGITAL);
       pinAD(B, 4, DIGITAL);
-      CNPDB = 1;
-      CNPUB = 4;
+      pinPull(B, 0, UP);
+      pinPull(B, 0, DOWN);
+      pinPull(B, 2, UP);
       digitalWrite(B, 4, 1);
 
 

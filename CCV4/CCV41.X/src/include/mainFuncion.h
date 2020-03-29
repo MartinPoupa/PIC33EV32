@@ -20,18 +20,19 @@
 
 
 
-void delay(int t);                              // it waits t seconds
+void delay(int t);                                          // it waits t seconds
 
-void pinMode(int chanel, int pinNumber, int set);            // set OUTPUT/INPUT
+void pinMode(int chanel, int pinNumber, int set);           // set OUTPUT/INPUT
 void pinAD(int chanel, int pinNumber, int set);             // set DIGITAL/ANALOG
+void pinPull(int chanel, int pinNumber, int set);           // set DOWN/UP/FREE
 
 void digitalWrite(int chanel, int pinNumber, int set);      // set LOW/HIGH
-int digitalRead(int chanel, int pinNumber);
+int digitalRead(int chanel, int pinNumber);                 // read LOW/HIGH
 
-void setDA();                                   // sets the DA converter
-void DA (int chanel, int value);               // sends value to DA converter
+void setDA();                                               // sets the DA converter
+void DA (int chanel, int value);                            // sends value to DA converter
 
-void startInterrupts();                         // enable interrupt
+void startInterrupts();                                     // enable interrupt
 void FrequencyT2(unsigned int frequency) {
     if(frequency > 64){
         T2CON = 0x8000; // 1
