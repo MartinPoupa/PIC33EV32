@@ -23,13 +23,12 @@ int main() {
     pinAD(B, 0, DIGITAL);
     pinAD(B, 1, DIGITAL);
 
-    pinPull(B, 0, DOWN);
-    pinPull(B, 1, DOWN);
-    digitalWrite(B, 4, 1);
+    pinPull(B, 0, UP);
+    pinPull(B, 1, UP);
 
     setDA();
 
-    while (1) {
+    while (TRUE) {
         if (digitalRead(B, 1)) {
             if (digitalRead(B, 0)) {
                 DA(A, 3000);

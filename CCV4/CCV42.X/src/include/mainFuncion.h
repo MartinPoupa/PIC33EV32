@@ -4,6 +4,9 @@
 #define OUTPUT 0
 #define INPUT 1
 
+#define FALSE 0
+#define TRUE 1
+
 #define DIGITAL 0
 #define ANALOG 1
 
@@ -13,19 +16,27 @@
 #define LOW 0
 #define HIGH 1
 
+#define DOWN 0
+#define UP 1
+#define FREE 2
 
 
-void delay(int t);                              // it waits t seconds
 
-void pinMode(int pinNumber, int set);            // set OUTPUT/INPUT
-void pinAD(int pinNumber, int set);             // set DIGITAL/ANALOG
 
-void digitalWrite(int pinNumber, int set);      // set LOW/HIGH
+void delay(int t);                                          // it waits t miliseconds
 
-void setDA();                                   // sets the DA converter
-void DA (int chanel, int value);               // sends value to DA converter
+void pinMode(int chanel, int pinNumber, int set);           // set OUTPUT/INPUT
+void pinAD(int chanel, int pinNumber, int set);             // set DIGITAL/ANALOG
+void pinPull(int chanel, int pinNumber, int set);           // set DOWN/UP/FREE
 
-void startInterrupts();                         // enable interrupt
+void digitalWrite(int chanel, int pinNumber, int set);      // set LOW/HIGH
+int digitalRead(int chanel, int pinNumber);                 // read LOW/HIGH
+
+void setDA();                                               // sets the DA converter
+void DA (int chanel, int value);                            // sends value to DA converter
+
+void startInterrupts();
+void stopInterrupts();                                     // enable interrupt
 void FrequencyT2(unsigned int frequency) {
     if(frequency > 64){
         T2CON = 0x8000; // 1

@@ -199,7 +199,6 @@ endDigitalRead:         MOV #0x000F, W2
 
                         BCLR SPI2STAT, #SPIROV
                         BSET SPI2STAT, #SPIEN
-
                     return
 
                     .global _DA                 ; void DA(int, int);

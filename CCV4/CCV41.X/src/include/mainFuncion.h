@@ -4,6 +4,9 @@
 #define OUTPUT 0
 #define INPUT 1
 
+#define FALSE 0
+#define TRUE 1
+
 #define DIGITAL 0
 #define ANALOG 1
 
@@ -20,7 +23,7 @@
 
 
 
-void delay(int t);                                          // it waits t seconds
+void delay(int t);                                          // it waits t miliseconds
 
 void pinMode(int chanel, int pinNumber, int set);           // set OUTPUT/INPUT
 void pinAD(int chanel, int pinNumber, int set);             // set DIGITAL/ANALOG
