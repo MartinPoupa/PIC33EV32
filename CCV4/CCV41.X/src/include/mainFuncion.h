@@ -17,11 +17,11 @@
 
 void delay(int t);                              // it waits t seconds
 
-void pinMode(int pinNumber, int set);            // set OUTPUT/INPUT
-void pinAD(int pinNumber, int set);             // set DIGITAL/ANALOG
+void pinMode(int chanel, int pinNumber, int set);            // set OUTPUT/INPUT
+void pinAD(int chanel, int pinNumber, int set);             // set DIGITAL/ANALOG
 
-void digitalWrite(int pinNumber, int set);      // set LOW/HIGH
-int digitalRead(int pinNumber);
+void digitalWrite(int chanel, int pinNumber, int set);      // set LOW/HIGH
+int digitalRead(int chanel, int pinNumber);
 
 void setDA();                                   // sets the DA converter
 void DA (int chanel, int value);               // sends value to DA converter

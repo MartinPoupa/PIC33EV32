@@ -17,16 +17,16 @@
 
 
 int main() {
-      pinMode(0, OUTPUT);
-      pinMode(1, INPUT);
-      pinMode(2, OUTPUT);
-      pinMode(3, OUTPUT);
-      pinAD(0, DIGITAL);
-      pinAD(1, DIGITAL);
-      pinAD(2, DIGITAL);
-      pinAD(3, DIGITAL);
-      
-      digitalWrite(3,1);
+      pinMode(A, 0, OUTPUT);
+      pinMode(B, 1, INPUT);
+      pinMode(B, 2, OUTPUT);
+      pinMode(B, 3, OUTPUT);
+      pinAD(B, 0, DIGITAL);
+      pinAD(B, 1, DIGITAL);
+      pinAD(B, 2, DIGITAL);
+      pinAD(B, 3, DIGITAL);
+
+      digitalWrite(B, 3, 1);
       int a = 0;
 
 
@@ -34,9 +34,9 @@ int main() {
 
     while (1) {
  //       delay(1);
-        int a = digitalRead(1);
-        digitalWrite(0,a);
-        digitalWrite(2,PORTBbits.RB1);
+        int a = digitalRead(B, 1);
+        digitalWrite(B, 0, a);
+        digitalWrite(B, 2, digitalRead(B, 1));
     }
 
     return 0;
