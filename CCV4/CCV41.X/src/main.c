@@ -21,15 +21,15 @@ int main() {
       pinMode(B, 1, OUTPUT);
       pinMode(B, 2, INPUT);
       pinMode(B, 3, OUTPUT);
-      pinMode(B, 5, OUTPUT);
+      pinMode(B, 4, OUTPUT);
       pinAD(B, 0, DIGITAL);
       pinAD(B, 1, DIGITAL);
       pinAD(B, 2, DIGITAL);
       pinAD(B, 3, DIGITAL);
-      pinAD(B, 5, DIGITAL);
+      pinAD(B, 4, DIGITAL);
       CNPDB = 1;
       CNPUB = 4;
-      digitalWrite(B, 5, 1);
+      digitalWrite(B, 4, 1);
 
 
       //setDA();
