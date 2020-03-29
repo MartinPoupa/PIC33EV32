@@ -17,7 +17,7 @@
 
 
 int main() {
-      pinMode(A, 0, OUTPUT);
+      pinMode(B, 0, OUTPUT);
       pinMode(B, 1, INPUT);
       pinMode(B, 2, OUTPUT);
       pinMode(B, 3, OUTPUT);
