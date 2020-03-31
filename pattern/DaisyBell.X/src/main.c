@@ -88,6 +88,7 @@ int main() {
         note( D0 ,TAKT);
         note( C0 ,TAKT * 2);
 
+        note( C0 ,TAKT * 2 );
         note( C0 ,TAKT);
 
 

@@ -36,12 +36,16 @@
 
 
 int state = 0;
+int voltageDA = 1000;
 
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
     if(state){
-        DA(A, 0x0fff);
+        DA(A, voltageDA);
         state = 0;
+        if(voltageDA < 0x0fff){
+            voltageDA++;
+        }
     }
     else{
         DA(A, 0);
@@ -73,6 +77,7 @@ void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
 
 */
 void note (int frequency, int time){
+    voltageDA = 1000;
     FrequencyT2(frequency * 2);
     delay(time);
 }
