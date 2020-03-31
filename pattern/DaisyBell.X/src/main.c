@@ -68,8 +68,7 @@ int main() {
         note( BB0 ,TAKT);
         note( A0 ,TAKT);
         note( G0 ,TAKT);
-
-        delay(10000);
+        note( 0 ,10000);
 
     }
     return 0;

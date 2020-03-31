@@ -71,10 +71,10 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x186           0x249  (585)
-.text                        0x386               0x2c8           0x42c  (1068)
-.dinit                       0x64e                 0x8             0xc  (12)
+.text                        0x386               0x2ca           0x42f  (1071)
+.dinit                       0x650                 0x8             0xc  (12)
 
-                 Total "program" memory used (bytes):          0x681  (1665) 5%
+                 Total "program" memory used (bytes):          0x684  (1668) 5%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x1000]
@@ -1483,7 +1483,7 @@ __c30_signature
  .ivt._T2Interrupt
                   0x000022          0x2 build/default/production/src/main.o
 
-.text             0x000386        0x2c8
+.text             0x000386        0x2ca
  .text            0x000386        0x192 build/default/production/src/asm/mainFuncion.o
                   0x000386                  _delay
                   0x000392                  _pinMode
@@ -1495,10 +1495,10 @@ __c30_signature
                   0x0004b2                  _stopInterrupts
                   0x0004b6                  _setDA
                   0x000502                  _DA
- .text            0x000518        0x136 build/default/production/src/main.o
+ .text            0x000518        0x138 build/default/production/src/main.o
                   0x000518                  _FrequencyT2
                   0x000588                  _note
                   0x00059c                  _main
 
-.dinit            0x00064e          0x8
- .dinit           0x00064e          0x8 data_init
+.dinit            0x000650          0x8
+ .dinit           0x000650          0x8 data_init
