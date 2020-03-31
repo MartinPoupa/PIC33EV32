@@ -13,7 +13,7 @@
 #pragma config IOL1WAY = ON    //Allow Only One reconfiguration pro PPS
 #pragma config FWDTEN = OFF	   // WDT and SWDTEN Disabled    Watchdog vypnut
 
-#define TAKT 150
+#define TAKT 200
 
 int main() {
 
@@ -76,7 +76,7 @@ int main() {
         note( G0 ,TAKT );
         note( F0 ,TAKT * 2);
 
-        note( F0 ,TAKT * 2); 
+        note( F0 ,TAKT * 2);
         note( G0 ,TAKT );
 
         note( A0 ,TAKT * 2);
