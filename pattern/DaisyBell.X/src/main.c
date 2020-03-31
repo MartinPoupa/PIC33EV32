@@ -97,6 +97,7 @@ int main() {
 
         note( G0 ,TAKT);
         stopInterrupts();
+        DA(A, 0);
         delay (TAKT * 2);
         startInterrupts();
 
@@ -117,6 +118,7 @@ int main() {
         note( F0 ,TAKT * 3);
 
         stopInterrupts();
+        DA(A, 0);
         delay (10000);
         startInterrupts();
 

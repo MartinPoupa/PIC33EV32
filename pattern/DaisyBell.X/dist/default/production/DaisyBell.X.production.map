@@ -71,10 +71,10 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x196           0x261  (609)
-.text                        0x396               0x380           0x540  (1344)
-.dinit                       0x716                0x10            0x18  (24)
+.text                        0x396               0x38c           0x552  (1362)
+.dinit                       0x722                0x10            0x18  (24)
 
-                 Total "program" memory used (bytes):          0x7b9  (1977) 6%
+                 Total "program" memory used (bytes):          0x7cb  (1995) 6%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x1000]
@@ -122,20 +122,20 @@ External Symbols in Program Memory (by address):
                   0x000396                  _FrequencyT2
                   0x000406                  _note
                   0x00041e                  _main
-                  0x000584                  _delay
-                  0x000590                  _pinMode
-                  0x0005cc                  _pinAD
-                  0x000608                  _pinPull
-                  0x000654                  _digitalWrite
-                  0x000690                  _digitalRead
-                  0x0006ac                  _startInterrupts
-                  0x0006b0                  _stopInterrupts
-                  0x0006b4                  _setDA
-                  0x000700                  _DA
+                  0x000590                  _delay
+                  0x00059c                  _pinMode
+                  0x0005d8                  _pinAD
+                  0x000614                  _pinPull
+                  0x000660                  _digitalWrite
+                  0x00069c                  _digitalRead
+                  0x0006b8                  _startInterrupts
+                  0x0006bc                  _stopInterrupts
+                  0x0006c0                  _setDA
+                  0x00070c                  _DA
 
 External Symbols in Program Memory (by name):
 
-                  0x000700                  _DA
+                  0x00070c                  _DA
                   0x000396                  _FrequencyT2
                   0x000352                  __DefaultInterrupt
                   0x0002fa                  __T2Interrupt
@@ -145,17 +145,17 @@ External Symbols in Program Memory (by name):
                   0x000248                  __data_init_extended
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000584                  _delay
-                  0x000690                  _digitalRead
-                  0x000654                  _digitalWrite
+                  0x000590                  _delay
+                  0x00069c                  _digitalRead
+                  0x000660                  _digitalWrite
                   0x00041e                  _main
                   0x000406                  _note
-                  0x0005cc                  _pinAD
-                  0x000590                  _pinMode
-                  0x000608                  _pinPull
-                  0x0006b4                  _setDA
-                  0x0006ac                  _startInterrupts
-                  0x0006b0                  _stopInterrupts
+                  0x0005d8                  _pinAD
+                  0x00059c                  _pinMode
+                  0x000614                  _pinPull
+                  0x0006c0                  _setDA
+                  0x0006b8                  _startInterrupts
+                  0x0006bc                  _stopInterrupts
 
 Memory Configuration
 
@@ -303,10 +303,10 @@ __FALTREG
  .debug_abbrev    0x000000        0x129 build/default/production/src/main.o
  .debug_abbrev    0x000129         0x14 build/default/production/src/asm/mainFuncion.o
 
-.debug_line       0x000000        0x298
+.debug_line       0x000000        0x29a
  *(.debug_line)
- .debug_line      0x000000        0x1ab build/default/production/src/main.o
- .debug_line      0x0001ab         0xed build/default/production/src/asm/mainFuncion.o
+ .debug_line      0x000000        0x1ad build/default/production/src/main.o
+ .debug_line      0x0001ad         0xed build/default/production/src/asm/mainFuncion.o
 
 .debug_frame      0x000000         0xa8
  *(.debug_frame)
@@ -1490,22 +1490,22 @@ __c30_signature
  .ivt._T2Interrupt
                   0x000022          0x2 build/default/production/src/main.o
 
-.text             0x000396        0x380
- .text            0x000396        0x1ee build/default/production/src/main.o
+.text             0x000396        0x38c
+ .text            0x000396        0x1fa build/default/production/src/main.o
                   0x000396                  _FrequencyT2
                   0x000406                  _note
                   0x00041e                  _main
- .text            0x000584        0x192 build/default/production/src/asm/mainFuncion.o
-                  0x000584                  _delay
-                  0x000590                  _pinMode
-                  0x0005cc                  _pinAD
-                  0x000608                  _pinPull
-                  0x000654                  _digitalWrite
-                  0x000690                  _digitalRead
-                  0x0006ac                  _startInterrupts
-                  0x0006b0                  _stopInterrupts
-                  0x0006b4                  _setDA
-                  0x000700                  _DA
+ .text            0x000590        0x192 build/default/production/src/asm/mainFuncion.o
+                  0x000590                  _delay
+                  0x00059c                  _pinMode
+                  0x0005d8                  _pinAD
+                  0x000614                  _pinPull
+                  0x000660                  _digitalWrite
+                  0x00069c                  _digitalRead
+                  0x0006b8                  _startInterrupts
+                  0x0006bc                  _stopInterrupts
+                  0x0006c0                  _setDA
+                  0x00070c                  _DA
 
-.dinit            0x000716         0x10
- .dinit           0x000716         0x10 data_init
+.dinit            0x000722         0x10
+ .dinit           0x000722         0x10 data_init
