@@ -26,48 +26,48 @@ int main() {
 
 
     while (1) {
-        note( C2 ,TAKT * 3);
-
-        note( A1 ,TAKT * 3);
-
-        note( F1 ,TAKT * 3);
-
         note( C1 ,TAKT * 3);
 
-        note( D1 ,TAKT);
-        note( E1 ,TAKT);
-        note( F1 ,TAKT);
+        note( A0 ,TAKT * 3);
 
-        note( D1 ,TAKT * 2);
-        note( F1 ,TAKT);
+        note( F0 ,TAKT * 3);
 
-        note( C1 ,TAKT * 3);
+        note( C0 ,TAKT * 3);
 
-        note( C1 ,TAKT * 3);
+        note( D0 ,TAKT);
+        note( E0 ,TAKT);
+        note( F0 ,TAKT);
 
-        note( D1 ,TAKT * 3);
+        note( D0 ,TAKT * 2);
+        note( F0 ,TAKT);
 
-        note( BB1 ,TAKT * 3);
+        note( C0 ,TAKT * 3);
 
-        note( A1 ,TAKT * 3);
+        note( C0 ,TAKT * 3);
 
-        note( F1 ,TAKT * 3); 
+        note( D0 ,TAKT * 3);
 
-        note( D1 ,TAKT);
-        note( E1 ,TAKT);
-        note( F1 ,TAKT);
+        note( BB0 ,TAKT * 3);
 
-        note( G1 ,TAKT * 2);
-        note( B1 ,TAKT);
+        note( A0 ,TAKT * 3);
 
-        note( G1 ,TAKT * 3);
+        note( F0 ,TAKT * 3);
 
-        note( G1 ,TAKT * 2);
-        note( A1 ,TAKT);
+        note( D0 ,TAKT);
+        note( E0 ,TAKT);
+        note( F0 ,TAKT);
 
-        note( BB1 ,TAKT);
-        note( A1 ,TAKT);
-        note( G1 ,TAKT);
+        note( G0 ,TAKT * 2);
+        note( B0 ,TAKT);
+
+        note( G0 ,TAKT * 3);
+
+        note( G0 ,TAKT * 2);
+        note( A0 ,TAKT);
+
+        note( BB0 ,TAKT);
+        note( A0 ,TAKT);
+        note( G0 ,TAKT);
 
         delay(10000);
 

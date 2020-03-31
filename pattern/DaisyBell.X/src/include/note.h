@@ -1,3 +1,12 @@
+#define C0 130
+#define D0 146
+#define E0 164
+#define F0 174
+#define G0 195
+#define A0 220
+#define BB0 233
+#define B0 247
+
 #define C1 261
 #define D1 293
 #define E1 329

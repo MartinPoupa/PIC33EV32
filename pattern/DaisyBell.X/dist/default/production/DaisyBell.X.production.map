@@ -300,10 +300,10 @@ __FALTREG
  .debug_abbrev    0x000000        0x107 build/default/production/src/main.o
  .debug_abbrev    0x000107         0x14 build/default/production/src/asm/mainFuncion.o
 
-.debug_line       0x000000        0x271
+.debug_line       0x000000        0x273
  *(.debug_line)
- .debug_line      0x000000        0x184 build/default/production/src/main.o
- .debug_line      0x000184         0xed build/default/production/src/asm/mainFuncion.o
+ .debug_line      0x000000        0x186 build/default/production/src/main.o
+ .debug_line      0x000186         0xed build/default/production/src/asm/mainFuncion.o
 
 .debug_frame      0x000000         0xa8
  *(.debug_frame)
