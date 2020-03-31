@@ -32,7 +32,7 @@ int main() {
 
         note( F1 ,TAKT * 3);
 
-        note( C1 ,TAKT * 3);
+        note( C1 ,TAKT * 3); 
 
         note( D1 ,TAKT);
         note( E1 ,TAKT);

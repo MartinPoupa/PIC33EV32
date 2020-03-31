@@ -24,8 +24,9 @@
 #define C4 2093
 
 
-int state = 0;
 
+int state = 0;
+/*
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
     if(state){
@@ -37,9 +38,30 @@ void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
         state = 1;
     }
 }
+*/
+int voltageDA = 0;
+
+void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
+    IFS0bits.T2IF = 0;
+    if (voltageDA >= 0x0fff) {
+        state = 1;
+        voltageDA = 0x0fff;
+    }
+    if (voltageDA <= 0) {
+        state = 0;
+        voltageDA = 0;
+    }
+    DA(A, voltageDA);
+    if (state == 0) {
+        voltageDA = voltageDA + 1024;
+    }
+    else{
+        voltageDA = voltageDA - 1024;
+    }
+}
 
 
 void note (int frequency, int time){
-    FrequencyT2(frequency * 2);
+    FrequencyT2(frequency * 8);
     delay(time);
 }
