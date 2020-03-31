@@ -71,10 +71,10 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x186           0x249  (585)
-.text                        0x386               0x2c2           0x423  (1059)
-.dinit                       0x648                 0x8             0xc  (12)
+.text                        0x386               0x2c4           0x426  (1062)
+.dinit                       0x64a                 0x8             0xc  (12)
 
-                 Total "program" memory used (bytes):          0x678  (1656) 5%
+                 Total "program" memory used (bytes):          0x67b  (1659) 5%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x1000]
@@ -128,7 +128,7 @@ External Symbols in Program Memory (by address):
                   0x000502                  _DA
                   0x000518                  _FrequencyT2
                   0x000588                  _note
-                  0x00059a                  _main
+                  0x00059c                  _main
 
 External Symbols in Program Memory (by name):
 
@@ -145,7 +145,7 @@ External Symbols in Program Memory (by name):
                   0x000386                  _delay
                   0x000492                  _digitalRead
                   0x000456                  _digitalWrite
-                  0x00059a                  _main
+                  0x00059c                  _main
                   0x000588                  _note
                   0x0003ce                  _pinAD
                   0x000392                  _pinMode
@@ -1483,7 +1483,7 @@ __c30_signature
  .ivt._T2Interrupt
                   0x000022          0x2 build/default/production/src/main.o
 
-.text             0x000386        0x2c2
+.text             0x000386        0x2c4
  .text            0x000386        0x192 build/default/production/src/asm/mainFuncion.o
                   0x000386                  _delay
                   0x000392                  _pinMode
@@ -1495,10 +1495,10 @@ __c30_signature
                   0x0004b2                  _stopInterrupts
                   0x0004b6                  _setDA
                   0x000502                  _DA
- .text            0x000518        0x130 build/default/production/src/main.o
+ .text            0x000518        0x132 build/default/production/src/main.o
                   0x000518                  _FrequencyT2
                   0x000588                  _note
-                  0x00059a                  _main
+                  0x00059c                  _main
 
-.dinit            0x000648          0x8
- .dinit           0x000648          0x8 data_init
+.dinit            0x00064a          0x8
+ .dinit           0x00064a          0x8 data_init

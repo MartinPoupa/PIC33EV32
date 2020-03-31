@@ -13,12 +13,13 @@
 #pragma config IOL1WAY = ON    //Allow Only One reconfiguration pro PPS
 #pragma config FWDTEN = OFF	   // WDT and SWDTEN Disabled    Watchdog vypnut
 
-#define TAKT 500
+#define TAKT 300
 
 int main() {
 
-    FrequencyT2(820);
+
     setDA();
+    FrequencyT2(500);
     DA(A, 0);
     startInterrupts();
 

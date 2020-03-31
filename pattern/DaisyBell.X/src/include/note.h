@@ -40,6 +40,6 @@ void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
 
 
 void note (int frequency, int time){
-    FrequencyT2(frequency);
+    FrequencyT2(frequency * 2);
     delay(time);
 }
