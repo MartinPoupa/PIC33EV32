@@ -58,7 +58,7 @@ int main() {
         note( F0 ,TAKT);
 
         note( G0 ,TAKT * 2);
-        note( C1 ,TAKT);
+        note( BB0 ,TAKT);
 
         note( G0 ,TAKT * 3);
 
@@ -68,6 +68,29 @@ int main() {
         note( BB0 ,TAKT);
         note( A0 ,TAKT);
         note( G0 ,TAKT);
+
+
+        note( C1 ,TAKT * 2);
+        note( A0 ,TAKT );
+
+        note( G0 ,TAKT );
+        note( F0 ,TAKT * 2);
+
+        note( F0 ,TAKT * 2);
+        note( G0 ,TAKT );
+
+        note( A0 ,TAKT * 2);
+        note( F0 ,TAKT );
+
+        note( D0 ,TAKT * 2);
+        note( F0 ,TAKT );
+
+        note( D0 ,TAKT);
+        note( C0 ,TAKT * 2);
+
+        note( C0 ,TAKT);
+
+
 
         stopInterrupts();
         delay (10000);
