@@ -47,11 +47,11 @@ int main() {
 
         note( D1 ,TAKT * 3);
 
-        note( B1 ,TAKT * 3);
+        note( BB1 ,TAKT * 3);
 
         note( A1 ,TAKT * 3);
 
-        note( F1 ,TAKT * 3);
+        note( F1 ,TAKT * 3); 
 
         note( D1 ,TAKT);
         note( E1 ,TAKT);
@@ -65,9 +65,11 @@ int main() {
         note( G1 ,TAKT * 2);
         note( A1 ,TAKT);
 
+        note( BB1 ,TAKT);
         note( A1 ,TAKT);
-        note( B1 ,TAKT);
         note( G1 ,TAKT);
+
+        delay(10000);
 
     }
     return 0;

@@ -4,6 +4,7 @@
 #define F1 349
 #define G1 392
 #define A1 440
+#define BB1 466
 #define B1 493
 
 #define C2 523
@@ -26,7 +27,7 @@
 
 
 int state = 0;
-/*
+
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
     if(state){
@@ -38,7 +39,8 @@ void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
         state = 1;
     }
 }
-*/
+
+/*
 int voltageDA = 0;
 
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
@@ -60,8 +62,8 @@ void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     }
 }
 
-
+*/
 void note (int frequency, int time){
-    FrequencyT2(frequency * 16);
+    FrequencyT2(frequency * 2);
     delay(time);
 }
