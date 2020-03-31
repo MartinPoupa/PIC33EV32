@@ -15,7 +15,7 @@
 
 #define TAKT 150
 
-int main() {     
+int main() {
 
 
     setDA();
@@ -76,7 +76,7 @@ int main() {
         note( G0 ,TAKT );
         note( F0 ,TAKT * 2);
 
-        note( F0 ,TAKT * 2);
+        note( F0 ,TAKT * 2); 
         note( G0 ,TAKT );
 
         note( A0 ,TAKT * 2);
