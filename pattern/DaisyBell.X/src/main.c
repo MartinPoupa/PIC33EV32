@@ -15,7 +15,7 @@
 
 #define TAKT 150
 
-int main() {    
+int main() {     
 
 
     setDA();

@@ -41,7 +41,7 @@ int voltageDA = 2000;
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
     if(state){
-        DA(A, voltageDA);
+
         state = 0;
         if(voltageDA < 0x0fff){
             voltageDA = voltageDA + 20;
@@ -49,6 +49,7 @@ void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
         else{
             voltageDA = 0x0fff;
         }
+        DA(A, voltageDA);
     }
     else{
         DA(A, 0);
