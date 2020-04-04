@@ -53,9 +53,11 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     //Vynuluje interrupt flag
     IFS0bits.T2IF = 0;
 
-        float voltage = adcGetVoltage(analogRead(B, 0));
-        
-        float voltage1 = adcGetVoltage(analogRead(B, 1));
+        int voltageA = analogRead(B, 0);
+        int voltageA1 = analogRead(B, 1);
+        float voltage = adcGetVoltage(voltageA);
+        delay(10);
+        float voltage1 = adcGetVoltage(voltageA1);
         U2TXREG = (int)voltage + 48;
         U2TXREG = '.';
         U2TXREG = (int)(voltage*10)-(((int)voltage)*10) + 48;
