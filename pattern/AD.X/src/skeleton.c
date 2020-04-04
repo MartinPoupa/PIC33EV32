@@ -40,7 +40,7 @@ void  main() {
 
     //Povoleni preruseni
     IEC0bits.T2IE = 0x01;
-    //IEC0bits.AD1IE = 0x01;
+
     INTCON2bits.GIE = 0x0001;
 
     while(1) {
@@ -74,23 +74,6 @@ void __attribute__((interrupt, shadow, auto_psv)) _U2TXInterrupt(void) {
     //Vynuluje interrupt flag
     IFS1bits.U2TXIF = 0;
     IEC1bits.U2TXIE = 0x00;
-
-}
-
-void __attribute__((interrupt, shadow, auto_psv)) _AD1Interrupt(void) {
-    //Vynuluje interrupt flag
-    IFS0bits.AD1IF = 0;
-
-    //float voltage = adcGetVoltage(ADC1BUF0);
-    //U2TXREG = (int)voltage + 48;
-    //U2TXREG = '.';
-    //U2TXREG = (int)(voltage*10)-(((int)voltage)*10) + 48;
-    //U2TXREG = (int)(voltage*100)-((int)(voltage*10)*10) + 48;
-    //U2TXREG = ' ';
-    //U2TXREG = '\n';
-
-    //IEC1bits.U2TXIE = 0x01;
-
 
 }
 
