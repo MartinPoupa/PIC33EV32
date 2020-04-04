@@ -54,6 +54,7 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
 
         int voltageA = analogRead(B, 0);
+        delay(10);
         int voltageA1 = analogRead(B, 1);
         float voltage = adcGetVoltage(voltageA);
         delay(10);
