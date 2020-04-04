@@ -54,7 +54,7 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
 
     AD1CHS0 = 0x0020;
     AD1CON1bits.SAMP = 0;
-    delay(100);
+    delay(10);
     AD1CHS0 = 0x0018;
     AD1CON1bits.SAMP = 0;
 
