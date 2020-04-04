@@ -50,14 +50,13 @@ _pinAD:	                MOV #0x000F, W3
 nullChanelPinAD:          MOV ANSELA, W1
 endChanelPinAD:       BTSC W2, #0
                         GOTO nullSetPinAD
-                            MOV #0x8404, W2
-                            MOV W2, AD1CON1
                             MOV #0xFFFF, W2
                             XOR W2, W3, W3
                             AND W3, W1, W1
-
                             GOTO endSetPinAD
 nullSetPinAD:	            IOR W3, W1, W1
+                            MOV #0x8404, W2
+                            MOV W2, AD1CON1
 endSetPinAD:	        BTSC W0, #15
                         GOTO nullPinAD
                             MOV W1, ANSELB
@@ -152,7 +151,7 @@ _analogRead:            BTSC W0, #15
                                 GOTO endAnalogRead
 nullAnalogRead:                 MOV W1, AD1CHS0
 endAnalogRead:          BCLR AD1CON1, #SAMP
-                        ;REPEAT #8
+                        ;REPEAT #8 
                         ;    NOP
                         MOV ADC1BUF0, W0
                     return
