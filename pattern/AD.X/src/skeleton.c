@@ -72,9 +72,11 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
         U2TXREG = '.';
         U2TXREG = (int)(voltage*10)-(((int)voltage)*10) + 48;
         U2TXREG = (int)(voltage*100)-((int)(voltage*10)*10) + 48;
+        
+        delay(10);
+        IEC1bits.U2TXIE = 0x01;
         U2TXREG = ' ';
         U2TXREG = '\n';
-
         IEC1bits.U2TXIE = 0x01;
 }
 
