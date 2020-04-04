@@ -95,10 +95,10 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x4be           0x71d  (1821)
-.text                        0x6be               0x2ea           0x45f  (1119)
-.dinit                       0x9a8                 0xa             0xf  (15)
+.text                        0x6be               0x2e8           0x45c  (1116)
+.dinit                       0x9a6                 0xa             0xf  (15)
 
-                 Total "program" memory used (bytes):          0xb8b  (2955) 9%
+                 Total "program" memory used (bytes):          0xb88  (2952) 8%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x1000]
@@ -169,9 +169,9 @@ External Symbols in Program Memory (by address):
                   0x000856                  _DA
                   0x00086c                  _FrequencyT2
                   0x0008dc                  _main
-                  0x000922                  _adcGetVoltage
-                  0x000936                  _init
-                  0x000978                  _ftoval
+                  0x000920                  _adcGetVoltage
+                  0x000934                  _init
+                  0x000976                  _ftoval
 
 External Symbols in Program Memory (by name):
 
@@ -201,13 +201,13 @@ External Symbols in Program Memory (by name):
                   0x000588                  __funpack2
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000922                  _adcGetVoltage
+                  0x000920                  _adcGetVoltage
                   0x0007e6                  _analogRead
                   0x0006be                  _delay
                   0x0007ca                  _digitalRead
                   0x00078e                  _digitalWrite
-                  0x000978                  _ftoval
-                  0x000936                  _init
+                  0x000976                  _ftoval
+                  0x000934                  _init
                   0x0008dc                  _main
                   0x000706                  _pinAD
                   0x0006ca                  _pinMode
@@ -401,10 +401,10 @@ __FALTREG
  .debug_abbrev    0x000000        0x148 build/default/production/src/skeleton.o
  .debug_abbrev    0x000148         0x14 build/default/production/src/asm/mainFuncion.o
 
-.debug_line       0x000000        0x28d
+.debug_line       0x000000        0x28c
  *(.debug_line)
- .debug_line      0x000000        0x194 build/default/production/src/skeleton.o
- .debug_line      0x000194         0xf9 build/default/production/src/asm/mainFuncion.o
+ .debug_line      0x000000        0x193 build/default/production/src/skeleton.o
+ .debug_line      0x000193         0xf9 build/default/production/src/asm/mainFuncion.o
 
 .debug_frame      0x000000        0x122
  *(.debug_frame)
@@ -1618,7 +1618,7 @@ __c30_signature
  .ivt._AD1Interrupt
                   0x00002e          0x2 build/default/production/src/skeleton.o
 
-.text             0x0006be        0x2ea
+.text             0x0006be        0x2e8
  .text            0x0006be        0x1ae build/default/production/src/asm/mainFuncion.o
                   0x0006be                  _delay
                   0x0006ca                  _pinMode
@@ -1631,12 +1631,12 @@ __c30_signature
                   0x000806                  _stopInterrupts
                   0x00080a                  _setDA
                   0x000856                  _DA
- .text            0x00086c        0x13c build/default/production/src/skeleton.o
+ .text            0x00086c        0x13a build/default/production/src/skeleton.o
                   0x00086c                  _FrequencyT2
                   0x0008dc                  _main
-                  0x000922                  _adcGetVoltage
-                  0x000936                  _init
-                  0x000978                  _ftoval
+                  0x000920                  _adcGetVoltage
+                  0x000934                  _init
+                  0x000976                  _ftoval
 
-.dinit            0x0009a8          0xa
- .dinit           0x0009a8          0xa data_init
+.dinit            0x0009a6          0xa
+ .dinit           0x0009a6          0xa data_init

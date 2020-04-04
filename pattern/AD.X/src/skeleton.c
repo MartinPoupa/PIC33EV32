@@ -40,7 +40,7 @@ void  main() {
 
     //Povoleni preruseni
     IEC0bits.T2IE = 0x01;
-    IEC0bits.AD1IE = 0x01;
+    //IEC0bits.AD1IE = 0x01;
     INTCON2bits.GIE = 0x0001;
 
     while(1) {
