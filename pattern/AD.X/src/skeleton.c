@@ -75,8 +75,8 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
 
         U2TXREG = (int)voltage1 + 48;
         U2TXREG = '.';
-        U2TXREG = (int)(voltage1*10)-(((int)voltage)*10) + 48;
-        U2TXREG = (int)(voltage1*100)-((int)(voltage*10)*10) + 48;
+        U2TXREG = (int)(voltage1*10)-(((int)voltage1)*10) + 48;
+        U2TXREG = (int)(voltage1*100)-((int)(voltage1*10)*10) + 48;
 
         delay(10);
         IEC1bits.U2TXIE = 0x01;
