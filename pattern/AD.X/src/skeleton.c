@@ -1,5 +1,5 @@
 #include "p33EV32GM002.h"
-
+#include "include/mainFuncion.h"
 //Nastaveni oscilatoru (FRC, OSC2 jako pin, jedno prenastaveni PPS, WD vypnut)
 #pragma config FNOSC = FRC
 #pragma config OSCIOFNC = ON
@@ -13,9 +13,10 @@ float adcGetVoltage(uint16_t value);
 void  main() {
 
     //RA0 je analog in, zbytek dig out
-    TRISA = 0x0008;
 
-    ANSELA = 0x0008;
+    pinMode(A, 2, INPUT);
+    pinAD(A, 2, ANALOG);
+
 
 
     //PORTB jako vystupni, RB2 jako vstupni
