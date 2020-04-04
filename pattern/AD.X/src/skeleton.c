@@ -13,8 +13,8 @@ float adcGetVoltage(uint16_t value);
 void  main() {
 
     //RA0 je analog in, zbytek dig out
-    TRISA = 0x0001;
-    ANSELA = 0x0001;
+    TRISA = 0x0002;
+    ANSELA = 0x0002;
 
 
     //PORTB jako vystupni, RB2 jako vstupni
