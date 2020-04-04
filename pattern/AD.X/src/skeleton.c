@@ -13,9 +13,9 @@ float adcGetVoltage(uint16_t value);
 void  main() {
 
     //RA0 je analog in, zbytek dig out
-    TRISA = 0x0010;
+    TRISA = 0x0004;
 
-    ANSELA = 0x0010;
+    ANSELA = 0x0004;
 
 
     //PORTB jako vystupni, RB2 jako vstupni
@@ -31,7 +31,7 @@ void  main() {
     init();
 
     AD1CON1 = 0x8404;
-    AD1CHS0 = 0x0018;
+    AD1CHS0 = 0x0032;
 
     //Povoleni preruseni
     IEC0bits.T2IE = 0x01;
