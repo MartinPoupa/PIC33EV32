@@ -14,8 +14,8 @@ void  main() {
 
     //RA0 je analog in, zbytek dig out
 
-    pinMode(A, 2, INPUT);
-    pinAD(A, 2, ANALOG);
+    pinMode(A, 4, INPUT);
+    pinAD(A, 4, ANALOG);
 
 
 
@@ -32,7 +32,7 @@ void  main() {
     init();
 
     AD1CON1 = 0x8404;
-    AD1CHS0 = 0x0032;
+    AD1CHS0 = 0x0024;
 
     //Povoleni preruseni
     IEC0bits.T2IE = 0x01;
