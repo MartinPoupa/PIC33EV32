@@ -149,7 +149,7 @@ _analogRead:            BTSC W0, #15
                                 GOTO endAnalogRead
 nullAnalogRead:                 MOV W1, AD1CHS0
 endAnalogRead:          BCLR AD1CON1, #SAMP
-                        REPEAT #32
+                        REPEAT #100
                             NOP
                         MOV ADC1BUF0, W0
                     return
