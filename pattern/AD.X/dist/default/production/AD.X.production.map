@@ -94,10 +94,10 @@ Default Scalar Model: Small
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                        0x200               0x4f4           0x76e  (1902)
-.text                        0x6f4               0x2e8           0x45c  (1116)
+.text                        0x200               0x4f8           0x774  (1908)
+.text                        0x6f8               0x2e8           0x45c  (1116)
 
-                 Total "program" memory used (bytes):          0xbca  (3018) 9%
+                 Total "program" memory used (bytes):          0xbd0  (3024) 9%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x1000]
@@ -127,82 +127,82 @@ External Symbols in Program Memory (by address):
                   0x000248                  __data_init_extended
                   0x000248                  __data_init
                   0x0002fa                  __T2Interrupt
-                  0x0003fe                  __U2TXInterrupt
-                  0x00041e                  __DefaultInterrupt
-                  0x000424                  ___divsf3
-                  0x0004a8                  ___divsi3
-                  0x0004c6                  ___fixsfsi
-                  0x000508                  ___fixunssfsi
-                  0x00053e                  ___floatsisf
-                  0x000544                  ___floatunsisf
-                  0x000548                  __fpack
-                  0x000594                  __funpack
-                  0x0005be                  __funpack2
-                  0x0005ce                  __fPropagateNaN
-                  0x0005e0                  __fbopExit
-                  0x0005e8                  __fbopReturnNaN
-                  0x0005ee                  ___mulsf3
-                  0x000656                  ___udivsi3
-                  0x000676                  ___floatdisf
-                  0x000696                  ___floatundisf
-                  0x0006f4                  _delay
-                  0x000700                  _pinMode
-                  0x00073c                  _pinAD
-                  0x000778                  _pinPull
-                  0x0007c4                  _digitalWrite
-                  0x000800                  _digitalRead
-                  0x00081c                  _analogRead
-                  0x000838                  _startInterrupts
-                  0x00083c                  _stopInterrupts
-                  0x000840                  _setDA
-                  0x00088c                  _DA
-                  0x0008a2                  _FrequencyT2
-                  0x000912                  _main
-                  0x000956                  _adcGetVoltage
-                  0x00096a                  _init
-                  0x0009ac                  _ftoval
+                  0x000402                  __U2TXInterrupt
+                  0x000422                  __DefaultInterrupt
+                  0x000428                  ___divsf3
+                  0x0004ac                  ___divsi3
+                  0x0004ca                  ___fixsfsi
+                  0x00050c                  ___fixunssfsi
+                  0x000542                  ___floatsisf
+                  0x000548                  ___floatunsisf
+                  0x00054c                  __fpack
+                  0x000598                  __funpack
+                  0x0005c2                  __funpack2
+                  0x0005d2                  __fPropagateNaN
+                  0x0005e4                  __fbopExit
+                  0x0005ec                  __fbopReturnNaN
+                  0x0005f2                  ___mulsf3
+                  0x00065a                  ___udivsi3
+                  0x00067a                  ___floatdisf
+                  0x00069a                  ___floatundisf
+                  0x0006f8                  _delay
+                  0x000704                  _pinMode
+                  0x000740                  _pinAD
+                  0x00077c                  _pinPull
+                  0x0007c8                  _digitalWrite
+                  0x000804                  _digitalRead
+                  0x000820                  _analogRead
+                  0x00083c                  _startInterrupts
+                  0x000840                  _stopInterrupts
+                  0x000844                  _setDA
+                  0x000890                  _DA
+                  0x0008a6                  _FrequencyT2
+                  0x000916                  _main
+                  0x00095a                  _adcGetVoltage
+                  0x00096e                  _init
+                  0x0009b0                  _ftoval
 
 External Symbols in Program Memory (by name):
 
-                  0x00088c                  _DA
-                  0x0008a2                  _FrequencyT2
-                  0x00041e                  __DefaultInterrupt
+                  0x000890                  _DA
+                  0x0008a6                  _FrequencyT2
+                  0x000422                  __DefaultInterrupt
                   0x0002fa                  __T2Interrupt
-                  0x0003fe                  __U2TXInterrupt
-                  0x000424                  ___divsf3
-                  0x0004a8                  ___divsi3
-                  0x0004c6                  ___fixsfsi
-                  0x000508                  ___fixunssfsi
-                  0x000676                  ___floatdisf
-                  0x00053e                  ___floatsisf
-                  0x000696                  ___floatundisf
-                  0x000544                  ___floatunsisf
-                  0x0005ee                  ___mulsf3
-                  0x000656                  ___udivsi3
+                  0x000402                  __U2TXInterrupt
+                  0x000428                  ___divsf3
+                  0x0004ac                  ___divsi3
+                  0x0004ca                  ___fixsfsi
+                  0x00050c                  ___fixunssfsi
+                  0x00067a                  ___floatdisf
+                  0x000542                  ___floatsisf
+                  0x00069a                  ___floatundisf
+                  0x000548                  ___floatunsisf
+                  0x0005f2                  ___mulsf3
+                  0x00065a                  ___udivsi3
                   0x000248                  __data_init
                   0x000248                  __data_init_extended
-                  0x0005ce                  __fPropagateNaN
-                  0x0005e0                  __fbopExit
-                  0x0005e8                  __fbopReturnNaN
-                  0x000548                  __fpack
-                  0x000594                  __funpack
-                  0x0005be                  __funpack2
+                  0x0005d2                  __fPropagateNaN
+                  0x0005e4                  __fbopExit
+                  0x0005ec                  __fbopReturnNaN
+                  0x00054c                  __fpack
+                  0x000598                  __funpack
+                  0x0005c2                  __funpack2
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000956                  _adcGetVoltage
-                  0x00081c                  _analogRead
-                  0x0006f4                  _delay
-                  0x000800                  _digitalRead
-                  0x0007c4                  _digitalWrite
-                  0x0009ac                  _ftoval
-                  0x00096a                  _init
-                  0x000912                  _main
-                  0x00073c                  _pinAD
-                  0x000700                  _pinMode
-                  0x000778                  _pinPull
-                  0x000840                  _setDA
-                  0x000838                  _startInterrupts
-                  0x00083c                  _stopInterrupts
+                  0x00095a                  _adcGetVoltage
+                  0x000820                  _analogRead
+                  0x0006f8                  _delay
+                  0x000804                  _digitalRead
+                  0x0007c8                  _digitalWrite
+                  0x0009b0                  _ftoval
+                  0x00096e                  _init
+                  0x000916                  _main
+                  0x000740                  _pinAD
+                  0x000704                  _pinMode
+                  0x00077c                  _pinPull
+                  0x000844                  _setDA
+                  0x00083c                  _startInterrupts
+                  0x000840                  _stopInterrupts
 
 Memory Configuration
 
@@ -262,7 +262,7 @@ LOAD /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libfx-elf.a
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000200        0x4f4
+.text             0x000200        0x4f8
  *(.init)
  .init            0x000200         0x48 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
                   0x000200                  __reset
@@ -274,60 +274,60 @@ LOAD /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libfx-elf.a
  *(.user_init)
  *(.handle)
  *(.isr*)
- .isr.text        0x0002fa        0x124 build/default/production/src/skeleton.o
+ .isr.text        0x0002fa        0x128 build/default/production/src/skeleton.o
                   0x0002fa                  __T2Interrupt
-                  0x0003fe                  __U2TXInterrupt
- .isr             0x00041e          0x4 default_isr
-                  0x00041e                  __DefaultInterrupt
+                  0x000402                  __U2TXInterrupt
+ .isr             0x000422          0x4 default_isr
+                  0x000422                  __DefaultInterrupt
  *(.libc)
  *(.libm)
  *(.libdsp)
  *(.lib*)
  .libpic30_crt_start_mode
-                  0x000422          0x2 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt_start_mode_normalep.Leo)
-                  0x000422                  __crt_start_mode_normal
-                  0x000422                  __crt_start_mode
- .libm.divfs3     0x000424         0x84 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(divsf3.epeo)
-                  0x000424                  ___divsf3
- .libm.divsi3     0x0004a8         0x1e /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(divsi3.epeo)
-                  0x0004a8                  ___divsi3
- .libm.fixsfsi    0x0004c6         0x42 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(fixsfsi.epeo)
-                  0x0004c6                  _(float, int, long long, short, float, short, int)
+                  0x000426          0x2 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt_start_mode_normalep.Leo)
+                  0x000426                  __crt_start_mode_normal
+                  0x000426                  __crt_start_mode
+ .libm.divfs3     0x000428         0x84 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(divsf3.epeo)
+                  0x000428                  ___divsf3
+ .libm.divsi3     0x0004ac         0x1e /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(divsi3.epeo)
+                  0x0004ac                  ___divsi3
+ .libm.fixsfsi    0x0004ca         0x42 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(fixsfsi.epeo)
+                  0x0004ca                  _(float, int, long long, short, float, short, int)
  .libm.fixunssfsi
-                  0x000508         0x36 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(fixunssfsi.epeo)
-                  0x000508                  ___fixunssfsi
+                  0x00050c         0x36 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(fixunssfsi.epeo)
+                  0x00050c                  ___fixunssfsi
  .libm.floatsisf
-                  0x00053e          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatsisf.epeo)
-                  0x00053e                  ___floatsisf
+                  0x000542          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatsisf.epeo)
+                  0x000542                  ___floatsisf
  .libm.floatunsisf
-                  0x000544          0x4 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatunsisf.epeo)
-                  0x000544                  ___floatunsisf
- .libm.fpack      0x000548         0x4c /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(fpack.epeo)
-                  0x000548                  __fpack
- .libm.funpack    0x000594         0x2a /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(funpack.epeo)
-                  0x000594                  __funpack
+                  0x000548          0x4 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatunsisf.epeo)
+                  0x000548                  ___floatunsisf
+ .libm.fpack      0x00054c         0x4c /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(fpack.epeo)
+                  0x00054c                  __fpack
+ .libm.funpack    0x000598         0x2a /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(funpack.epeo)
+                  0x000598                  __funpack
  .libm.funpack2
-                  0x0005be         0x10 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(funpack2.epeo)
-                  0x0005be                  __funpack2
+                  0x0005c2         0x10 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(funpack2.epeo)
+                  0x0005c2                  __funpack2
  .libm.fPropagateNaN
-                  0x0005ce         0x12 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(futil.epeo)
-                  0x0005ce                  __fPropagateNaN
+                  0x0005d2         0x12 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(futil.epeo)
+                  0x0005d2                  __fPropagateNaN
  .libm.fbobExit
-                  0x0005e0          0x8 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(futil.epeo)
-                  0x0005e0                  __fbopExit
+                  0x0005e4          0x8 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(futil.epeo)
+                  0x0005e4                  __fbopExit
  .libm.fbopReturnNaN
-                  0x0005e8          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(futil.epeo)
-                  0x0005e8                  __fbopReturnNaN
- .libm.mulsf3     0x0005ee         0x68 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(mulsf3.epeo)
-                  0x0005ee                  ___mulsf3
- .libm.udivsi3    0x000656         0x20 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(udivsi3.epeo)
-                  0x000656                  ___udivsi3
+                  0x0005ec          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(futil.epeo)
+                  0x0005ec                  __fbopReturnNaN
+ .libm.mulsf3     0x0005f2         0x68 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(mulsf3.epeo)
+                  0x0005f2                  ___mulsf3
+ .libm.udivsi3    0x00065a         0x20 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(udivsi3.epeo)
+                  0x00065a                  ___udivsi3
  .libm.floatdisf
-                  0x000676         0x20 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatdisf.epeo)
-                  0x000676                  ___floatdisf
+                  0x00067a         0x20 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatdisf.epeo)
+                  0x00067a                  ___floatdisf
  .libm.floatundisf
-                  0x000696         0x5e /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatundisf.epeo)
-                  0x000696                  ___floatundisf
+                  0x00069a         0x5e /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(floatundisf.epeo)
+                  0x00069a                  ___floatundisf
 
 usercode
  *(usercode)
@@ -388,10 +388,10 @@ __FALTREG
  .debug_abbrev    0x000000        0x126 build/default/production/src/skeleton.o
  .debug_abbrev    0x000126         0x14 build/default/production/src/asm/mainFuncion.o
 
-.debug_line       0x000000        0x28d
+.debug_line       0x000000        0x28f
  *(.debug_line)
- .debug_line      0x000000        0x194 build/default/production/src/skeleton.o
- .debug_line      0x000194         0xf9 build/default/production/src/asm/mainFuncion.o
+ .debug_line      0x000000        0x196 build/default/production/src/skeleton.o
+ .debug_line      0x000196         0xf9 build/default/production/src/asm/mainFuncion.o
 
 .debug_frame      0x000000         0xfe
  *(.debug_frame)
@@ -1595,22 +1595,22 @@ __c30_signature
  .ivt._U2TXInterrupt
                   0x000052          0x2 build/default/production/src/skeleton.o
 
-.text             0x0006f4        0x2e8
- .text            0x0006f4        0x1ae build/default/production/src/asm/mainFuncion.o
-                  0x0006f4                  _delay
-                  0x000700                  _pinMode
-                  0x00073c                  _pinAD
-                  0x000778                  _pinPull
-                  0x0007c4                  _digitalWrite
-                  0x000800                  _digitalRead
-                  0x00081c                  _analogRead
-                  0x000838                  _startInterrupts
-                  0x00083c                  _stopInterrupts
-                  0x000840                  _setDA
-                  0x00088c                  _DA
- .text            0x0008a2        0x13a build/default/production/src/skeleton.o
-                  0x0008a2                  _FrequencyT2
-                  0x000912                  _main
-                  0x000956                  _adcGetVoltage
-                  0x00096a                  _init
-                  0x0009ac                  _ftoval
+.text             0x0006f8        0x2e8
+ .text            0x0006f8        0x1ae build/default/production/src/asm/mainFuncion.o
+                  0x0006f8                  _delay
+                  0x000704                  _pinMode
+                  0x000740                  _pinAD
+                  0x00077c                  _pinPull
+                  0x0007c8                  _digitalWrite
+                  0x000804                  _digitalRead
+                  0x000820                  _analogRead
+                  0x00083c                  _startInterrupts
+                  0x000840                  _stopInterrupts
+                  0x000844                  _setDA
+                  0x000890                  _DA
+ .text            0x0008a6        0x13a build/default/production/src/skeleton.o
+                  0x0008a6                  _FrequencyT2
+                  0x000916                  _main
+                  0x00095a                  _adcGetVoltage
+                  0x00096e                  _init
+                  0x0009b0                  _ftoval
