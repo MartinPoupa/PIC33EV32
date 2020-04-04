@@ -139,6 +139,13 @@ endDigitalRead:         MOV #0x000F, W2
                         AND W0, W2, W0
                     return
 
+                    .global _analogRead              ; void analogRead(int);
+_analogRead:
+
+                    return
+
+
+
                     .global _startInterrupts    ; void startInterrupts();
  _startInterrupts:	     BSET  INTCON2, #GIE
                     return
@@ -213,5 +220,7 @@ _DA:
                             NOP
                         BSET PORTB, #13
                     return
+
+
 
                     .end

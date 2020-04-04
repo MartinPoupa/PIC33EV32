@@ -31,12 +31,14 @@ void pinPull(int chanel, int pinNumber, int set);           // set DOWN/UP/FREE
 
 void digitalWrite(int chanel, int pinNumber, int set);      // set LOW/HIGH
 int digitalRead(int chanel, int pinNumber);                 // read LOW/HIGH
+int analogRead(int pinNumber);
 
 void setDA();                                               // sets the DA converter
 void DA (int chanel, int value);                            // sends value to DA converter
 
 void startInterrupts();
-void stopInterrupts();                                     // enable interrupt
+void stopInterrupts();
+                                     // enable interrupt
 void FrequencyT2(unsigned int frequency) {
     if(frequency > 64){
         T2CON = 0x8000; // 1
