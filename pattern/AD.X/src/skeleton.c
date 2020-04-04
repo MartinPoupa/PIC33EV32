@@ -59,6 +59,8 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
         U2TXREG = (int)(voltage*10)-(((int)voltage)*10) + 48;
         U2TXREG = (int)(voltage*100)-((int)(voltage*10)*10) + 48;
         U2TXREG = ' ';
+        U2TXREG = '-';
+        U2TXREG = ' ';
 
 
         voltage = adcGetVoltage(analogRead(B, 1));
