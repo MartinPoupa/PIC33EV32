@@ -16,7 +16,7 @@ void  main() {
 
     pinMode(A, 2, INPUT);
     pinAD(A, 2, ANALOG);
-    
+
     pinMode(A, 4, INPUT);
     pinAD(A, 4, ANALOG);
 
@@ -27,7 +27,7 @@ void  main() {
     ANSELB = 0x0000;
 
     //Nastaveni T2
-    PR2 = ftoval(1, 256);
+    PR2 = ftoval(1, 200);
     //Delicka 1, citac zapnut
     T2CON = 0x8030;
 
@@ -47,15 +47,17 @@ void  main() {
     }
 
 }
-
+int abc = 1;
 void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     //Vynuluje interrupt flag
     IFS0bits.T2IF = 0;
-    if(AD1CHS0 == 0x0020){
+    if(abc == 1){
         AD1CHS0 = 0x0018;
+        abc = 0;
     }
     else{
-        AD1CHS0 = 0x0020; 
+        AD1CHS0 = 0x0020;
+        abc = 1;
     }
     AD1CON1bits.SAMP = 0;
 }
