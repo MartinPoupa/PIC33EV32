@@ -52,10 +52,11 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     //Vynuluje interrupt flag
     IFS0bits.T2IF = 0;
 
-    AD1CHS0 = 0x0020;
+    AD1CHS0 = 0x0018;
     AD1CON1bits.SAMP = 0;
     delay(10);
-    AD1CHS0 = 0x0018;
+    
+    AD1CHS0 = 0x0020;
     AD1CON1bits.SAMP = 0;
 
 }
@@ -76,6 +77,7 @@ void __attribute__((interrupt, shadow, auto_psv)) _AD1Interrupt(void) {
     U2TXREG = '.';
     U2TXREG = (int)(voltage*10)-(((int)voltage)*10) + 48;
     U2TXREG = (int)(voltage*100)-((int)(voltage*10)*10) + 48;
+    U2TXREG = ' ';
     U2TXREG = '\n';
 
     IEC1bits.U2TXIE = 0x01;
