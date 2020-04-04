@@ -14,8 +14,8 @@ void  main() {
 
     //RA0 je analog in, zbytek dig out
 
-    pinMode(A, 4, INPUT);
-    pinAD(A, 4, ANALOG);
+    pinMode(A, 2, INPUT);
+    pinAD(A, 2, ANALOG);
 
 
 
