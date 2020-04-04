@@ -31,7 +31,7 @@ void pinPull(int chanel, int pinNumber, int set);           // set DOWN/UP/FREE
 
 void digitalWrite(int chanel, int pinNumber, int set);      // set LOW/HIGH
 int digitalRead(int chanel, int pinNumber);                 // read LOW/HIGH
-int analogRead(int pinNumber);
+int analogRead(int chanel, int pinNumber);
 
 void setDA();                                               // sets the DA converter
 void DA (int chanel, int value);                            // sends value to DA converter

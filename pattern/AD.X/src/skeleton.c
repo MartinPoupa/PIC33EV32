@@ -14,17 +14,18 @@ void  main() {
 
     //RA0 je analog in, zbytek dig out
 
-    pinMode(A, 2, INPUT);
-    pinAD(A, 2, ANALOG);
-
-    pinMode(A, 4, INPUT);
-    pinAD(A, 4, ANALOG);
 
 
 
     //PORTB jako vystupni, RB2 jako vstupni
     TRISB = 0x0004;
     ANSELB = 0x0000;
+    pinMode(B, 0, INPUT);
+    pinAD(B, 0, ANALOG);
+
+    pinMode(B, 1, INPUT);
+    pinAD(B, 1, ANALOG);
+
 
     //Nastaveni T2
     PR2 = ftoval(1, 200);
@@ -52,14 +53,12 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     //Vynuluje interrupt flag
     IFS0bits.T2IF = 0;
     if(abc == 1){
-        AD1CHS0 = 0x0018;
         abc = 0;
     }
     else{
-        AD1CHS0 = 0x0020;
         abc = 1;
     }
-    AD1CON1bits.SAMP = 0;
+    analogRead(B, abc);
 }
 
 void __attribute__((interrupt, shadow, auto_psv)) _U2TXInterrupt(void) {

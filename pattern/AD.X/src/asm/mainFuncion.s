@@ -140,8 +140,15 @@ endDigitalRead:         MOV #0x000F, W2
                     return
 
                     .global _analogRead              ; void analogRead(int);
-_analogRead:
+_analogRead:            BTSC W0, #15
+                            GOTO nullAnalogRead
+                                MOV #2, W2
+                                ADD W2, W1, W1
+                                MOV W1, AD1CHS0
 
+                                GOTO endAnalogRead
+nullAnalogRead:                 MOV W1, AD1CHS0
+endAnalogRead:          BCLR AD1CON1, #SAMP
                     return
 
 
