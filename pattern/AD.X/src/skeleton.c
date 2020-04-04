@@ -59,6 +59,15 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
         abc = 1;
     }
     analogRead(B, abc);
+        float voltage = adcGetVoltage(analogRead(B, abc));
+        U2TXREG = (int)voltage + 48;
+        U2TXREG = '.';
+        U2TXREG = (int)(voltage*10)-(((int)voltage)*10) + 48;
+        U2TXREG = (int)(voltage*100)-((int)(voltage*10)*10) + 48;
+        U2TXREG = ' ';
+        U2TXREG = '\n';
+
+        IEC1bits.U2TXIE = 0x01;
 }
 
 void __attribute__((interrupt, shadow, auto_psv)) _U2TXInterrupt(void) {
@@ -72,15 +81,15 @@ void __attribute__((interrupt, shadow, auto_psv)) _AD1Interrupt(void) {
     //Vynuluje interrupt flag
     IFS0bits.AD1IF = 0;
 
-    float voltage = adcGetVoltage(ADC1BUF0);
-    U2TXREG = (int)voltage + 48;
-    U2TXREG = '.';
-    U2TXREG = (int)(voltage*10)-(((int)voltage)*10) + 48;
-    U2TXREG = (int)(voltage*100)-((int)(voltage*10)*10) + 48;
-    U2TXREG = ' ';
-    U2TXREG = '\n';
+    //float voltage = adcGetVoltage(ADC1BUF0);
+    //U2TXREG = (int)voltage + 48;
+    //U2TXREG = '.';
+    //U2TXREG = (int)(voltage*10)-(((int)voltage)*10) + 48;
+    //U2TXREG = (int)(voltage*100)-((int)(voltage*10)*10) + 48;
+    //U2TXREG = ' ';
+    //U2TXREG = '\n';
 
-    IEC1bits.U2TXIE = 0x01;
+    //IEC1bits.U2TXIE = 0x01;
 
 
 }
