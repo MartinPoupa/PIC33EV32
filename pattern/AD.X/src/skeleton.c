@@ -76,8 +76,9 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
         delay(10);
         IEC1bits.U2TXIE = 0x01;
         U2TXREG = ' ';
-        U2TXREG = '\n';
         U2TXREG = (char)(13);
+        U2TXREG = '\n';
+        
         IEC1bits.U2TXIE = 0x01;
 }
 
