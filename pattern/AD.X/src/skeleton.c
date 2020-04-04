@@ -27,10 +27,7 @@ void  main() {
     pinAD(B, 1, ANALOG);
 
 
-    //Nastaveni T2
-    PR2 = ftoval(1, 200);
-    //Delicka 1, citac zapnut
-    T2CON = 0x8030;
+    FrequencyT2(1000);
 
     //Inicializace
     init();
@@ -38,8 +35,7 @@ void  main() {
     AD1CON1 = 0x8404;
     AD1CHS0 = 0x0020;
 
-    //Povoleni preruseni
-    IEC0bits.T2IE = 0x01;
+    //Povoleni preruseni 
 
     INTCON2bits.GIE = 0x0001;
 
