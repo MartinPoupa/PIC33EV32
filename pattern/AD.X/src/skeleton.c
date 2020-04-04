@@ -30,7 +30,7 @@ void  main() {
     init();
 
     AD1CON1 = 0x8404;
-    AD1CHS0 = 0x0100;
+    AD1CHS0 = 0x0101;
 
     //Povoleni preruseni
     IEC0bits.T2IE = 0x01;
