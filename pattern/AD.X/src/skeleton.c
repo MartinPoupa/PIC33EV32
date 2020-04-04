@@ -32,10 +32,10 @@ void  main() {
     //Inicializace
     init();
 
-    AD1CON1 = 0x8404;
-    AD1CHS0 = 0x0020;
+    //AD1CON1 = 0x8404;
+    //AD1CHS0 = 0x0020;
 
-    //Povoleni preruseni 
+    //Povoleni preruseni
 
     INTCON2bits.GIE = 0x0001;
 

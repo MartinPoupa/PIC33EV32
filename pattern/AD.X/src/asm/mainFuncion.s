@@ -50,9 +50,12 @@ _pinAD:	                MOV #0x000F, W3
 nullChanelPinAD:          MOV ANSELA, W1
 endChanelPinAD:       BTSC W2, #0
                         GOTO nullSetPinAD
+                            MOV #0x8404, W2
+                            MOV W2, AD1CON1
                             MOV #0xFFFF, W2
                             XOR W2, W3, W3
                             AND W3, W1, W1
+
                             GOTO endSetPinAD
 nullSetPinAD:	            IOR W3, W1, W1
 endSetPinAD:	        BTSC W0, #15
