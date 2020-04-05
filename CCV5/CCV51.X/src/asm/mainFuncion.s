@@ -55,6 +55,8 @@ endChanelPinAD:       BTSC W2, #0
                             AND W3, W1, W1
                             GOTO endSetPinAD
 nullSetPinAD:	            IOR W3, W1, W1
+                            MOV #0x8404, W2
+                            MOV W2, AD1CON1
 endSetPinAD:	        BTSC W0, #15
                         GOTO nullPinAD
                             MOV W1, ANSELB
@@ -139,6 +141,20 @@ endDigitalRead:         MOV #0x000F, W2
                         AND W0, W2, W0
                     return
 
+                    .global _analogRead              ; void analogRead(int);
+_analogRead:            BTSC W0, #15
+                            GOTO nullAnalogRead
+                                MOV #2, W2
+                                ADD W2, W1, W1
+                                MOV W1, AD1CHS0
+                                GOTO endAnalogRead
+nullAnalogRead:                 MOV W1, AD1CHS0
+endAnalogRead:          BCLR AD1CON1, #SAMP
+                        MOV ADC1BUF0, W0
+                    return
+
+
+
                     .global _startInterrupts    ; void startInterrupts();
  _startInterrupts:	     BSET  INTCON2, #GIE
                     return
@@ -213,5 +229,7 @@ _DA:
                             NOP
                         BSET PORTB, #13
                     return
+
+
 
                     .end

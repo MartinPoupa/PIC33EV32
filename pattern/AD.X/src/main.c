@@ -17,10 +17,9 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
     int voltage = analogRead(A, 0);
     voltage = voltage & 3840;
-    int i = 0;
-    while( i < 8) {
+    int i;
+    for( i = 0; i < 8; i++) {
         voltage = voltage / 2;
-        i++;
     }
     PORTB = voltage;
 }
@@ -28,12 +27,12 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
 int main() {
     pinMode(A, 0, INPUT);
     pinAD(A, 0, ANALOG);
-    int j = 0;
-    while( j < 4) {
+    int j;
+    for( j = 0; j < 8; j++) {
         pinMode(B, j, OUTPUT);
         pinAD(B, j, DIGITAL);
-        j++;
     }
+
     startInterrupts();
     FrequencyT2(1000);
     while (1) {

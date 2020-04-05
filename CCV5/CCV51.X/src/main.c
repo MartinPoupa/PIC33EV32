@@ -1,127 +1,42 @@
 /*
 * File:   main.c
-* Author: Matej Kraus and Martin Poupa
+* Author: Martin Poupa
 *
 */
 
 #include "p33EV32GM002.h"
 #include "include/mainFuncion.h"
-#include "include/note.h"
 
 #pragma config FNOSC = FRC     //  pracujeme s FRC oscilatorem 7.37MHz
 #pragma config OSCIOFNC = ON   //OSC2 is general purpose digital I/O pin
 #pragma config IOL1WAY = ON    //Allow Only One reconfiguration pro PPS
 #pragma config FWDTEN = OFF	   // WDT and SWDTEN Disabled    Watchdog vypnut
 
-#define TAKT 200
+
+void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
+    IFS0bits.T2IF = 0;
+    int voltage = analogRead(A, 0);
+    voltage = voltage & 3840;
+    int i;
+    for( i = 0; i < 8; i++) {
+        voltage = voltage / 2;
+    }
+    PORTB = voltage;
+}
 
 int main() {
+    pinMode(A, 0, INPUT);
+    pinAD(A, 0, ANALOG);
+    int j;
+    for( j = 0; j < 8; j++) {
+        pinMode(B, j, OUTPUT);
+        pinAD(B, j, DIGITAL);
+    }
 
-
-    setDA();
-    FrequencyT2(500);
-    DA(A, 0);
     startInterrupts();
-
-
-
+    FrequencyT2(1000);
     while (1) {
-        note( C1 ,TAKT * 3);
-
-        note( A0 ,TAKT * 3);
-
-        note( F0 ,TAKT * 3);
-
-        note( C0 ,TAKT * 3);
-
-        note( D0 ,TAKT);
-        note( E0 ,TAKT);
-        note( F0 ,TAKT);
-
-        note( D0 ,TAKT * 2);
-        note( F0 ,TAKT);
-
-        note( C0 ,TAKT * 3);
-
-        note( C0 ,TAKT * 3);
-
-        note( D0 ,TAKT * 3);
-
-        note( BB0 ,TAKT * 3);
-
-        note( A0 ,TAKT * 3);
-
-        note( F0 ,TAKT * 3);
-
-        note( D0 ,TAKT);
-        note( E0 ,TAKT);
-        note( F0 ,TAKT);
-
-        note( G0 ,TAKT * 2);
-        note( BB0 ,TAKT);
-
-        note( G0 ,TAKT * 3);
-
-        note( G0 ,TAKT * 2);
-        note( A0 ,TAKT);
-
-        note( BB0 ,TAKT);
-        note( A0 ,TAKT);
-        note( G0 ,TAKT);
-
-
-        note( C1 ,TAKT * 2);
-        note( A0 ,TAKT );
-
-        note( G0 ,TAKT );
-        note( F0 ,TAKT * 2);
-
-        note( F0 ,TAKT * 2);
-        note( G0 ,TAKT );
-
-        note( A0 ,TAKT * 2);
-        note( F0 ,TAKT );
-
-        note( D0 ,TAKT * 2);
-        note( F0 ,TAKT );
-
-        note( D0 ,TAKT);
-        note( C0 ,TAKT * 2);
-
-        note( C0 ,TAKT * 2 );
-        note( C0 ,TAKT);
-
-
-        note( F0 ,TAKT * 2);
-        note( A0 ,TAKT);
-
-        note( G0 ,TAKT);
-        stopInterrupts();
-        DA(A, 0);
-        delay (TAKT * 2);
-        startInterrupts();
-
-        note( F0 ,TAKT * 2);
-        note( A0 ,TAKT);
-
-        note( G0 ,TAKT);
-        note( A0 ,TAKT);
-        note( BB0 ,TAKT);
-
-        note( B0 ,TAKT);
-        note( A0 ,TAKT);
-        note( F0 ,TAKT);
-
-        note( G0 ,TAKT * 2);
-        note( C0 ,TAKT);
-
-        note( F0 ,TAKT * 3);
-
-        stopInterrupts();
-        DA(A, 0);
-        delay (10000);
-        startInterrupts();
-
+        delay(1);
     }
     return 0;
 }

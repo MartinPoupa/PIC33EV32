@@ -7,7 +7,7 @@ Command:
   -p33EV32GM002 \
   --mdfp=/Applications/microchip/mplabx/v5.30/packs/Microchip/dsPIC33EV-GM-00X-10X_DFP/1.1.28/xc16 \
   -o \
-  dist/default/production/AD.X.production.elf \
+  dist/default/production/CCV51.X.production.elf \
   -L/Applications/microchip/xc16/v1.50/bin/bin/.. \
   -L/Applications/microchip/mplabx/v5.30/packs/Microchip/dsPIC33EV-GM-00X-10X_DFP/1.1.28/xc16/bin/../support/dsPIC33E/gld \
   -L/Applications/microchip/xc16/v1.50/bin/bin/../../lib \
@@ -18,8 +18,8 @@ Command:
   -L/Applications/microchip/xc16/v1.50/bin/bin/../../support/dsPIC33C/gld \
   -L/Applications/microchip/xc16/v1.50/bin/bin/../../support/dsPIC33E/gld \
   -L/Applications/microchip/xc16/v1.50/bin/bin/../../support/dsPIC33F/gld \
-  build/default/production/src/asm/mainFuncion.o \
   build/default/production/src/main.o \
+  build/default/production/src/asm/mainFuncion.o \
   --local-stack \
   --defsym=__MPLAB_BUILD=1 \
   -Tp33EV32GM002.gld.00 \
@@ -34,7 +34,7 @@ Command:
   --stackguard=16 \
   --no-force-link \
   --smart-io \
-  -Map=dist/default/production/AD.X.production.map \
+  -Map=dist/default/production/CCV51.X.production.map \
   --report-mem \
   --memorysummary \
   dist/default/production/memoryfile.xml \
@@ -169,8 +169,8 @@ FALTREG          0x0057c4           0x000002
 
 Linker script and memory map
 
-LOAD build/default/production/src/asm/mainFuncion.o
 LOAD build/default/production/src/main.o
+LOAD build/default/production/src/asm/mainFuncion.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD p33EV32GM002
 LOAD /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libfx-elf.a
@@ -281,19 +281,19 @@ __FALTREG
 
 .debug_info       0x000000        0x5e7
  *(.debug_info)
- .debug_info      0x000000         0x9e build/default/production/src/asm/mainFuncion.o
- .debug_info      0x00009e        0x549 build/default/production/src/main.o
+ .debug_info      0x000000        0x549 build/default/production/src/main.o
+ .debug_info      0x000549         0x9e build/default/production/src/asm/mainFuncion.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000         0xe6
  *(.debug_abbrev)
- .debug_abbrev    0x000000         0x14 build/default/production/src/asm/mainFuncion.o
- .debug_abbrev    0x000014         0xd2 build/default/production/src/main.o
+ .debug_abbrev    0x000000         0xd2 build/default/production/src/main.o
+ .debug_abbrev    0x0000d2         0x14 build/default/production/src/asm/mainFuncion.o
 
 .debug_line       0x000000        0x258
  *(.debug_line)
- .debug_line      0x000000         0xf9 build/default/production/src/asm/mainFuncion.o
- .debug_line      0x0000f9        0x15f build/default/production/src/main.o
+ .debug_line      0x000000        0x15f build/default/production/src/main.o
+ .debug_line      0x00015f         0xf9 build/default/production/src/asm/mainFuncion.o
 
 .debug_frame      0x000000         0x7c
  *(.debug_frame)
@@ -321,9 +321,9 @@ __FALTREG
 .debug_aranges    0x000000         0x30
  *(.debug_aranges)
  .debug_aranges
-                  0x000000         0x18 build/default/production/src/asm/mainFuncion.o
+                  0x000000         0x18 build/default/production/src/main.o
  .debug_aranges
-                  0x000018         0x18 build/default/production/src/main.o
+                  0x000018         0x18 build/default/production/src/asm/mainFuncion.o
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -1431,7 +1431,7 @@ LOAD /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a
 LOAD /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a
 LOAD /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-c-elf.a
 END GROUP
-OUTPUT(dist/default/production/AD.X.production.elf elf32-pic30)
+OUTPUT(dist/default/production/CCV51.X.production.elf elf32-pic30)
 LOAD default_isr
 
 .debug_pubtypes
