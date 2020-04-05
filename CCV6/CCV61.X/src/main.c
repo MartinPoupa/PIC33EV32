@@ -22,7 +22,7 @@ int main() {
     pinMode(A, 0, INPUT);
     pinAD(A, 0, ANALOG);
     setDA();
-    FrequencyT2(40000);
+    FrequencyT2(50000);
     startInterrupts();
     while (1) {
         delay(1);
