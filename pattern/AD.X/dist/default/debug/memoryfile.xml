@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <executable name="dist/default/debug/AD.X.debug.elf">
+    <memory name="data">
+      <units>bytes</units>
+      <length>4096</length>
+      <used>0</used>
+      <free>4096</free>
+    </memory>
+    <memory name="program">
+      <units>bytes</units>
+      <length>32832</length>
+      <used>2832</used>
+      <free>30000</free>
+    </memory>
+  </executable>
+</project>
