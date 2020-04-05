@@ -15,23 +15,23 @@
 
 void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
-    int voltage = analogRead(B,0);
+    int voltage = analogRead(A, 0);
     voltage = voltage & 3840;
     int i = 0;
     while( i < 8) {
         voltage = voltage / 2;
         i++;
     }
-    PORTA = voltage;
+    PORTB = voltage;
 }
 
 int main() {
-    pinMode(B, 0, INPUT);
-    pinAD(B, 0, ANALOG);
+    pinMode(A, 0, INPUT);
+    pinAD(A, 0, ANALOG);
     int j = 0;
     while( j < 4) {
-        pinMode(A, j, OUTPUT);
-        pinAD(A, j, DIGITAL);
+        pinMode(B, j, OUTPUT);
+        pinAD(B, j, DIGITAL);
         j++;
     }
     startInterrupts();
