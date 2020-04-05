@@ -15,26 +15,29 @@
 
 void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
-
-    //Zacne se prevod
-    AD1CON1bits.SAMP = 0;
-
-}
-
-void __attribute__((interrupt, shadow, auto_psv)) _AD1Interrupt(void) {
-    IFS0bits.AD1IF = 0;
-
-    float voltage = adcGetVoltage(ADC1BUF0);
-
+    int voltage = analogRead(B,0);
+    voltage = voltage & 3840;
+    int i = 0;
+    while( i < 8) {
+        voltage = voltage / 2;
+        i++;
+    }
+    PORTA = voltage;
 }
 
 int main() {
-FrequencyT2(100);
-AD1CON1 = 0x8404;
-IEC0bits.AD1IE = 1;
-
+    pinMode(B, 0, INPUT);
+    pinAD(B, 0, ANALOG);
+    int j = 0;
+    while( j < 4) {
+        pinMode(A, j, OUTPUT);
+        pinAD(A, j, DIGITAL);
+        j++;
+    }
+    startInterrupts();
+    FrequencyT2(1000);
     while (1) {
-
+        delay(1);
     }
     return 0;
 }
