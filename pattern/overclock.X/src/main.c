@@ -27,15 +27,17 @@ int main() {
     pinMode(B, 4, OUTPUT);
     pinAD(B, 4, DIGITAL);
 
-    PR2 = 1;
-    T2CON = 0x8000;
 
-    IEC0bits.T2IE = 1;
-    IFS0bits.T2IF = 0;
 
     __builtin_write_OSCCONL(OSCCON & 0xBF) ;
     RPOR1 = 0x0031;
     __builtin_write_OSCCONL(OSCCON |  0x40) ;
+
+    PR2 = 1000;
+    T2CON = 0x8000;
+
+    IEC0bits.T2IE = 1;
+    IFS0bits.T2IF = 0;
 
     REFOCON = 0x8000;
 
@@ -57,7 +59,7 @@ while (OSCCONbits.LOCK != 1){
 }
 
     while (1) {
-        delay(1);
+        asm(" btg PORTB, #0 ");
     }
     return 0;
 }
