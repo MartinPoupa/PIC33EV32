@@ -27,11 +27,11 @@ int main() {
     pinMode(B, 4, OUTPUT);
     pinAD(B, 4, DIGITAL);
 
-    //PR2 = 2;
-    //T2CON = 0x8000;
+    PR2 = 4;
+    T2CON = 0x8000;
 
-    //IEC0bits.T2IE = 1;
-    //IFS0bits.T2IF = 0;
+    IEC0bits.T2IE = 1;
+    IFS0bits.T2IF = 0;
 
     __builtin_write_OSCCONL(OSCCON & 0xBF) ;
     RPOR1 = 0x0031;
@@ -63,8 +63,8 @@ while (OSCCONbits.LOCK != 1){
 }
 
 
-//void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
-//    IFS0bits.T2IF = 0;
-//    asm(" btg PORTB, #1 ");
+void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
+    IFS0bits.T2IF = 0;
+    asm(" btg PORTB, #1 ");
 
-//}
+}
