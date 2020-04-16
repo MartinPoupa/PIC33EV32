@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=src/main.c src/asm/mainFuncion.s
+SOURCEFILES_QUOTED_IF_SPACED=/Users/martinpoupa/programi/spr/H7/cv74.s
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/main.o ${OBJECTDIR}/src/asm/mainFuncion.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/src/main.o.d ${OBJECTDIR}/src/asm/mainFuncion.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1409866138/cv74.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1409866138/cv74.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/src/main.o ${OBJECTDIR}/src/asm/mainFuncion.o
+OBJECTFILES=${OBJECTDIR}/_ext/1409866138/cv74.o
 
 # Source Files
-SOURCEFILES=src/main.c src/asm/mainFuncion.s
+SOURCEFILES=/Users/martinpoupa/programi/spr/H7/cv74.s
 
 
 
@@ -95,40 +95,26 @@ MP_LINKER_FILE_OPTION=,--script=p33EV32GM002.gld
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/src/main.o: src/main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/src" 
-	@${RM} ${OBJECTDIR}/src/main.o.d 
-	@${RM} ${OBJECTDIR}/src/main.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/main.c  -o ${OBJECTDIR}/src/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/src/main.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp=${DFP_DIR}/xc16
-	@${FIXDEPS} "${OBJECTDIR}/src/main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
-	
 else
-${OBJECTDIR}/src/main.o: src/main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/src" 
-	@${RM} ${OBJECTDIR}/src/main.o.d 
-	@${RM} ${OBJECTDIR}/src/main.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/main.c  -o ${OBJECTDIR}/src/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/src/main.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp=${DFP_DIR}/xc16
-	@${FIXDEPS} "${OBJECTDIR}/src/main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
-	
 endif
 
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/src/asm/mainFuncion.o: src/asm/mainFuncion.s  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/src/asm" 
-	@${RM} ${OBJECTDIR}/src/asm/mainFuncion.o.d 
-	@${RM} ${OBJECTDIR}/src/asm/mainFuncion.o 
-	${MP_CC} $(MP_EXTRA_AS_PRE)  src/asm/mainFuncion.s  -o ${OBJECTDIR}/src/asm/mainFuncion.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  -Wa,-MD,"${OBJECTDIR}/src/asm/mainFuncion.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp=${DFP_DIR}/xc16
-	@${FIXDEPS} "${OBJECTDIR}/src/asm/mainFuncion.o.d"  $(SILENT)  -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/_ext/1409866138/cv74.o: /Users/martinpoupa/programi/spr/H7/cv74.s  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1409866138" 
+	@${RM} ${OBJECTDIR}/_ext/1409866138/cv74.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1409866138/cv74.o 
+	${MP_CC} $(MP_EXTRA_AS_PRE)  /Users/martinpoupa/programi/spr/H7/cv74.s  -o ${OBJECTDIR}/_ext/1409866138/cv74.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  -Wa,-MD,"${OBJECTDIR}/_ext/1409866138/cv74.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp=${DFP_DIR}/xc16
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1409866138/cv74.o.d"  $(SILENT)  -rsi ${MP_CC_DIR}../  
 	
 else
-${OBJECTDIR}/src/asm/mainFuncion.o: src/asm/mainFuncion.s  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/src/asm" 
-	@${RM} ${OBJECTDIR}/src/asm/mainFuncion.o.d 
-	@${RM} ${OBJECTDIR}/src/asm/mainFuncion.o 
-	${MP_CC} $(MP_EXTRA_AS_PRE)  src/asm/mainFuncion.s  -o ${OBJECTDIR}/src/asm/mainFuncion.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  -Wa,-MD,"${OBJECTDIR}/src/asm/mainFuncion.o.d",--defsym=__MPLAB_BUILD=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp=${DFP_DIR}/xc16
-	@${FIXDEPS} "${OBJECTDIR}/src/asm/mainFuncion.o.d"  $(SILENT)  -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/_ext/1409866138/cv74.o: /Users/martinpoupa/programi/spr/H7/cv74.s  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1409866138" 
+	@${RM} ${OBJECTDIR}/_ext/1409866138/cv74.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1409866138/cv74.o 
+	${MP_CC} $(MP_EXTRA_AS_PRE)  /Users/martinpoupa/programi/spr/H7/cv74.s  -o ${OBJECTDIR}/_ext/1409866138/cv74.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  -Wa,-MD,"${OBJECTDIR}/_ext/1409866138/cv74.o.d",--defsym=__MPLAB_BUILD=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp=${DFP_DIR}/xc16
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1409866138/cv74.o.d"  $(SILENT)  -rsi ${MP_CC_DIR}../  
 	
 endif
 
