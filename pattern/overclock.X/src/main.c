@@ -29,14 +29,16 @@ int main() {
 
 
    CLKDIVbits.FRCDIV =  0;
-   PLLFBD=70;
-   CLKDIVbits.PLLPOST=0;
-   CLKDIVbits.PLLPRE=0;
+   PLLFBD=130;
+   CLKDIVbits.PLLPOST=1;
+   CLKDIVbits.PLLPRE=1;
 
    digitalWrite(B, 0, HIGH);
-
+  INTCON2bits.GIE = 0;
    __builtin_write_OSCCONH(0x01);
    __builtin_write_OSCCONL(OSCCON | 0x01);
+
+   INTCON2bits.GIE = 1;
    digitalWrite(B, 1, HIGH);
 
 
