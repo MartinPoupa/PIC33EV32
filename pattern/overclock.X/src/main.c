@@ -24,24 +24,29 @@ int main() {
     pinAD(B, 1, DIGITAL);
     pinMode(B, 2, OUTPUT);
     pinAD(B, 2, DIGITAL);
-    
+    pinMode(B, 3, OUTPUT);
+    pinAD(B, 3, DIGITAL);
+
+
    CLKDIVbits.FRCDIV =  0;
    PLLFBD=79;
    CLKDIVbits.PLLPOST=1;
    CLKDIVbits.PLLPRE=1;
 
+   digitalWrite(B, 0, HIGH);
+
    __builtin_write_OSCCONH(0x01);
    __builtin_write_OSCCONL(OSCCON | 0x01);
-   digitalWrite(A,0, HIGH);
+   digitalWrite(B, 1, HIGH);
 
 
 while (OSCCONbits.LOCK != 1){
     delay(1);
-};
-digitalWrite(A,1, HIGH);
+}
+digitalWrite(B, 2, HIGH);
 
     while (1) {
-        asm(" btg PORTB, #2 ");
+        asm(" btg PORTB, #3 ");
     }
     return 0;
 }
