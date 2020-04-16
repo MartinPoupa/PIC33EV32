@@ -37,7 +37,7 @@ int main() {
 
     CLKDIV = 0;
    //CLKDIVbits.FRCDIV =  0;
-   PLLFBD=40;
+   PLLFBD=60;
    //CLKDIVbits.PLLPOST=0;
    //CLKDIVbits.PLLPRE=0;
 
