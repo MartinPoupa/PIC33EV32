@@ -29,11 +29,11 @@ int main() {
     pinMode(B, 4, OUTPUT);
     pinAD(B, 4, DIGITAL);
 
-    __builtin_write_OSCCONL(OSCCON & 0xBF)    ;
+    __builtin_write_OSCCONL(OSCCON & 0xBF) ;
+    RPOR1 = 0x0031;
+    __builtin_write_OSCCONL(OSCCON |  0x40) ;
+
     REFOCON = 0x8000;
-    __builtin_write_OSCCONL(OSCCON |  0x40)    ;
-
-
 
     CLKDIV = 0;
    //CLKDIVbits.FRCDIV =  0;
