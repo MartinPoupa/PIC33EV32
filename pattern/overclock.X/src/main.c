@@ -18,16 +18,20 @@
 
 
 int main() {
+
     pinMode(B, 0, OUTPUT);
     pinAD(B, 0, DIGITAL);
     pinMode(B, 1, OUTPUT);
     pinAD(B, 1, DIGITAL);
-    pinMode(B, 2, OUTPUT);
-    pinAD(B, 2, DIGITAL);
-    pinMode(B, 3, OUTPUT);
-    pinAD(B, 3, DIGITAL);
+
     pinMode(B, 4, OUTPUT);
     pinAD(B, 4, DIGITAL);
+
+    PR2 = 2;
+    T2CON = 0x8000;
+
+    IEC0bits.T2IE = 1;
+    IFS0bits.T2IF = 0;
 
     __builtin_write_OSCCONL(OSCCON & 0xBF) ;
     RPOR1 = 0x0031;
@@ -41,23 +45,26 @@ int main() {
    //CLKDIVbits.PLLPOST=0;
    //CLKDIVbits.PLLPRE=0;
 
-   digitalWrite(B, 0, HIGH);
-
   INTCON2bits.GIE = 0;
    __builtin_write_OSCCONH(0x01);
    __builtin_write_OSCCONL(OSCCON | 0x01);
 
    INTCON2bits.GIE = 1;
-   digitalWrite(B, 1, HIGH);
 
 
 while (OSCCONbits.LOCK != 1){
     delay(1);
 }
-digitalWrite(B, 2, HIGH);
 
     while (1) {
-        asm(" btg PORTB, #3 ");
+        asm(" btg PORTB, #0 ");
     }
     return 0;
+}
+
+
+void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
+    IFS0bits.T2IF = 0;
+    asm(" btg PORTB, #1 ");
+
 }
