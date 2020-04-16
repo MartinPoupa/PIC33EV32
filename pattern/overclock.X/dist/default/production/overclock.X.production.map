@@ -18,7 +18,8 @@ Command:
   -L/Applications/microchip/xc16/v1.50/bin/bin/../../support/dsPIC33C/gld \
   -L/Applications/microchip/xc16/v1.50/bin/bin/../../support/dsPIC33E/gld \
   -L/Applications/microchip/xc16/v1.50/bin/bin/../../support/dsPIC33F/gld \
-  build/default/production/_ext/1409866138/cv712.o \
+  build/default/production/src/main.o \
+  build/default/production/src/asm/mainFuncion.o \
   --local-stack \
   --defsym=__MPLAB_BUILD=1 \
   -Tp33EV32GM002.gld.00 \
@@ -53,6 +54,10 @@ Archive member included because of file (symbol)
                               /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o) (__data_init_extended)
 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt_start_mode_normalep.Leo)
                               (__crt_start_mode_normal)
+/Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(divsi3.epeo)
+                              build/default/production/src/main.o (___divsi3)
+/Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(udivsi3.epeo)
+                              /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(divsi3.epeo) (___udivsi3)
 
 
 xc16-ld 1.50 (B)
@@ -65,20 +70,18 @@ Default Scalar Model: Small
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                        0x200                0xb8           0x114  (276)
-.text                        0x2b8                0xb2           0x10b  (267)
-.dinit                       0x36a                 0x8             0xc  (12)
+.text                        0x200               0x13e           0x1dd  (477)
+.text                        0x33e               0x2f2           0x46b  (1131)
 
-                 Total "program" memory used (bytes):          0x22b  (555) 1%
+                 Total "program" memory used (bytes):          0x648  (1608) 4%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x1000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.bss                        0x1000                   0            0x32  (50)
 
-                 Total "data" memory used (bytes):           0x32  (50) 1%
+                 Total "data" memory used (bytes):              0  (0) 
 
 
 Dynamic Memory Usage
@@ -86,26 +89,58 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                       0x1032                               0xfce  (4046)
+stack                       0x1000                              0x1000  (4096)
 
-                 Maximum dynamic memory (bytes):          0xfce  (4046)
+                 Maximum dynamic memory (bytes):         0x1000  (4096)
+
+Info: Project is using a large data memory model when small data memory model is sufficient.
 
 
 External Symbols in Program Memory (by address):
 
-                  0x000200                  __data_init_extended
-                  0x000200                  __data_init
-                  0x0002b2                  __DefaultInterrupt
-                  0x0002b8                  __reset
-                  0x00034a                  __StackError
+                  0x000200                  __resetPRI
+                  0x00023c                  __psv_init
+                  0x000248                  __data_init
+                  0x000248                  __data_init_extended
+                  0x0002fa                  __DefaultInterrupt
+                  0x000300                  ___divsi3
+                  0x00031e                  ___udivsi3
+                  0x00033e                  _delay
+                  0x00034a                  _pinMode
+                  0x000386                  _pinAD
+                  0x0003c6                  _pinPull
+                  0x000412                  _digitalWrite
+                  0x00044e                  _digitalRead
+                  0x00046a                  _analogRead
+                  0x000482                  _startInterrupts
+                  0x000486                  _stopInterrupts
+                  0x00048a                  _setDA
+                  0x0004d6                  _DA
+                  0x0004ec                  _FrequencyT2
+                  0x00055c                  _main
 
 External Symbols in Program Memory (by name):
 
-                  0x0002b2                  __DefaultInterrupt
-                  0x00034a                  __StackError
-                  0x000200                  __data_init
-                  0x000200                  __data_init_extended
-                  0x0002b8                  __reset
+                  0x0004d6                  _DA
+                  0x0004ec                  _FrequencyT2
+                  0x0002fa                  __DefaultInterrupt
+                  0x000300                  ___divsi3
+                  0x00031e                  ___udivsi3
+                  0x000248                  __data_init
+                  0x000248                  __data_init_extended
+                  0x00023c                  __psv_init
+                  0x000200                  __resetPRI
+                  0x00046a                  _analogRead
+                  0x00033e                  _delay
+                  0x00044e                  _digitalRead
+                  0x000412                  _digitalWrite
+                  0x00055c                  _main
+                  0x000386                  _pinAD
+                  0x00034a                  _pinMode
+                  0x0003c6                  _pinPull
+                  0x00048a                  _setDA
+                  0x000482                  _startInterrupts
+                  0x000486                  _stopInterrupts
 
 Memory Configuration
 
@@ -132,7 +167,8 @@ FALTREG          0x0057c4           0x000002
 
 Linker script and memory map
 
-LOAD build/default/production/_ext/1409866138/cv712.o
+LOAD build/default/production/src/main.o
+LOAD build/default/production/src/asm/mainFuncion.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD p33EV32GM002
 LOAD /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libfx-elf.a
@@ -159,29 +195,37 @@ LOAD /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libfx-elf.a
                     0x1800                  __YDATA_BASE = 0x1800
 
 .reset            0x000000          0x4
-                  0x000000          0x2 SHORT 0x2b8 ABSOLUTE (__reset)
+                  0x000000          0x2 SHORT 0x200 ABSOLUTE (__reset)
                   0x000001          0x2 SHORT 0x4
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000200         0xb8
+.text             0x000200        0x13e
  *(.init)
- .init            0x000200         0xb2 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
-                  0x000200                  __data_init_extended
-                  0x000200                  __data_init
+ .init            0x000200         0x48 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
+                  0x000200                  __reset
+                  0x000200                  __resetPRI
+                  0x00023c                  __psv_init
+ .init            0x000248         0xb2 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
+                  0x000248                  __data_init_extended
+                  0x000248                  __data_init
  *(.user_init)
  *(.handle)
  *(.isr*)
- .isr             0x0002b2          0x4 default_isr
-                  0x0002b2                  __DefaultInterrupt
+ .isr             0x0002fa          0x4 default_isr
+                  0x0002fa                  __DefaultInterrupt
  *(.libc)
  *(.libm)
  *(.libdsp)
  *(.lib*)
  .libpic30_crt_start_mode
-                  0x0002b6          0x2 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt_start_mode_normalep.Leo)
-                  0x0002b6                  __crt_start_mode_normal
-                  0x0002b6                  __crt_start_mode
+                  0x0002fe          0x2 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt_start_mode_normalep.Leo)
+                  0x0002fe                  __crt_start_mode_normal
+                  0x0002fe                  __crt_start_mode
+ .libm.divsi3     0x000300         0x1e /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(divsi3.epeo)
+                  0x000300                  ___divsi3
+ .libm.udivsi3    0x00031e         0x20 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(udivsi3.epeo)
+                  0x00031e                  ___udivsi3
 
 usercode
  *(usercode)
@@ -192,17 +236,14 @@ __FSEC
 __FBSLIM
  *(__FBSLIM.sec*)
 
-__FOSCSEL         0x005798          0x2
+__FOSCSEL
  *(__FOSCSEL.sec*)
- __FOSCSEL.sec    0x005798          0x2 build/default/production/_ext/1409866138/cv712.o
 
-__FOSC            0x00579c          0x2
+__FOSC
  *(__FOSC.sec*)
- __FOSC.sec       0x00579c          0x2 build/default/production/_ext/1409866138/cv712.o
 
-__FWDT            0x0057a0          0x2
+__FWDT
  *(__FWDT.sec*)
- __FWDT.sec       0x0057a0          0x2 build/default/production/_ext/1409866138/cv712.o
 
 __FPOR
  *(__FPOR.sec*)
@@ -222,9 +263,8 @@ __FDMTCNTL
 __FDMTCNTH
  *(__FDMTCNTH.sec*)
 
-__FDMT            0x0057bc          0x2
+__FDMT
  *(__FDMT.sec*)
- __FDMT.sec       0x0057bc          0x2 build/default/production/_ext/1409866138/cv712.o
 
 __FDEVOPT
  *(__FDEVOPT.sec*)
@@ -235,24 +275,29 @@ __FALTREG
 .comment
  *(.comment)
 
-.debug_info       0x000000         0xba
+.debug_info       0x000000        0x888
  *(.debug_info)
- .debug_info      0x000000         0xba build/default/production/_ext/1409866138/cv712.o
+ .debug_info      0x000000        0x7e3 build/default/production/src/main.o
+ .debug_info      0x0007e3         0xa5 build/default/production/src/asm/mainFuncion.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000         0x14
+.debug_abbrev     0x000000         0xff
  *(.debug_abbrev)
- .debug_abbrev    0x000000         0x14 build/default/production/_ext/1409866138/cv712.o
+ .debug_abbrev    0x000000         0xeb build/default/production/src/main.o
+ .debug_abbrev    0x0000eb         0x14 build/default/production/src/asm/mainFuncion.o
 
-.debug_line       0x000000         0xb0
+.debug_line       0x000000        0x253
  *(.debug_line)
- .debug_line      0x000000         0xb0 build/default/production/_ext/1409866138/cv712.o
+ .debug_line      0x000000        0x15a build/default/production/src/main.o
+ .debug_line      0x00015a         0xf9 build/default/production/src/asm/mainFuncion.o
 
-.debug_frame
+.debug_frame      0x000000         0x48
  *(.debug_frame)
+ .debug_frame     0x000000         0x48 build/default/production/src/main.o
 
-.debug_str
+.debug_str        0x000000         0x29
  *(.debug_str)
+ .debug_str       0x000000         0x29 build/default/production/src/main.o
 
 .debug_loc
  *(.debug_loc)
@@ -261,15 +306,20 @@ __FALTREG
  *(.debug_macinfo)
 
 .debug_pubnames
+                  0x000000         0x2b
  *(.debug_pubnames)
+ .debug_pubnames
+                  0x000000         0x2b build/default/production/src/main.o
 
 .debug_ranges
  *(.debug_ranges)
 
-.debug_aranges    0x000000         0x18
+.debug_aranges    0x000000         0x30
  *(.debug_aranges)
  .debug_aranges
-                  0x000000         0x18 build/default/production/_ext/1409866138/cv712.o
+                  0x000000         0x18 build/default/production/src/main.o
+ .debug_aranges
+                  0x000018         0x18 build/default/production/src/asm/mainFuncion.o
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -1379,25 +1429,49 @@ LOAD /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-c-elf.a
 END GROUP
 OUTPUT(dist/default/production/overclock.X.production.elf elf32-pic30)
 LOAD default_isr
-LOAD data_init
+
+.debug_pubtypes
+                  0x000030         0x9d
+ .debug_pubtypes
+                  0x000030         0x9d build/default/production/src/main.o
 
 __c30_signature
-                  0x000018          0x6
+                  0x0000cd         0x1e
  __c30_signature
-                  0x000018          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
+                  0x0000cd          0x6 build/default/production/src/main.o
+ __c30_signature
+                  0x0000d3          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
+ __c30_signature
+                  0x0000d9          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
+ __c30_signature
+                  0x0000df          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(divsi3.epeo)
+ __c30_signature
+                  0x0000e5          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(udivsi3.epeo)
 
-.bss                0x1000         0x32
- .bss               0x1000         0x32 build/default/production/_ext/1409866138/cv712.o
+.config_WDTWIN    0x0057a0          0x2
+ .config_WDTWIN
+                  0x0057a0          0x2 build/default/production/src/main.o
 
-.ivt._StackError
-                  0x00000a          0x2
- .ivt._StackError
-                  0x00000a          0x2 build/default/production/_ext/1409866138/cv712.o
+.config_PLLKEN    0x00579c          0x2
+ .config_PLLKEN
+                  0x00579c          0x2 build/default/production/src/main.o
 
-.text             0x0002b8         0xb2
- .text            0x0002b8         0xb2 build/default/production/_ext/1409866138/cv712.o
-                  0x0002b8                  __reset
-                  0x00034a                  __StackError
+.config_IESO      0x005798          0x2
+ .config_IESO     0x005798          0x2 build/default/production/src/main.o
 
-.dinit            0x00036a          0x8
- .dinit           0x00036a          0x8 data_init
+.text             0x00033e        0x2f2
+ .text            0x00033e        0x1ae build/default/production/src/asm/mainFuncion.o
+                  0x00033e                  _delay
+                  0x00034a                  _pinMode
+                  0x000386                  _pinAD
+                  0x0003c6                  _pinPull
+                  0x000412                  _digitalWrite
+                  0x00044e                  _digitalRead
+                  0x00046a                  _analogRead
+                  0x000482                  _startInterrupts
+                  0x000486                  _stopInterrupts
+                  0x00048a                  _setDA
+                  0x0004d6                  _DA
+ .text            0x0004ec        0x144 build/default/production/src/main.o
+                  0x0004ec                  _FrequencyT2
+                  0x00055c                  _main

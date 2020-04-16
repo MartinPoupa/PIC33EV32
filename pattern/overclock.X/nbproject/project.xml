@@ -6,7 +6,7 @@
             <name>overclock</name>
             <creation-uuid>6ef374a7-2479-40a2-bff3-986f1523c220</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions/>
+            <c-extensions>c</c-extensions>
             <cpp-extensions/>
             <header-extensions/>
             <asminc-extensions/>
