@@ -29,9 +29,9 @@ int main() {
 
 
    CLKDIVbits.FRCDIV =  0;
-   PLLFBD=130;
-   CLKDIVbits.PLLPOST=1;
-   CLKDIVbits.PLLPRE=1;
+   PLLFBD=200;
+   CLKDIVbits.PLLPOST=0;
+   CLKDIVbits.PLLPRE=0;
 
    digitalWrite(B, 0, HIGH);
   INTCON2bits.GIE = 0;
