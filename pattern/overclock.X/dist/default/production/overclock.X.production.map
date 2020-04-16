@@ -71,9 +71,9 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x13e           0x1dd  (477)
-.text                        0x33e               0x2cc           0x432  (1074)
+.text                        0x33e               0x2c8           0x42c  (1068)
 
-                 Total "program" memory used (bytes):          0x60f  (1551) 4%
+                 Total "program" memory used (bytes):          0x609  (1545) 4%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x1000]
@@ -1459,7 +1459,7 @@ __c30_signature
 .config_IESO      0x005798          0x2
  .config_IESO     0x005798          0x2 build/default/production/src/main.o
 
-.text             0x00033e        0x2cc
+.text             0x00033e        0x2c8
  .text            0x00033e        0x1ae build/default/production/src/asm/mainFuncion.o
                   0x00033e                  _delay
                   0x00034a                  _pinMode
@@ -1472,6 +1472,6 @@ __c30_signature
                   0x000486                  _stopInterrupts
                   0x00048a                  _setDA
                   0x0004d6                  _DA
- .text            0x0004ec        0x11e build/default/production/src/main.o
+ .text            0x0004ec        0x11a build/default/production/src/main.o
                   0x0004ec                  _FrequencyT2
                   0x00055c                  _main
