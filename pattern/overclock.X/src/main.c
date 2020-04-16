@@ -26,14 +26,23 @@ int main() {
     pinAD(B, 2, DIGITAL);
     pinMode(B, 3, OUTPUT);
     pinAD(B, 3, DIGITAL);
+    pinMode(B, 4, OUTPUT);
+    pinAD(B, 4, DIGITAL);
+
+    __builtin_write_OSCCONL(OSCCON & 0xBF)    ;
+    REFOCON = 0x8000;
+    __builtin_write_OSCCONL(OSCCON |  0x40)    ;
 
 
-   CLKDIVbits.FRCDIV =  0;
-   PLLFBD=79;
-   CLKDIVbits.PLLPOST=1;
-   CLKDIVbits.PLLPRE=1;
+
+    CLKDIV = 0;
+   //CLKDIVbits.FRCDIV =  0;
+   PLLFBD=58;
+   //CLKDIVbits.PLLPOST=0;
+   //CLKDIVbits.PLLPRE=0;
 
    digitalWrite(B, 0, HIGH);
+
   INTCON2bits.GIE = 0;
    __builtin_write_OSCCONH(0x01);
    __builtin_write_OSCCONL(OSCCON | 0x01);
