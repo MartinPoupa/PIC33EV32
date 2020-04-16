@@ -29,7 +29,7 @@ int main() {
 
 
    CLKDIVbits.FRCDIV =  0;
-   PLLFBD=10;
+   PLLFBD=50;
    CLKDIVbits.PLLPOST=0;
    CLKDIVbits.PLLPRE=0;
 
