@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=/Users/martinpoupa/programi/spr/H7/cv74.s
+SOURCEFILES_QUOTED_IF_SPACED=/Users/martinpoupa/programi/spr/H7/cv712.s
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1409866138/cv74.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1409866138/cv74.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1409866138/cv712.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1409866138/cv712.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1409866138/cv74.o
+OBJECTFILES=${OBJECTDIR}/_ext/1409866138/cv712.o
 
 # Source Files
-SOURCEFILES=/Users/martinpoupa/programi/spr/H7/cv74.s
+SOURCEFILES=/Users/martinpoupa/programi/spr/H7/cv712.s
 
 
 
@@ -101,20 +101,20 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/_ext/1409866138/cv74.o: /Users/martinpoupa/programi/spr/H7/cv74.s  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/_ext/1409866138/cv712.o: /Users/martinpoupa/programi/spr/H7/cv712.s  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1409866138" 
-	@${RM} ${OBJECTDIR}/_ext/1409866138/cv74.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1409866138/cv74.o 
-	${MP_CC} $(MP_EXTRA_AS_PRE)  /Users/martinpoupa/programi/spr/H7/cv74.s  -o ${OBJECTDIR}/_ext/1409866138/cv74.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  -Wa,-MD,"${OBJECTDIR}/_ext/1409866138/cv74.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp=${DFP_DIR}/xc16
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1409866138/cv74.o.d"  $(SILENT)  -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/_ext/1409866138/cv712.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1409866138/cv712.o 
+	${MP_CC} $(MP_EXTRA_AS_PRE)  /Users/martinpoupa/programi/spr/H7/cv712.s  -o ${OBJECTDIR}/_ext/1409866138/cv712.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  -Wa,-MD,"${OBJECTDIR}/_ext/1409866138/cv712.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp=${DFP_DIR}/xc16
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1409866138/cv712.o.d"  $(SILENT)  -rsi ${MP_CC_DIR}../  
 	
 else
-${OBJECTDIR}/_ext/1409866138/cv74.o: /Users/martinpoupa/programi/spr/H7/cv74.s  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/_ext/1409866138/cv712.o: /Users/martinpoupa/programi/spr/H7/cv712.s  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1409866138" 
-	@${RM} ${OBJECTDIR}/_ext/1409866138/cv74.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1409866138/cv74.o 
-	${MP_CC} $(MP_EXTRA_AS_PRE)  /Users/martinpoupa/programi/spr/H7/cv74.s  -o ${OBJECTDIR}/_ext/1409866138/cv74.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  -Wa,-MD,"${OBJECTDIR}/_ext/1409866138/cv74.o.d",--defsym=__MPLAB_BUILD=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp=${DFP_DIR}/xc16
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1409866138/cv74.o.d"  $(SILENT)  -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/_ext/1409866138/cv712.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1409866138/cv712.o 
+	${MP_CC} $(MP_EXTRA_AS_PRE)  /Users/martinpoupa/programi/spr/H7/cv712.s  -o ${OBJECTDIR}/_ext/1409866138/cv712.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  -Wa,-MD,"${OBJECTDIR}/_ext/1409866138/cv712.o.d",--defsym=__MPLAB_BUILD=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp=${DFP_DIR}/xc16
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1409866138/cv712.o.d"  $(SILENT)  -rsi ${MP_CC_DIR}../  
 	
 endif
 

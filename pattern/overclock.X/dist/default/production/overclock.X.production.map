@@ -18,7 +18,7 @@ Command:
   -L/Applications/microchip/xc16/v1.50/bin/bin/../../support/dsPIC33C/gld \
   -L/Applications/microchip/xc16/v1.50/bin/bin/../../support/dsPIC33E/gld \
   -L/Applications/microchip/xc16/v1.50/bin/bin/../../support/dsPIC33F/gld \
-  build/default/production/_ext/1409866138/cv74.o \
+  build/default/production/_ext/1409866138/cv712.o \
   --local-stack \
   --defsym=__MPLAB_BUILD=1 \
   -Tp33EV32GM002.gld.00 \
@@ -66,11 +66,10 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0xb8           0x114  (276)
-const                        0x2b8                 0x6             0x9  (9)
-.text                        0x2be                0xec           0x162  (354)
-.dinit                       0x3aa                 0x8             0xc  (12)
+.text                        0x2b8                0xb2           0x10b  (267)
+.dinit                       0x36a                 0x8             0xc  (12)
 
-                 Total "program" memory used (bytes):          0x28b  (651) 1%
+                 Total "program" memory used (bytes):          0x22b  (555) 1%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x1000]
@@ -97,16 +96,16 @@ External Symbols in Program Memory (by address):
                   0x000200                  __data_init_extended
                   0x000200                  __data_init
                   0x0002b2                  __DefaultInterrupt
-                  0x0002be                  __reset
-                  0x00038a                  __StackError
+                  0x0002b8                  __reset
+                  0x00034a                  __StackError
 
 External Symbols in Program Memory (by name):
 
                   0x0002b2                  __DefaultInterrupt
-                  0x00038a                  __StackError
+                  0x00034a                  __StackError
                   0x000200                  __data_init
                   0x000200                  __data_init_extended
-                  0x0002be                  __reset
+                  0x0002b8                  __reset
 
 Memory Configuration
 
@@ -133,7 +132,7 @@ FALTREG          0x0057c4           0x000002
 
 Linker script and memory map
 
-LOAD build/default/production/_ext/1409866138/cv74.o
+LOAD build/default/production/_ext/1409866138/cv712.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD p33EV32GM002
 LOAD /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libfx-elf.a
@@ -160,7 +159,7 @@ LOAD /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libfx-elf.a
                     0x1800                  __YDATA_BASE = 0x1800
 
 .reset            0x000000          0x4
-                  0x000000          0x2 SHORT 0x2be ABSOLUTE (__reset)
+                  0x000000          0x2 SHORT 0x2b8 ABSOLUTE (__reset)
                   0x000001          0x2 SHORT 0x4
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
@@ -195,15 +194,15 @@ __FBSLIM
 
 __FOSCSEL         0x005798          0x2
  *(__FOSCSEL.sec*)
- __FOSCSEL.sec    0x005798          0x2 build/default/production/_ext/1409866138/cv74.o
+ __FOSCSEL.sec    0x005798          0x2 build/default/production/_ext/1409866138/cv712.o
 
 __FOSC            0x00579c          0x2
  *(__FOSC.sec*)
- __FOSC.sec       0x00579c          0x2 build/default/production/_ext/1409866138/cv74.o
+ __FOSC.sec       0x00579c          0x2 build/default/production/_ext/1409866138/cv712.o
 
 __FWDT            0x0057a0          0x2
  *(__FWDT.sec*)
- __FWDT.sec       0x0057a0          0x2 build/default/production/_ext/1409866138/cv74.o
+ __FWDT.sec       0x0057a0          0x2 build/default/production/_ext/1409866138/cv712.o
 
 __FPOR
  *(__FPOR.sec*)
@@ -225,7 +224,7 @@ __FDMTCNTH
 
 __FDMT            0x0057bc          0x2
  *(__FDMT.sec*)
- __FDMT.sec       0x0057bc          0x2 build/default/production/_ext/1409866138/cv74.o
+ __FDMT.sec       0x0057bc          0x2 build/default/production/_ext/1409866138/cv712.o
 
 __FDEVOPT
  *(__FDEVOPT.sec*)
@@ -236,18 +235,18 @@ __FALTREG
 .comment
  *(.comment)
 
-.debug_info       0x000000         0xb9
+.debug_info       0x000000         0xba
  *(.debug_info)
- .debug_info      0x000000         0xb9 build/default/production/_ext/1409866138/cv74.o
+ .debug_info      0x000000         0xba build/default/production/_ext/1409866138/cv712.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000         0x14
  *(.debug_abbrev)
- .debug_abbrev    0x000000         0x14 build/default/production/_ext/1409866138/cv74.o
+ .debug_abbrev    0x000000         0x14 build/default/production/_ext/1409866138/cv712.o
 
-.debug_line       0x000000         0xca
+.debug_line       0x000000         0xb0
  *(.debug_line)
- .debug_line      0x000000         0xca build/default/production/_ext/1409866138/cv74.o
+ .debug_line      0x000000         0xb0 build/default/production/_ext/1409866138/cv712.o
 
 .debug_frame
  *(.debug_frame)
@@ -270,7 +269,7 @@ __FALTREG
 .debug_aranges    0x000000         0x18
  *(.debug_aranges)
  .debug_aranges
-                  0x000000         0x18 build/default/production/_ext/1409866138/cv74.o
+                  0x000000         0x18 build/default/production/_ext/1409866138/cv712.o
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -1388,20 +1387,17 @@ __c30_signature
                   0x000018          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
 
 .bss                0x1000         0x32
- .bss               0x1000         0x32 build/default/production/_ext/1409866138/cv74.o
+ .bss               0x1000         0x32 build/default/production/_ext/1409866138/cv712.o
 
 .ivt._StackError
                   0x00000a          0x2
  .ivt._StackError
-                  0x00000a          0x2 build/default/production/_ext/1409866138/cv74.o
+                  0x00000a          0x2 build/default/production/_ext/1409866138/cv712.o
 
-const               0x82b8          0x6 load address 0x0002b8  
- const              0x82b8          0x6 build/default/production/_ext/1409866138/cv74.o
+.text             0x0002b8         0xb2
+ .text            0x0002b8         0xb2 build/default/production/_ext/1409866138/cv712.o
+                  0x0002b8                  __reset
+                  0x00034a                  __StackError
 
-.text             0x0002be         0xec
- .text            0x0002be         0xec build/default/production/_ext/1409866138/cv74.o
-                  0x0002be                  __reset
-                  0x00038a                  __StackError
-
-.dinit            0x0003aa          0x8
- .dinit           0x0003aa          0x8 data_init
+.dinit            0x00036a          0x8
+ .dinit           0x00036a          0x8 data_init
