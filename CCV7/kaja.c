@@ -25,7 +25,7 @@ int main() {
     TRISB = 0;
 
     PR2 = 14395;    //cca 1Hz
-    T2CON = 0x8000; // 256
+    T2CON = 0x8030; // 256
 
     IFS0bits.T2IF = 0;
     IEC0bits.T2IE = 1;
