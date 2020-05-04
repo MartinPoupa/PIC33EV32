@@ -17,7 +17,7 @@
 
 int tik = 0;
 int overclock = 1;
-int repetion = 60;
+int repetion = 5;
 
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
