@@ -17,12 +17,13 @@
 
 int tik = 0;
 int overclock = 1;
+int repetion = 60;
 
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
     asm(" btg PORTB, #0 ");
 
-    if(tik <= 5){
+    if(tik <= repetion * 2){
         tik++;
     }
 }
@@ -40,7 +41,7 @@ int main() {
 
     while (1) {
 
-        if(tik >= 5 && overclock == 1){
+        if(tik >= repetion * 2 && overclock == 1){
             __builtin_write_OSCCONL(OSCCON & 0xBF) ;
             RPOR1 = 0x0031;
             __builtin_write_OSCCONL(OSCCON |  0x40) ;
