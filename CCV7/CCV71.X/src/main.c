@@ -22,7 +22,7 @@ int repetion = 5;
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
     asm(" btg PORTB, #0 ");
-        tik++;
+    tik++;
 }
 
 

@@ -18,7 +18,8 @@ Command:
   -L/Applications/microchip/xc16/v1.50/bin/bin/../../support/dsPIC33C/gld \
   -L/Applications/microchip/xc16/v1.50/bin/bin/../../support/dsPIC33E/gld \
   -L/Applications/microchip/xc16/v1.50/bin/bin/../../support/dsPIC33F/gld \
-  build/default/production/_ext/98690702/kaja.o \
+  build/default/production/src/main.o \
+  build/default/production/src/asm/mainFuncion.o \
   --local-stack \
   --defsym=__MPLAB_BUILD=1 \
   -Tp33EV32GM002.gld.00 \
@@ -53,6 +54,10 @@ Archive member included because of file (symbol)
                               /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o) (__data_init_extended)
 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt_start_mode_normalep.Leo)
                               (__crt_start_mode_normal)
+/Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(divsi3.epeo)
+                              build/default/production/src/main.o (___divsi3)
+/Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(udivsi3.epeo)
+                              /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(divsi3.epeo) (___udivsi3)
 
 
 xc16-ld 1.50 (B)
@@ -65,11 +70,11 @@ Default Scalar Model: Small
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                        0x200               0x126           0x1b9  (441)
-.text                        0x326                0xa8            0xfc  (252)
-.dinit                       0x3ce                0x12            0x1b  (27)
+.text                        0x200               0x164           0x216  (534)
+.text                        0x364               0x2dc           0x44a  (1098)
+.dinit                       0x640                0x12            0x1b  (27)
 
-                 Total "program" memory used (bytes):          0x2d0  (720) 2%
+                 Total "program" memory used (bytes):          0x67b  (1659) 5%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x1000]
@@ -96,35 +101,63 @@ Info: Project is using a large data memory model when small data memory model is
 
 External Symbols in Data Memory (by address):
 
-                    0x1000                  _stelinka
-                    0x1002                  _pastelka
-                    0x1004                  _cekame
+                    0x1000                  _overclock
+                    0x1002                  _repetion
+                    0x1004                  _tik
 
 External Symbols in Data Memory (by name):
 
-                    0x1004                  _cekame
-                    0x1002                  _pastelka
-                    0x1000                  _stelinka
+                    0x1000                  _overclock
+                    0x1002                  _repetion
+                    0x1004                  _tik
 
 External Symbols in Program Memory (by address):
 
                   0x000200                  __resetPRI
                   0x00023c                  __psv_init
-                  0x000248                  __data_init_extended
                   0x000248                  __data_init
+                  0x000248                  __data_init_extended
                   0x0002fa                  __T2Interrupt
                   0x000320                  __DefaultInterrupt
-                  0x000326                  _main
+                  0x000326                  ___divsi3
+                  0x000344                  ___udivsi3
+                  0x000364                  _delay
+                  0x000370                  _pinMode
+                  0x0003ac                  _pinAD
+                  0x0003ec                  _pinPull
+                  0x000438                  _digitalWrite
+                  0x000474                  _digitalRead
+                  0x000490                  _analogRead
+                  0x0004a8                  _startInterrupts
+                  0x0004ac                  _stopInterrupts
+                  0x0004b0                  _setDA
+                  0x0004fc                  _DA
+                  0x000512                  _FrequencyT2
+                  0x000582                  _main
 
 External Symbols in Program Memory (by name):
 
+                  0x0004fc                  _DA
+                  0x000512                  _FrequencyT2
                   0x000320                  __DefaultInterrupt
                   0x0002fa                  __T2Interrupt
+                  0x000326                  ___divsi3
+                  0x000344                  ___udivsi3
                   0x000248                  __data_init
                   0x000248                  __data_init_extended
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000326                  _main
+                  0x000490                  _analogRead
+                  0x000364                  _delay
+                  0x000474                  _digitalRead
+                  0x000438                  _digitalWrite
+                  0x000582                  _main
+                  0x0003ac                  _pinAD
+                  0x000370                  _pinMode
+                  0x0003ec                  _pinPull
+                  0x0004b0                  _setDA
+                  0x0004a8                  _startInterrupts
+                  0x0004ac                  _stopInterrupts
 
 Memory Configuration
 
@@ -151,7 +184,8 @@ FALTREG          0x0057c4           0x000002
 
 Linker script and memory map
 
-LOAD build/default/production/_ext/98690702/kaja.o
+LOAD build/default/production/src/main.o
+LOAD build/default/production/src/asm/mainFuncion.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD p33EV32GM002
 LOAD /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libfx-elf.a
@@ -183,7 +217,7 @@ LOAD /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libfx-elf.a
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000200        0x126
+.text             0x000200        0x164
  *(.init)
  .init            0x000200         0x48 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
                   0x000200                  __reset
@@ -195,7 +229,7 @@ LOAD /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libfx-elf.a
  *(.user_init)
  *(.handle)
  *(.isr*)
- .isr.text        0x0002fa         0x26 build/default/production/_ext/98690702/kaja.o
+ .isr.text        0x0002fa         0x26 build/default/production/src/main.o
                   0x0002fa                  __T2Interrupt
  .isr             0x000320          0x4 default_isr
                   0x000320                  __DefaultInterrupt
@@ -207,6 +241,10 @@ LOAD /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libfx-elf.a
                   0x000324          0x2 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt_start_mode_normalep.Leo)
                   0x000324                  __crt_start_mode_normal
                   0x000324                  __crt_start_mode
+ .libm.divsi3     0x000326         0x1e /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(divsi3.epeo)
+                  0x000326                  ___divsi3
+ .libm.udivsi3    0x000344         0x20 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(udivsi3.epeo)
+                  0x000344                  ___udivsi3
 
 usercode
  *(usercode)
@@ -256,26 +294,29 @@ __FALTREG
 .comment
  *(.comment)
 
-.debug_info       0x000000        0xa6c
+.debug_info       0x000000        0xb02
  *(.debug_info)
- .debug_info      0x000000        0xa6c build/default/production/_ext/98690702/kaja.o
+ .debug_info      0x000000        0xa64 build/default/production/src/main.o
+ .debug_info      0x000a64         0x9e build/default/production/src/asm/mainFuncion.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x11c
+.debug_abbrev     0x000000        0x158
  *(.debug_abbrev)
- .debug_abbrev    0x000000        0x11c build/default/production/_ext/98690702/kaja.o
+ .debug_abbrev    0x000000        0x144 build/default/production/src/main.o
+ .debug_abbrev    0x000144         0x14 build/default/production/src/asm/mainFuncion.o
 
-.debug_line       0x000000        0x16e
+.debug_line       0x000000        0x26b
  *(.debug_line)
- .debug_line      0x000000        0x16e build/default/production/_ext/98690702/kaja.o
+ .debug_line      0x000000        0x172 build/default/production/src/main.o
+ .debug_line      0x000172         0xf9 build/default/production/src/asm/mainFuncion.o
 
-.debug_frame      0x000000         0x58
+.debug_frame      0x000000         0x72
  *(.debug_frame)
- .debug_frame     0x000000         0x58 build/default/production/_ext/98690702/kaja.o
+ .debug_frame     0x000000         0x72 build/default/production/src/main.o
 
-.debug_str        0x000000         0x46
+.debug_str        0x000000         0x47
  *(.debug_str)
- .debug_str       0x000000         0x46 build/default/production/_ext/98690702/kaja.o
+ .debug_str       0x000000         0x47 build/default/production/src/main.o
 
 .debug_loc
  *(.debug_loc)
@@ -284,18 +325,20 @@ __FALTREG
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000         0x51
+                  0x000000         0x5f
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000         0x51 build/default/production/_ext/98690702/kaja.o
+                  0x000000         0x5f build/default/production/src/main.o
 
 .debug_ranges
  *(.debug_ranges)
 
-.debug_aranges    0x000000         0x18
+.debug_aranges    0x000000         0x30
  *(.debug_aranges)
  .debug_aranges
-                  0x000000         0x18 build/default/production/_ext/98690702/kaja.o
+                  0x000000         0x18 build/default/production/src/main.o
+ .debug_aranges
+                  0x000018         0x18 build/default/production/src/asm/mainFuncion.o
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -1408,47 +1451,64 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x000018         0xbe
+                  0x000030         0xbe
  .debug_pubtypes
-                  0x000018         0xbe build/default/production/_ext/98690702/kaja.o
+                  0x000030         0xbe build/default/production/src/main.o
 
 __c30_signature
-                  0x0000d6         0x12
+                  0x0000ee         0x1e
  __c30_signature
-                  0x0000d6          0x6 build/default/production/_ext/98690702/kaja.o
+                  0x0000ee          0x6 build/default/production/src/main.o
  __c30_signature
-                  0x0000dc          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
+                  0x0000f4          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
  __c30_signature
-                  0x0000e2          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
+                  0x0000fa          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
+ __c30_signature
+                  0x000100          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(divsi3.epeo)
+ __c30_signature
+                  0x000106          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(udivsi3.epeo)
 
 .ndata              0x1000          0x4
- .ndata             0x1000          0x4 build/default/production/_ext/98690702/kaja.o
-                    0x1000                  _stelinka
-                    0x1002                  _pastelka
+ .ndata             0x1000          0x4 build/default/production/src/main.o
+                    0x1000                  _overclock
+                    0x1002                  _repetion
 
 .nbss               0x1004          0x2
- .nbss              0x1004          0x2 build/default/production/_ext/98690702/kaja.o
-                    0x1004                  _cekame
+ .nbss              0x1004          0x2 build/default/production/src/main.o
+                    0x1004                  _tik
 
 .config_WDTWIN    0x0057a0          0x2
  .config_WDTWIN
-                  0x0057a0          0x2 build/default/production/_ext/98690702/kaja.o
+                  0x0057a0          0x2 build/default/production/src/main.o
 
 .config_PLLKEN    0x00579c          0x2
  .config_PLLKEN
-                  0x00579c          0x2 build/default/production/_ext/98690702/kaja.o
+                  0x00579c          0x2 build/default/production/src/main.o
 
 .config_IESO      0x005798          0x2
- .config_IESO     0x005798          0x2 build/default/production/_ext/98690702/kaja.o
+ .config_IESO     0x005798          0x2 build/default/production/src/main.o
 
 .ivt._T2Interrupt
                   0x000022          0x2
  .ivt._T2Interrupt
-                  0x000022          0x2 build/default/production/_ext/98690702/kaja.o
+                  0x000022          0x2 build/default/production/src/main.o
 
-.text             0x000326         0xa8
- .text            0x000326         0xa8 build/default/production/_ext/98690702/kaja.o
-                  0x000326                  _main
+.text             0x000364        0x2dc
+ .text            0x000364        0x1ae build/default/production/src/asm/mainFuncion.o
+                  0x000364                  _delay
+                  0x000370                  _pinMode
+                  0x0003ac                  _pinAD
+                  0x0003ec                  _pinPull
+                  0x000438                  _digitalWrite
+                  0x000474                  _digitalRead
+                  0x000490                  _analogRead
+                  0x0004a8                  _startInterrupts
+                  0x0004ac                  _stopInterrupts
+                  0x0004b0                  _setDA
+                  0x0004fc                  _DA
+ .text            0x000512        0x12e build/default/production/src/main.o
+                  0x000512                  _FrequencyT2
+                  0x000582                  _main
 
-.dinit            0x0003ce         0x12
- .dinit           0x0003ce         0x12 data_init
+.dinit            0x000640         0x12
+ .dinit           0x000640         0x12 data_init
