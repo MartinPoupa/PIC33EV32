@@ -33,7 +33,7 @@ int main() {
     pinMode(B, 0, OUTPUT);
     pinAD(B, 0, DIGITAL);
 
-    FrequencyT2(1);
+    FrequencyT2(2);
     startInterrupts();
 
 
