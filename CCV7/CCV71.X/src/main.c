@@ -53,7 +53,7 @@ int main() {
 
             CLKDIV = 0;
             //CLKDIVbits.FRCDIV = 0;
-            PLLFBD=168;
+            PLLFBD = 205;
             CLKDIVbits.PLLPOST = 0;
             CLKDIVbits.PLLPRE = 5;
 
