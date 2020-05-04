@@ -34,6 +34,13 @@ int main() {
     pinMode(B, 0, OUTPUT);
     pinAD(B, 0, DIGITAL);
 
+    pinMode(B, 4, OUTPUT);
+    pinAD(B, 4, DIGITAL);
+
+    __builtin_write_OSCCONL(OSCCON & 0xBF) ;
+    RPOR1 = 0x0031;
+    __builtin_write_OSCCONL(OSCCON |  0x40) ;
+
     FrequencyT2(2);
     startInterrupts();
 
@@ -42,9 +49,7 @@ int main() {
     while (1) {
 
         if(tik >= repetion * 2 && overclock == 1){
-            __builtin_write_OSCCONL(OSCCON & 0xBF) ;
-            RPOR1 = 0x0031;
-            __builtin_write_OSCCONL(OSCCON |  0x40) ;
+
 
 
             REFOCON = 0x8000;
