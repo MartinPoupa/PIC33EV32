@@ -22,10 +22,7 @@ int repetion = 60;
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
     asm(" btg PORTB, #0 ");
-
-    if(tik <= repetion * 2 && overclock == 1){
         tik++;
-    }
 }
 
 
@@ -33,13 +30,10 @@ int main() {
 
     pinMode(B, 0, OUTPUT);
     pinAD(B, 0, DIGITAL);
-    pinMode(B, 1, OUTPUT);
-    pinAD(B, 1, DIGITAL);
+
 
     pinMode(B, 4, OUTPUT);
     pinAD(B, 4, DIGITAL);
-
-
 
     FrequencyT2(2);
     startInterrupts();
@@ -48,7 +42,7 @@ int main() {
 
     while (1) {
 
-        if(tik >= repetion * 2 && overclock == 1){
+        if(overclock == 1 && tik > repetion * 2){
 
             __builtin_write_OSCCONL(OSCCON & 0xBF) ;
             RPOR1 = 0x0031;
@@ -67,15 +61,13 @@ int main() {
             __builtin_write_OSCCONH(0x01);
             __builtin_write_OSCCONL(OSCCON | 0x01);
 
-            INTCON2bits.GIE = 1;
-
-
             while (OSCCONbits.LOCK != 1){
                 delay(1);
             }
             overclock = 0;
+            INTCON2bits.GIE = 1;
+
         }
-        asm(" btg PORTB, #1 ");
 
     }
     return 0;
