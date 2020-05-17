@@ -15,8 +15,19 @@
 #pragma config IOL1WAY = ON    //Allow Only One reconfiguration pro PPS
 #pragma config FWDTEN = OFF	   // WDT and SWDTEN Disabled    Watchdog vypnut
 
+tik = 0;
 
+void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
+    IFS0bits.T2IF = 0;
+    PDC1 = tik;
+    if(tik <= 0x0fff){
+        tik++;
+    }
+    else{
+        tik = 0;
+    }
 
+}
 
 
 
@@ -47,9 +58,11 @@ int main() {
 
     PTCON = 0x8000;
 
+    FrequencyT2(100);
+    startInterrupts();
 
     while (1) {
-        asm("nop");
+        delay(1);
     }
     return 0;
 }
