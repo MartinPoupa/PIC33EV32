@@ -6,7 +6,7 @@
             <name>CCV81</name>
             <creation-uuid>da766c65-c5b7-480c-a4a6-6e01757d2ea4</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions>c</c-extensions>
+            <c-extensions/>
             <cpp-extensions/>
             <header-extensions/>
             <asminc-extensions/>
@@ -14,6 +14,7 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>src</sourceRootElem>
+                <sourceRootElem>/Users/martinpoupa/programi/H8</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
