@@ -20,7 +20,7 @@ tik = 0;
 void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
     PDC1 = tik;
-    if(tik <= 0x0fff){
+    if(tik <= 3684){
         tik++;
     }
     else{
@@ -48,7 +48,7 @@ int main() {
     PTPER = 3684;
 
     PHASE1 = 0;
-    PDC1 = 367;
+    PDC1 = 0;
     DTR1 = 0;
     ALTDTR1 = 0;
 
