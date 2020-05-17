@@ -49,7 +49,7 @@ int main() {
 
 
     while (1) {
-        delay(1);
+        asm("nop");
     }
     return 0;
 }

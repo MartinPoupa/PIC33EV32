@@ -6,7 +6,7 @@
             <name>CCV81</name>
             <creation-uuid>da766c65-c5b7-480c-a4a6-6e01757d2ea4</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions/>
+            <c-extensions>c</c-extensions>
             <cpp-extensions/>
             <header-extensions/>
             <asminc-extensions/>
