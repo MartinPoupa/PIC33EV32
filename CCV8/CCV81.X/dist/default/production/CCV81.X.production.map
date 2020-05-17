@@ -18,7 +18,7 @@ Command:
   -L/Applications/microchip/xc16/v1.50/bin/bin/../../support/dsPIC33C/gld \
   -L/Applications/microchip/xc16/v1.50/bin/bin/../../support/dsPIC33E/gld \
   -L/Applications/microchip/xc16/v1.50/bin/bin/../../support/dsPIC33F/gld \
-  build/default/production/_ext/236220289/CV812.o \
+  build/default/production/src/asm/CV812.o \
   --local-stack \
   --defsym=__MPLAB_BUILD=1 \
   -Tp33EV32GM002.gld.00 \
@@ -130,7 +130,7 @@ FALTREG          0x0057c4           0x000002
 
 Linker script and memory map
 
-LOAD build/default/production/_ext/236220289/CV812.o
+LOAD build/default/production/src/asm/CV812.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD p33EV32GM002
 LOAD /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libfx-elf.a
@@ -192,15 +192,15 @@ __FBSLIM
 
 __FOSCSEL         0x005798          0x2
  *(__FOSCSEL.sec*)
- __FOSCSEL.sec    0x005798          0x2 build/default/production/_ext/236220289/CV812.o
+ __FOSCSEL.sec    0x005798          0x2 build/default/production/src/asm/CV812.o
 
 __FOSC            0x00579c          0x2
  *(__FOSC.sec*)
- __FOSC.sec       0x00579c          0x2 build/default/production/_ext/236220289/CV812.o
+ __FOSC.sec       0x00579c          0x2 build/default/production/src/asm/CV812.o
 
 __FWDT            0x0057a0          0x2
  *(__FWDT.sec*)
- __FWDT.sec       0x0057a0          0x2 build/default/production/_ext/236220289/CV812.o
+ __FWDT.sec       0x0057a0          0x2 build/default/production/src/asm/CV812.o
 
 __FPOR
  *(__FPOR.sec*)
@@ -222,11 +222,11 @@ __FDMTCNTH
 
 __FDMT            0x0057bc          0x2
  *(__FDMT.sec*)
- __FDMT.sec       0x0057bc          0x2 build/default/production/_ext/236220289/CV812.o
+ __FDMT.sec       0x0057bc          0x2 build/default/production/src/asm/CV812.o
 
 __FDEVOPT         0x0057c0          0x2
  *(__FDEVOPT.sec*)
- __FDEVOPT.sec    0x0057c0          0x2 build/default/production/_ext/236220289/CV812.o
+ __FDEVOPT.sec    0x0057c0          0x2 build/default/production/src/asm/CV812.o
 
 __FALTREG
  *(__FALTREG.sec*)
@@ -234,18 +234,18 @@ __FALTREG
 .comment
  *(.comment)
 
-.debug_info       0x000000         0xaf
+.debug_info       0x000000         0x98
  *(.debug_info)
- .debug_info      0x000000         0xaf build/default/production/_ext/236220289/CV812.o
+ .debug_info      0x000000         0x98 build/default/production/src/asm/CV812.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000         0x14
  *(.debug_abbrev)
- .debug_abbrev    0x000000         0x14 build/default/production/_ext/236220289/CV812.o
+ .debug_abbrev    0x000000         0x14 build/default/production/src/asm/CV812.o
 
-.debug_line       0x000000         0x71
+.debug_line       0x000000         0x5a
  *(.debug_line)
- .debug_line      0x000000         0x71 build/default/production/_ext/236220289/CV812.o
+ .debug_line      0x000000         0x5a build/default/production/src/asm/CV812.o
 
 .debug_frame
  *(.debug_frame)
@@ -268,7 +268,7 @@ __FALTREG
 .debug_aranges    0x000000         0x18
  *(.debug_aranges)
  .debug_aranges
-                  0x000000         0x18 build/default/production/_ext/236220289/CV812.o
+                  0x000000         0x18 build/default/production/src/asm/CV812.o
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -1386,10 +1386,10 @@ __c30_signature
                   0x000018          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
 
 .bss                0x1000         0x30
- .bss               0x1000         0x30 build/default/production/_ext/236220289/CV812.o
+ .bss               0x1000         0x30 build/default/production/src/asm/CV812.o
 
 .text             0x0002b8         0x40
- .text            0x0002b8         0x40 build/default/production/_ext/236220289/CV812.o
+ .text            0x0002b8         0x40 build/default/production/src/asm/CV812.o
                   0x0002b8                  __reset
 
 .dinit            0x0002f8          0x8
