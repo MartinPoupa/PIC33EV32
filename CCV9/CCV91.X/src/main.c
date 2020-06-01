@@ -24,15 +24,17 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
 
     if(cikle){
-        duty++;
-        if(duty >= pwmF){
-            cikle = 1;
-        }
-    }
-    else{
+        digitalWrite(B, 0, 1);
         duty--;
         if(duty <= 0){
             cikle = 0;
+        }
+    }
+    else{
+        digitalWrite(B, 0, 0);
+        duty++;
+        if(duty >= pwmF){
+            cikle = 1;
         }
     }
 }
@@ -44,7 +46,8 @@ int main() {
     pinAD(B, 15, DIGITAL);
     pinAD(B, 14, DIGITAL);
 
-
+    pinMode(B, 0, OUTPUT);
+    pinAD(B, 0, DIGITAL);
 
     PTCON2 = 0;
     PTPER = pwmF;
