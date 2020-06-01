@@ -37,6 +37,8 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
             cikle = 1;
         }
     }
+    PDC1 = duty;
+
 }
 
 int main() {
@@ -53,7 +55,7 @@ int main() {
     PTPER = pwmF;
 
     PHASE1 = 0;
-    PDC1 = pwmF / 5;
+    PDC1 = 0;
     DTR1 = 0;
     ALTDTR1 = 0;
 
