@@ -38,6 +38,7 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
         }
     }
     PDC1 = duty;
+    PTCON = 0x8000;
 
 }
 
