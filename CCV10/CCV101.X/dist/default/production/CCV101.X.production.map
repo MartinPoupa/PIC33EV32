@@ -71,10 +71,10 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x1b6           0x291  (657)
-.text                        0x3b6               0x246           0x369  (873)
-.dinit                       0x5fc                 0x8             0xc  (12)
+.text                        0x3b6               0x2cc           0x432  (1074)
+.dinit                       0x682                 0x8             0xc  (12)
 
-                 Total "program" memory used (bytes):          0x606  (1542) 4%
+                 Total "program" memory used (bytes):          0x6cf  (1743) 5%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x1000]
@@ -291,29 +291,29 @@ __FALTREG
 .comment
  *(.comment)
 
-.debug_info       0x000000        0x603
+.debug_info       0x000000        0xb15
  *(.debug_info)
- .debug_info      0x000000        0x563 build/default/production/src/main.o
- .debug_info      0x000563         0xa0 build/default/production/src/asm/mainFuncion.o
+ .debug_info      0x000000        0xa75 build/default/production/src/main.o
+ .debug_info      0x000a75         0xa0 build/default/production/src/asm/mainFuncion.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x106
+.debug_abbrev     0x000000        0x130
  *(.debug_abbrev)
- .debug_abbrev    0x000000         0xf2 build/default/production/src/main.o
- .debug_abbrev    0x0000f2         0x14 build/default/production/src/asm/mainFuncion.o
+ .debug_abbrev    0x000000        0x11c build/default/production/src/main.o
+ .debug_abbrev    0x00011c         0x14 build/default/production/src/asm/mainFuncion.o
 
-.debug_line       0x000000        0x25d
+.debug_line       0x000000        0x270
  *(.debug_line)
- .debug_line      0x000000        0x164 build/default/production/src/main.o
- .debug_line      0x000164         0xf9 build/default/production/src/asm/mainFuncion.o
+ .debug_line      0x000000        0x177 build/default/production/src/main.o
+ .debug_line      0x000177         0xf9 build/default/production/src/asm/mainFuncion.o
 
 .debug_frame      0x000000         0x7c
  *(.debug_frame)
  .debug_frame     0x000000         0x7c build/default/production/src/main.o
 
-.debug_str        0x000000         0x12
+.debug_str        0x000000         0x34
  *(.debug_str)
- .debug_str       0x000000         0x12 build/default/production/src/main.o
+ .debug_str       0x000000         0x34 build/default/production/src/main.o
 
 .debug_loc
  *(.debug_loc)
@@ -1448,22 +1448,22 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x000030         0x59
+                  0x000030         0xbe
  .debug_pubtypes
-                  0x000030         0x59 build/default/production/src/main.o
+                  0x000030         0xbe build/default/production/src/main.o
 
 __c30_signature
-                  0x000089         0x1e
+                  0x0000ee         0x1e
  __c30_signature
-                  0x000089          0x6 build/default/production/src/main.o
+                  0x0000ee          0x6 build/default/production/src/main.o
  __c30_signature
-                  0x00008f          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
+                  0x0000f4          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(crt0_extendedep.o)
  __c30_signature
-                  0x000095          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
+                  0x0000fa          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/liblega-pic30-elf.a(data_init_extended.o)
  __c30_signature
-                  0x00009b          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(divsi3.epeo)
+                  0x000100          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(divsi3.epeo)
  __c30_signature
-                  0x0000a1          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(udivsi3.epeo)
+                  0x000106          0x6 /Applications/microchip/xc16/v1.50/bin/bin/../../lib/libm-elf.a(udivsi3.epeo)
 
 .nbss               0x1000          0x4
  .nbss              0x1000          0x4 build/default/production/src/main.o
@@ -1486,7 +1486,7 @@ __c30_signature
  .ivt._T2Interrupt
                   0x000022          0x2 build/default/production/src/main.o
 
-.text             0x0003b6        0x246
+.text             0x0003b6        0x2cc
  .text            0x0003b6        0x1ae build/default/production/src/asm/mainFuncion.o
                   0x0003b6                  _delay
                   0x0003c2                  _pinMode
@@ -1499,9 +1499,9 @@ __c30_signature
                   0x0004fe                  _stopInterrupts
                   0x000502                  _setDA
                   0x00054e                  _DA
- .text            0x000564         0x98 build/default/production/src/main.o
+ .text            0x000564        0x11e build/default/production/src/main.o
                   0x000564                  _FrequencyT2
                   0x0005d4                  _main
 
-.dinit            0x0005fc          0x8
- .dinit           0x0005fc          0x8 data_init
+.dinit            0x000682          0x8
+ .dinit           0x000682          0x8 data_init
