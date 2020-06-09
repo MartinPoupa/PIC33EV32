@@ -20,7 +20,7 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
 
     int input = analogRead(B, 0);
-    DA(A,input);
+
     int output = input - buffer + 0x0800;
     if(output < 0){
         output = 0;
@@ -33,11 +33,11 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     DA(B, output);
 
     if(test){
-        digitalWrite(B, 1, 1);
+        DA(A,1);
         test = 0;
     }
     else{
-        digitalWrite(B, 1, 0);
+        DA(A,0);
         test = 1;
     }
 }
@@ -46,11 +46,9 @@ int main() {
     pinMode(B, 0, INPUT);
     pinAD(B, 0, ANALOG);
     pinPull(B, 0, DOWN);
-    
-    pinMode(B, 1, OUTPUT);
-    pinAD(B, 1, DIGITAL);
+
     setDA();
-    FrequencyT2(30000);
+    FrequencyT2(35000);
     startInterrupts();
     while (1) {
         delay(1);
