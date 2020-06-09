@@ -48,7 +48,7 @@ int main() {
     pinMode(B, 1, OUTPUT);
     pinAD(B, 1, DIGITAL);
     setDA();
-    FrequencyT2(20000);
+    FrequencyT2(30000);
     startInterrupts();
     while (1) {
         delay(1);
