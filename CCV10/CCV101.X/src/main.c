@@ -28,6 +28,7 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
 
     int input = analogRead(B, 0);
+    DA(A,input);
     int output = input - buffer + 0x0800;
     if(output < 0){
         output = 0;
