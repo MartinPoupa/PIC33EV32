@@ -17,7 +17,7 @@
 
 
 int buffer = 0;
-
+int test = 0;
 void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
     int input = analogRead(B, 0);
@@ -31,9 +31,22 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
 
     buffer = input;
     DA(B, output);
+
+    if(test){
+        digitalWrite(B, 1, 1);
+        test = 0;
+    }
+    else{
+        digitalWrite(B, 1, 0);
+        test = 1;
+    }
+
 }
 
 int main() {
+    pinMode(B, 1, OUTPUT);
+    pinAD(B, 1, DIGITAL);
+
     pinMode(B, 0, INPUT);
     pinAD(B, 0, ANALOG);
     setDA();
