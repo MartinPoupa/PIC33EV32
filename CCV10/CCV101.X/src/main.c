@@ -32,7 +32,7 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     buffer = input;
     DA(B, output);
 
-    if(test){ 
+    if(test){
         digitalWrite(B, 1, 1);
         test = 0;
     }
@@ -45,6 +45,8 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
 int main() {
     pinMode(B, 0, INPUT);
     pinAD(B, 0, ANALOG);
+    pinPull(B, 0, DOWN);
+    
     pinMode(B, 1, OUTPUT);
     pinAD(B, 1, DIGITAL);
     setDA();
