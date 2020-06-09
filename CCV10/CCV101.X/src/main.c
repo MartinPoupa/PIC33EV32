@@ -7,10 +7,6 @@
 #include "p33EV32GM002.h"
 #include "include/mainFuncion.h"
 
-//#pragma config FNOSC = FRC     //  pracujeme s FRC oscilatorem 7.37MHz
-//#pragma config OSCIOFNC = ON   //OSC2 is general purpose digital I/O pin
-//#pragma config IOL1WAY = ON    //Allow Only One reconfiguration pro PPS
-//#pragma config FWDTEN = OFF	   // WDT and SWDTEN Disabled    Watchdog vypnut
 
 #pragma config FNOSC = FRC     //  pracujeme s FRC oscilatorem 7.37MHz
 #pragma config IESO  = OFF     //  Start up device with user selected oscillator source , u nas FRC
@@ -28,25 +24,24 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
 
     int input = analogRead(B, 0);
-    //DA(A,input);
+
     int output = input - buffer + 0x0800;
+
     if(output < 0){
         output = 0;
     }
     else if (output > 0x0FFF){
         output = 0x0FFF;
     }
-    buffer = input;
-    DA(B, output);
 
-    if(test){
-        DA(A,0x0FFF);
-        test = 0;
+    if(output <  0x0800 + 50 && output > 0x0800 - 50){
+        output = 0x0800;
     }
-    else{
-        DA(A,0);
-        test = 1;
+    else {
+            buffer = input;
     }
+
+    DA(B, output);
 }
 
 int main() {
@@ -79,7 +74,6 @@ int main() {
     __builtin_write_OSCCONL(OSCCON | 0x01);
 
     INTCON2bits.GIE = 1;
-    //startInterrupts();
 
 
     while (OSCCONbits.LOCK != 1){
