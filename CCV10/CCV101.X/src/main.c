@@ -33,7 +33,7 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     DA(B, output);
 
     if(test){
-        DA(A,1);
+        DA(A,0x0FFF);
         test = 0;
     }
     else{
