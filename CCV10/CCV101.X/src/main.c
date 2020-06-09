@@ -34,7 +34,7 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
         output = 0x0FFF;
     }
 
-    if(output <  0x0800 + 50 && output > 0x0800 - 50){
+    if(output <  0x0800 + 100 && output > 0x0800 - 100){
         output = 0x0800;
     }
     else {
