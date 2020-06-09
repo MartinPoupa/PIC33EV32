@@ -28,7 +28,7 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     IFS0bits.T2IF = 0;
 
     int input = analogRead(B, 0);
-    DA(A,input);
+    //DA(A,input);
     int output = input - buffer + 0x0800;
     if(output < 0){
         output = 0;
@@ -38,7 +38,7 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     }
     buffer = input;
     DA(B, output);
-/*
+
     if(test){
         DA(A,0x0FFF);
         test = 0;
@@ -46,7 +46,7 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     else{
         DA(A,0);
         test = 1;
-    }*/
+    }
 }
 
 int main() {
