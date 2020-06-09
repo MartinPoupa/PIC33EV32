@@ -48,7 +48,7 @@ int main() {
     pinPull(B, 0, DOWN);
 
     setDA();
-    FrequencyT2(35000);
+    FrequencyT2(20000);
     startInterrupts();
     while (1) {
         delay(1);
