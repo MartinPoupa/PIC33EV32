@@ -32,7 +32,7 @@ void __attribute__((interrupt, shadow, auto_psv)) _T2Interrupt(void) {
     buffer = input;
     DA(B, output);
 
-    if(test){
+    if(test){ 
         digitalWrite(B, 1, 1);
         test = 0;
     }
